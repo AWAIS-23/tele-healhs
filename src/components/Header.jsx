@@ -35,7 +35,7 @@ const navItems = [
     ],
   },
   { label: "Contact Us", href: "/contact" },
-  { label: "Partnership", href: "/patnership" },
+  { label: "Partnership", href: "/partnership" },
   { label: "FAQ", href: "/faqs" },
   { label: "Press Kit", href: "/press-kit" },
 ];

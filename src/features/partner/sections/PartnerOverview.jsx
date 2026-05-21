@@ -227,10 +227,10 @@ export function PartnerOverview() {
                   Year 2
                 </div>
                 <p className="text-sm text-gray-500 leading-relaxed">
-                  Secure{" "}
+                  Secure
                   <span className="font-medium text-gray-900">
                     insurance &amp; pharma partnerships
-                  </span>{" "}
+                  </span>
                   for pre-diagnosed patient panels at scale.
                 </p>
               </div>
