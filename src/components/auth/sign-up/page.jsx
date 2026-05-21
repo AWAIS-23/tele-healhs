@@ -269,11 +269,11 @@ export default function SignUpPage() {
                 onChange={(e) => setFormData({ ...formData, agreeToTerms: e.target.checked })}
               />
               <label htmlFor="agreeToTerms" className="ml-2 block text-sm text-gray-700">
-                I agree to the{" "}
+                I agree to the
                 <Link href="/terms" className="text-blue-600 hover:text-blue-500">
                   Terms of Service
-                </Link>{" "}
-                and{" "}
+                </Link>
+                and
                 <Link href="/privacy" className="text-blue-600 hover:text-blue-500">
                   Privacy Policy
                 </Link>
@@ -293,7 +293,7 @@ export default function SignUpPage() {
 
           <div className="text-center">
             <p className="text-sm text-gray-600">
-              Already have an account?{" "}
+              Already have an account?
               <Link href="/login" className="font-medium text-blue-600 hover:text-blue-500">
                 Sign in
               </Link>

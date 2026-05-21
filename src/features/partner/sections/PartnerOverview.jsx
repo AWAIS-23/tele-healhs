@@ -20,10 +20,10 @@ export function PartnerOverview() {
               The Problem
             </h2>
             <p className="text-sm text-gray-500 leading-relaxed mb-4">
-              Fragmented care, no scalable monitoring, and critical gaps between visits drive{" "}
+              Fragmented care, no scalable monitoring, and critical gaps between visits drive
               <span className="font-semibold text-gray-800">
                 billions in avoidable hospitalizations
-              </span>{" "}
+              </span>
               annually. Fewer than 5% of eligible Medicare patients receive CCM or RPM services today.
             </p>
             <div className="h-px bg-gray-100 mb-4" />
@@ -64,7 +64,7 @@ export function PartnerOverview() {
               B2B · Revenue-share or PMPM
             </span>
             <p className="text-sm text-black leading-relaxed">
-              We partner with{" "}
+              We partner with
               <span className="text-black font-medium">
                 practices, FQHCs, ACOs &amp; health systems
               </span>
@@ -208,9 +208,9 @@ export function PartnerOverview() {
                   Year 1
                 </div>
                 <p className="text-sm text-gray-500 leading-relaxed">
-                  <span className="font-medium text-gray-900">5,000+ patients</span>{" "}
+                  <span className="font-medium text-gray-900">5,000+ patients</span>
                   via direct provider partnerships. Platform build-out &amp; clinical workflow validation.
-                </p>  
+                </p>
               </div>
             </div>
 

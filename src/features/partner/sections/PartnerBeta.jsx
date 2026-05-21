@@ -17,10 +17,10 @@ export function PartnerBeta() {
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                Invite your clinic to{" "}
+                Invite your clinic to
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
                   beta test
-                </span>{" "}
+                </span>
                 Health Shield
               </h1>
 

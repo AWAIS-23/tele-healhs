@@ -35,7 +35,7 @@ export function BusinessModel() {
               We partner with independent practices, FQHCs, ACOs, pharmacies, and
               health systems. Health Shield handles enrollment, device logistics,
               AI monitoring, clinical support, and billing — providers keep their
-              payer relationships, we earn a{" "}
+              payer relationships, we earn a
               <strong className="text-gray-800 font-medium">
                 revenue-share or PMPM fee
               </strong>
