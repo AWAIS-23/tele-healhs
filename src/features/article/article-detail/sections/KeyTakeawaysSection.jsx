@@ -4,7 +4,7 @@ export default function KeyTakeawaysSection() {
   const takeaways = [
     {
       id: 1,
-      text: "Ethizo is purpose-built for senior care physicians — combined with CCN Health's facility EHR integrations, it creates the most streamlined dual-EHR workflow for geriatric and post-acute practices"
+      text: "Ethizo is purpose-built for senior care physicians — combined with tele Health's facility EHR integrations, it creates the most streamlined dual-EHR workflow for geriatric and post-acute practices"
     },
     {
       id: 2,
@@ -12,7 +12,7 @@ export default function KeyTakeawaysSection() {
     },
     {
       id: 3,
-      text: "Referral management features in Ethizo pair with CCN Health's facility EHR integrations to track patients across SNF, assisted living, and memory care settings"
+      text: "Referral management features in Ethizo pair with tele Health's facility EHR integrations to track patients across SNF, assisted living, and memory care settings"
     },
     {
       id: 4,

@@ -8,16 +8,16 @@ const faqs = [
     category: "General",
     questions: [
       {
-        q: "What is CCN Health?",
-        a: "CCN Health is a comprehensive remote patient monitoring platform that powers five Medicare programs — RPM, CCM, PCM, BHI, and RTM — across all 50 states. We provide healthcare providers with certified EHR integrations, FDA-cleared devices, and automated billing to deliver better patient care."
+        q: "What is tele Health?",
+        a: "tele Health is a comprehensive remote patient monitoring platform that powers five Medicare programs — RPM, CCM, PCM, BHI, and RTM — across all 50 states. We provide healthcare providers with certified EHR integrations, FDA-cleared devices, and automated billing to deliver better patient care."
       },
       {
-        q: "How long has CCN Health been in operation?",
-        a: "CCN Health was founded in 2020 in Los Angeles, California. Since then, we've grown to support providers across all 50 states and have processed over 1 billion data transactions."
+        q: "How long has tele Health been in operation?",
+        a: "tele Health was founded in 2020 in Los Angeles, California. Since then, we've grown to support providers across all 50 states and have processed over 1 billion data transactions."
       },
       {
-        q: "Is CCN Health HIPAA compliant?",
-        a: "Yes, CCN Health is fully HIPAA compliant. We maintain enterprise-grade security infrastructure to protect patient data and ensure compliance with all healthcare privacy regulations."
+        q: "Is tele Health HIPAA compliant?",
+        a: "Yes, tele Health is fully HIPAA compliant. We maintain enterprise-grade security infrastructure to protect patient data and ensure compliance with all healthcare privacy regulations."
       }
     ]
   },
@@ -54,7 +54,7 @@ const faqs = [
     category: "Devices & Integration",
     questions: [
       {
-        q: "What devices are compatible with CCN Health?",
+        q: "What devices are compatible with tele Health?",
         a: "We support 25+ FDA-cleared devices from manufacturers including Tenovi, Omron, Dexcom, and more. Our platform is device-agnostic, meaning it works with virtually any FDA-cleared monitoring device."
       },
       {
@@ -71,7 +71,7 @@ const faqs = [
     category: "Billing & Reimbursement",
     questions: [
       {
-        q: "How does billing work with CCN Health?",
+        q: "How does billing work with tele Health?",
         a: "We provide automated billing documentation and support for all Medicare programs. Our platform generates the necessary documentation and time tracking to ensure compliant billing for RPM, CCM, PCM, BHI, and RTM services."
       },
       {
@@ -88,7 +88,7 @@ const faqs = [
     category: "Getting Started",
     questions: [
       {
-        q: "How do I get started with CCN Health?",
+        q: "How do I get started with tele Health?",
         a: "Getting started is easy. Schedule a consultation with our team, we'll assess your practice's needs, set up the necessary integrations, and provide training for your staff. Most practices are up and running within 2-4 weeks."
       },
       {
@@ -101,7 +101,7 @@ const faqs = [
       },
       {
         q: "Do you offer a trial or demo?",
-        a: "Yes, we offer personalized demos and trial periods to help you evaluate our platform. Schedule a consultation to see how CCN Health can benefit your practice."
+        a: "Yes, we offer personalized demos and trial periods to help you evaluate our platform. Schedule a consultation to see how tele Health can benefit your practice."
       }
     ]
   }
@@ -115,8 +115,8 @@ export function FaqAccordion() {
     <section className="relative bg-gray-50 py-16 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <Badge 
-            variant="blue" 
+          <Badge
+            variant="blue"
             icon={
               <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -144,11 +144,10 @@ export function FaqAccordion() {
                   setOpenCategory(category.category);
                   setOpenQuestion(0);
                 }}
-                className={`px-6 py-3 rounded-lg font-medium transition-all ${
-                  openCategory === category.category
-                    ? "bg-blue-600 text-white shadow-lg"
-                    : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
-                }`}
+                className={`px-6 py-3 rounded-lg font-medium transition-all ${openCategory === category.category
+                  ? "bg-blue-600 text-white shadow-lg"
+                  : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
+                  }`}
               >
                 {category.category}
               </button>
@@ -172,9 +171,8 @@ export function FaqAccordion() {
                       {faq.q}
                     </span>
                     <svg
-                      className={`w-5 h-5 text-blue-600 flex-shrink-0 transition-transform ${
-                        openQuestion === index ? "rotate-180" : ""
-                      }`}
+                      className={`w-5 h-5 text-blue-600 flex-shrink-0 transition-transform ${openQuestion === index ? "rotate-180" : ""
+                        }`}
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"

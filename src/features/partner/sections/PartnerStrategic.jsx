@@ -12,7 +12,7 @@ export function PartnerStrategic() {
       text: "text-blue-600",
       icon: (
         <svg
-          className="w-8 h-8 text-white"
+          className="w-8 h-8 text-blue-600"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -35,7 +35,7 @@ export function PartnerStrategic() {
       text: "text-green-600",
       icon: (
         <svg
-          className="w-8 h-8 text-white"
+          className="w-8 h-8 text-blue-600"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -58,7 +58,7 @@ export function PartnerStrategic() {
       text: "text-purple-600",
       icon: (
         <svg
-          className="w-8 h-8 text-white"
+          className="w-8 h-8 text-blue-600"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -81,7 +81,7 @@ export function PartnerStrategic() {
       text: "text-red-600",
       icon: (
         <svg
-          className="w-8 h-8 text-white"
+          className="w-8 h-8 text-blue-600"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"

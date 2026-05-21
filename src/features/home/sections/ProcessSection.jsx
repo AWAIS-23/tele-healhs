@@ -137,7 +137,7 @@ export function ProcessSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#e0f4f1]/[0.97] via-[#e8f6f3]/[0.93] to-[#d5ede9]/[0.75]" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#d5ede9]/30 to-transparent" />
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #0a2540 1px, transparent 0)", backgroundSize: "24px 24px" }} />
-        
+
         <div className="relative py-16">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -150,7 +150,7 @@ export function ProcessSection() {
                   Every facility, practice, and care management group operates differently. We don't force you into a template — our team builds the integrations, alert rules, and clinical protocols that match how your staff actually works.
                 </p>
               </div>
-              
+
               <div className="space-y-8">
                 {approachSteps.map((step, index) => {
                   const IconComponent = Icons[step.icon];
@@ -188,14 +188,14 @@ export function ProcessSection() {
                 <div className="hidden lg:block">
                   <Image
                     src="/assets/webflow/screenshots/6663859913b44b5d4d5409de_screen (1).svg"
-                    alt="CCN Health platform"
+                    alt="tele Health platform"
                     width={300}
                     height={200}
                     className="w-full max-w-xs h-auto opacity-80"
                   />
                 </div>
               </div>
-              
+
               <div className="lg:col-span-3 space-y-0">
                 {capabilities.map((capability, index) => {
                   const IconComponent = Icons[capability.icon];
@@ -233,11 +233,10 @@ export function ProcessSection() {
                     <button
                       key={program.id}
                       onClick={() => setSelectedProgram(program.id)}
-                      className={`px-4 py-2.5 rounded-xl text-sm font-semibold tracking-tight transition-all duration-200 cursor-pointer ${
-                        selectedProgram === program.id
+                      className={`px-4 py-2.5 rounded-xl text-sm font-semibold tracking-tight transition-all duration-200 cursor-pointer ${selectedProgram === program.id
                           ? "bg-[#0a2540] text-white shadow-lg"
                           : "bg-[#0a2540]/[0.04] text-[#0a2540] hover:bg-[#0a2540]/[0.08]"
-                      }`}
+                        }`}
                     >
                       {program.name}
                     </button>

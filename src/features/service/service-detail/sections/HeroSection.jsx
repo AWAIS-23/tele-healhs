@@ -10,7 +10,7 @@ export default function HeroSection({ data }) {
   if (data.tags) {
     try {
       tags = typeof data.tags === 'string' && data.tags.startsWith('[') ? JSON.parse(data.tags) : data.tags.split(',').map(t => t.trim());
-    } catch(e) {}
+    } catch (e) { }
   }
 
   return (
@@ -32,12 +32,12 @@ export default function HeroSection({ data }) {
               </span>
             </h1>
 
-     <div
-  className="max-w-lg text-gray-600 text-lg leading-relaxed mb-8"
-  dangerouslySetInnerHTML={{
-    __html: heroDescription,
-  }}
-/>
+            <div
+              className="max-w-lg text-gray-600 text-lg leading-relaxed mb-8"
+              dangerouslySetInnerHTML={{
+                __html: heroDescription,
+              }}
+            />
 
             <div className="flex flex-wrap gap-3 mb-8">
               {Array.isArray(tags) ? tags.map((tag, index) => (
@@ -55,16 +55,16 @@ export default function HeroSection({ data }) {
           <div className="relative hidden lg:block">
             {data.image ? (
               <div className="relative rounded-2xl overflow-hidden shadow-xl">
-                <img 
+                <img
                   src={`${process.env.NEXT_PUBLIC_API_BASE_URL?.replace('/api', '') || 'http://localhost:5000'}/uploads/${data.image}`}
-                  alt={data.title} 
+                  alt={data.title}
                   className="w-full h-full object-cover"
                 />
               </div>
             ) : (
               <div className="relative bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8 border border-blue-100 flex items-center justify-center">
                 <svg className="w-64 h-64 text-blue-200/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
                 </svg>
               </div>
             )}

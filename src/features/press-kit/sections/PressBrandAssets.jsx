@@ -33,10 +33,10 @@ export function PressBrandAssets() {
               <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
                 <div className="flex items-center gap-3">
                   <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
                   <div>
-                    <p className="font-medium text-gray-900">CCN Health Logo</p>
+                    <p className="font-medium text-gray-900">tele Health Logo</p>
                     <p className="text-sm text-gray-500">PNG format</p>
                   </div>
                 </div>
@@ -48,7 +48,7 @@ export function PressBrandAssets() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                   </svg>
                   <div>
-                    <p className="font-medium text-gray-900">CCN Health Logo</p>
+                    <p className="font-medium text-gray-900">tele Health Logo</p>
                     <p className="text-sm text-gray-500">SVG format</p>
                   </div>
                 </div>

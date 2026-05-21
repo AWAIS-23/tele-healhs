@@ -22,12 +22,12 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
-  
+
   try {
     const apiUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
     const res = await fetch(`${apiUrl}/services/${slug}`);
     const data = await res.json();
-    
+
     if (data.success && data.data) {
       return {
         title: data.data.metaTitle || data.data.title || "Service Details",
@@ -37,9 +37,9 @@ export async function generateMetadata({ params }) {
   } catch (error) {
     console.error("Failed to fetch metadata", error);
   }
-  
+
   return {
-    title: "Service Details | CCN Health",
+    title: "Service Details | tele Health",
     description: "Learn more about our remote patient monitoring and chronic care management services.",
   };
 }

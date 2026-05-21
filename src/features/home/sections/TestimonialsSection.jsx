@@ -2,7 +2,7 @@
 
 const testimonials = [
   {
-    quote: "When we brought the Xandar Kardian integration to market with CCN Health, their team moved faster than any partner we've worked with. From technical integration to live patient monitoring in weeks — they made a complex three-way partnership feel effortless.",
+    quote: "When we brought the Xandar Kardian integration to market with tele Health, their team moved faster than any partner we've worked with. From technical integration to live patient monitoring in weeks — they made a complex three-way partnership feel effortless.",
     author: "Andrew Wheeler",
     role: "VP, GTM Strategy & Operations",
     company: "Tenovi",
@@ -20,7 +20,7 @@ const testimonials = [
     logoAlt: "Rural Health Services",
   },
   {
-    quote: "Partnering with CCN Health has been a game-changer — they're everything we look for in an RPM vendor: highly organized, reliable, and incredibly fast at scaling.",
+    quote: "Partnering with tele Health has been a game-changer — they're everything we look for in an RPM vendor: highly organized, reliable, and incredibly fast at scaling.",
     author: "Steve Wheeler",
     role: "VP of Partnerships",
     company: "Tenovi",
@@ -38,14 +38,14 @@ const testimonials = [
     logoAlt: "Village Medical",
   },
   {
-    quote: "Heart failure admissions have decreased noticeably. Over the last three years, we've seen fewer heart attacks and hospitalizations, significantly due to our monitoring efforts with CCN Health.",
+    quote: "Heart failure admissions have decreased noticeably. Over the last three years, we've seen fewer heart attacks and hospitalizations, significantly due to our monitoring efforts with tele Health.",
     author: "Dr. Dawn Atwal, MD",
     role: "Cardiologist",
     company: "Laguna Cardiology",
     hasLogo: false,
   },
   {
-    quote: "CCN Health's Caregiver App transformed our care delivery. It empowered our nursing teams to monitor numerous patients using minimal equipment, significantly reducing overhead costs.",
+    quote: "tele Health's Caregiver App transformed our care delivery. It empowered our nursing teams to monitor numerous patients using minimal equipment, significantly reducing overhead costs.",
     author: "Facility Manager",
     role: "Operations",
     company: "Access Healthcare Associates",

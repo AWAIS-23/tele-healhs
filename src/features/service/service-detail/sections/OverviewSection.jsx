@@ -5,7 +5,7 @@ export default function OverviewSection({ data }) {
   if (data.overviewFeatures) {
     try {
       overviewFeatures = typeof data.overviewFeatures === 'string' ? JSON.parse(data.overviewFeatures) : data.overviewFeatures;
-    } catch(e) {}
+    } catch (e) { }
   }
 
   return (
@@ -33,28 +33,28 @@ export default function OverviewSection({ data }) {
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
               {overview}
             </p>
-           <ul className="space-y-4">
-  {Array.isArray(overviewFeatures)
-    ? overviewFeatures.map((item, index) => (
-        <li key={index} className="flex items-start gap-3">
-          <svg
-            className="w-6 h-6 text-blue-600 shrink-0 mt-0.5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-          </svg>
+            <ul className="space-y-4">
+              {Array.isArray(overviewFeatures)
+                ? overviewFeatures.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <svg
+                      className="w-6 h-6 text-blue-600 shrink-0 mt-0.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
 
-          <span
-            className="text-gray-600"
-            dangerouslySetInnerHTML={{ __html: item }}
-          />
-        </li>
-      ))
-    : null}
-</ul>
+                    <span
+                      className="text-gray-600"
+                      dangerouslySetInnerHTML={{ __html: item }}
+                    />
+                  </li>
+                ))
+                : null}
+            </ul>
           </div>
           <div className="flex justify-center">
             <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8 border border-blue-100 w-full max-w-md">

@@ -3,14 +3,14 @@
 export function PartnerOverview() {
   return (
     <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-gray-50 to-teal-50">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col gap-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col gap-4">
 
         {/* ── Row 1: Problem + Business Model ── */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
           {/* The Problem — col-span-2 */}
-          <div className="md:col-span-2 bg-white border border-gray-100 rounded-2xl p-6">
-            <div className="flex items-center gap-1.5 mb-2">
+          <div className="md:col-span-2 bg-white border border-gray-100 rounded-2xl px-10 py-7">
+            <div className="flex items-center p-4 gap-1.5 mb-2">
               <span className="w-1.5 h-1.5 rounded-full bg-teal-500 shrink-0" />
               <span className="text-[10px] font-medium tracking-widest uppercase text-teal-700">
                 Healthcare crisis
@@ -50,22 +50,22 @@ export function PartnerOverview() {
           </div>
 
           {/* Business Model — dark teal */}
-          <div className="bg-teal-900 rounded-2xl p-6">
+          <div className="bg-[#0d504c26] text-black rounded-2xl p-6">
             <div className="flex items-center gap-1.5 mb-2">
               <span className="w-1.5 h-1.5 rounded-full bg-teal-400 shrink-0" />
-              <span className="text-[10px] font-medium tracking-widest uppercase text-teal-400">
+              <span className="text-[10px] font-medium tracking-widest uppercase text-teal-900">
                 Business model
               </span>
             </div>
-            <h2 className="text-lg font-semibold text-white mb-2 leading-snug">
+            <h2 className="text-lg font-semibold text-black mb-2 leading-snug">
               Care-as-a-Service
             </h2>
-            <span className="inline-block text-[11px] font-medium px-3 py-1 rounded-full bg-white/10 text-teal-200 mb-3">
+            <span className="inline-block text-[11px] font-medium px-3 py-1 rounded-full bg-white/10 text-teal-900 mb-3">
               B2B · Revenue-share or PMPM
             </span>
-            <p className="text-sm text-teal-200 leading-relaxed">
+            <p className="text-sm text-black leading-relaxed">
               We partner with{" "}
-              <span className="text-white font-medium">
+              <span className="text-black font-medium">
                 practices, FQHCs, ACOs &amp; health systems
               </span>
               . Health Shield handles enrollment, devices, AI, clinical support &amp; billing.
@@ -74,10 +74,10 @@ export function PartnerOverview() {
         </div>
 
         {/* ── Row 2: Medicare Reimbursement + One Integrated Platform ── */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
           {/* Medicare Reimbursement — col-span-3 */}
-          <div className="md:col-span-3 bg-white border border-gray-100 rounded-2xl p-6">
+          <div className="md:col-span-2 bg-white border border-gray-100 rounded-2xl p-6">
             <div className="flex items-center gap-1.5 mb-2">
               <span className="w-1.5 h-1.5 rounded-full bg-teal-500 shrink-0" />
               <span className="text-[10px] font-medium tracking-widest uppercase text-teal-700">
@@ -113,7 +113,7 @@ export function PartnerOverview() {
           </div>
 
           {/* One Integrated Platform — col-span-2 */}
-          <div className="md:col-span-2 bg-teal-50 border border-teal-100 rounded-2xl p-6">
+          <div className="md:col-span-1 bg-teal-50 border border-teal-100 rounded-2xl p-6">
             <div className="flex items-center gap-1.5 mb-2">
               <span className="w-1.5 h-1.5 rounded-full bg-teal-500 shrink-0" />
               <span className="text-[10px] font-medium tracking-widest uppercase text-teal-700">
@@ -204,13 +204,13 @@ export function PartnerOverview() {
                 <div className="w-px flex-1 bg-gray-100 mt-2" />
               </div>
               <div className="pb-4">
-                <div className="text-[10px] font-medium tracking-widest uppercase text-teal-600 mb-1">
+                <div className="text-[14px] font-medium tracking-widest uppercase text-teal-600 mb-1">
                   Year 1
                 </div>
                 <p className="text-sm text-gray-500 leading-relaxed">
-                  <span className="font-medium text-gray-900">5,000+ patients</span> via direct provider
-                  partnerships. Platform build-out &amp; clinical workflow validation.
-                </p>
+                  <span className="font-medium text-gray-900">5,000+ patients</span>{" "}
+                  via direct provider partnerships. Platform build-out &amp; clinical workflow validation.
+                </p>  
               </div>
             </div>
 
@@ -223,7 +223,7 @@ export function PartnerOverview() {
                 <div className="w-px flex-1 bg-gray-100 mt-2" />
               </div>
               <div className="pb-4">
-                <div className="text-[10px] font-medium tracking-widest uppercase text-teal-600 mb-1">
+                <div className="text-[14px] font-medium tracking-widest uppercase text-teal-600 mb-1">
                   Year 2
                 </div>
                 <p className="text-sm text-gray-500 leading-relaxed">
@@ -244,7 +244,7 @@ export function PartnerOverview() {
                 </div>
               </div>
               <div className="pb-4">
-                <div className="text-[10px] font-medium tracking-widest uppercase text-teal-600 mb-1">
+                <div className="text-[14px] font-medium tracking-widest uppercase text-teal-600 mb-1">
                   Year 3
                 </div>
                 <p className="text-sm text-gray-500 leading-relaxed">

@@ -3,7 +3,7 @@ export default function PlatformSection({ data }) {
   if (data?.platform) {
     try {
       platform = typeof data.platform === 'string' ? JSON.parse(data.platform) : data.platform;
-    } catch(e) {}
+    } catch (e) { }
   }
   if (!platform || platform.length === 0) return null;
 

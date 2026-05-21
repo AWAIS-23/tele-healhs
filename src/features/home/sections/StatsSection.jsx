@@ -26,7 +26,7 @@ const whyCCNStats = [
 
 const testimonials = [
   {
-    quote: "When we brought the Xandar Kardian integration to market with CCN Health, their team moved faster than any partner we've worked with. From technical integration to live patient monitoring in weeks — they made a complex three-way partnership feel effortless.",
+    quote: "When we brought the Xandar Kardian integration to market with tele Health, their team moved faster than any partner we've worked with. From technical integration to live patient monitoring in weeks — they made a complex three-way partnership feel effortless.",
     author: "Andrew Wheeler",
     role: "VP, GTM Strategy & Operations",
     company: "Tenovi",
@@ -42,7 +42,7 @@ const testimonials = [
     span: 5
   },
   {
-    quote: "Partnering with CCN Health has been a game-changer — they're everything we look for in an RPM vendor: highly organized, reliable, and incredibly fast at scaling.",
+    quote: "Partnering with tele Health has been a game-changer — they're everything we look for in an RPM vendor: highly organized, reliable, and incredibly fast at scaling.",
     author: "Steve Wheeler",
     role: "VP of Partnerships",
     company: "Tenovi",
@@ -58,7 +58,7 @@ const testimonials = [
     span: 4
   },
   {
-    quote: "Heart failure admissions have decreased noticeably. Over the last three years, we've seen fewer heart attacks and hospitalizations, significantly due to our monitoring efforts with CCN Health.",
+    quote: "Heart failure admissions have decreased noticeably. Over the last three years, we've seen fewer heart attacks and hospitalizations, significantly due to our monitoring efforts with tele Health.",
     author: "Dr. Dawn Atwal, MD",
     role: "Cardiologist",
     company: "Laguna Cardiology",
@@ -66,7 +66,7 @@ const testimonials = [
     span: 7
   },
   {
-    quote: "CCN Health's Caregiver App transformed our care delivery. It empowered our nursing teams to monitor numerous patients using minimal equipment, significantly reducing overhead costs.",
+    quote: "tele Health's Caregiver App transformed our care delivery. It empowered our nursing teams to monitor numerous patients using minimal equipment, significantly reducing overhead costs.",
     author: "Facility Manager",
     role: "Operations",
     company: "Access Healthcare Associates",
@@ -123,7 +123,7 @@ export function StatsSection() {
       {/* Reporting & Administration Section */}
       <section className="relative bg-[#0a2540] overflow-hidden py-16">
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #256eff 1px, transparent 0)", backgroundSize: "40px 40px" }} />
-        
+
         <div className="relative">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
@@ -143,11 +143,10 @@ export function StatsSection() {
                   <button
                     key={tab.id}
                     onClick={() => setSelectedTab(tab.id)}
-                    className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
-                      selectedTab === tab.id
+                    className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${selectedTab === tab.id
                         ? "bg-white text-[#0a2540] shadow-lg"
                         : "bg-white/[0.08] text-white/60 hover:bg-white/[0.14] hover:text-white/80 border border-white/[0.08]"
-                    }`}
+                      }`}
                   >
                     <IconComponent />
                     {tab.name}
@@ -215,7 +214,7 @@ export function StatsSection() {
                       <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-white/[0.06] text-white/40">Monthly</span>
                     </div>
                   </div>
-                  
+
                   <div className="grid grid-cols-3 gap-px bg-white/[0.04] border-b border-white/[0.06]">
                     <div className="px-4 py-3 bg-[#0d1b2a]">
                       <p className="text-[10px] text-white/30 uppercase tracking-wider">Active Staff</p>
@@ -274,12 +273,12 @@ export function StatsSection() {
         </div>
       </section>
 
-      {/* Why CCN Health Section */}
+      {/* Why tele Health Section */}
       <section className="relative bg-[#fef7f0] overflow-hidden py-16">
         <div className="relative">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
-              <p className="text-xs font-semibold uppercase tracking-wider text-[#6b7c93] mb-4">Why CCN Health</p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-[#6b7c93] mb-4">Why tele Health</p>
               <h2 className="text-4xl sm:text-5xl font-light tracking-tighter text-[#0a2540] leading-[0.95]">
                 The numbers speak.<br className="hidden sm:block" /> So do our partners.
               </h2>
@@ -287,30 +286,26 @@ export function StatsSection() {
 
             <div className="grid grid-cols-6 md:grid-cols-12 gap-4">
               {whyCCNStats.map((stat, index) => (
-                <div key={index} className={`col-span-6 md:col-span-${stat.span} rounded-2xl p-6 sm:p-7 flex flex-col justify-between min-h-[200px] ${
-                  stat.variant === "dark" ? "bg-[#0a2540]" :
-                  stat.variant === "blue" ? "bg-[#256eff]" :
-                  stat.variant === "purple" ? "bg-gradient-to-br from-[#635bff] to-[#4f46e5]" :
-                  "bg-gradient-to-br from-[#f0f7ff] to-[#e8f4f8] border border-[#d4e5f7]/60"
-                }`}>
-                  <p className={`text-xs font-semibold uppercase tracking-widest ${
-                    stat.variant === "dark" ? "text-white/40" :
-                    stat.variant === "blue" || stat.variant === "purple" ? "text-white/50" :
-                    "text-[#6b7c93]"
-                  } mb-auto`}>
+                <div key={index} className={`col-span-6 md:col-span-${stat.span} rounded-2xl p-6 sm:p-7 flex flex-col justify-between min-h-[200px] ${stat.variant === "dark" ? "bg-[#0a2540]" :
+                    stat.variant === "blue" ? "bg-[#256eff]" :
+                      stat.variant === "purple" ? "bg-gradient-to-br from-[#635bff] to-[#4f46e5]" :
+                        "bg-gradient-to-br from-[#f0f7ff] to-[#e8f4f8] border border-[#d4e5f7]/60"
+                  }`}>
+                  <p className={`text-xs font-semibold uppercase tracking-widest ${stat.variant === "dark" ? "text-white/40" :
+                      stat.variant === "blue" || stat.variant === "purple" ? "text-white/50" :
+                        "text-[#6b7c93]"
+                    } mb-auto`}>
                     {stat.label}
                   </p>
                   <div>
-                    <p className={`text-5xl sm:text-6xl font-light tracking-tighter leading-none ${
-                      stat.variant === "dark" || stat.variant === "blue" || stat.variant === "purple" ? "text-white" : "text-[#0a2540]"
-                    }`}>
+                    <p className={`text-5xl sm:text-6xl font-light tracking-tighter leading-none ${stat.variant === "dark" || stat.variant === "blue" || stat.variant === "purple" ? "text-white" : "text-[#0a2540]"
+                      }`}>
                       {stat.value}
                     </p>
-                    <p className={`text-sm mt-1 ${
-                      stat.variant === "dark" ? "text-white/50" :
-                      stat.variant === "blue" || stat.variant === "purple" ? "text-white/70" :
-                      "text-[#6b7c93]"
-                    }`}>
+                    <p className={`text-sm mt-1 ${stat.variant === "dark" ? "text-white/50" :
+                        stat.variant === "blue" || stat.variant === "purple" ? "text-white/70" :
+                          "text-[#6b7c93]"
+                      }`}>
                       {stat.description}
                     </p>
                   </div>
@@ -318,14 +313,12 @@ export function StatsSection() {
               ))}
 
               {testimonials.map((testimonial, index) => (
-                <div key={index} className={`col-span-6 md:col-span-${testimonial.span} rounded-2xl p-6 sm:p-7 flex flex-col justify-between min-h-[200px] ${
-                  testimonial.variant === "light" ? "bg-gradient-to-br from-[#f0f7ff] to-[#e8f4f8] border border-[#d4e5f7]/60" :
-                  testimonial.variant === "warm" ? "bg-gradient-to-br from-[#fef3f2] to-[#fef7f0] border border-[#fecaca]/40" :
-                  "bg-white border border-gray-200/60 shadow-sm"
-                }`}>
-                  <blockquote className={`text-[15px] leading-relaxed font-light ${
-                    testimonial.variant === "warm" || testimonial.variant === "light" ? "text-[#0a2540]" : "text-[#425466]"
+                <div key={index} className={`col-span-6 md:col-span-${testimonial.span} rounded-2xl p-6 sm:p-7 flex flex-col justify-between min-h-[200px] ${testimonial.variant === "light" ? "bg-gradient-to-br from-[#f0f7ff] to-[#e8f4f8] border border-[#d4e5f7]/60" :
+                    testimonial.variant === "warm" ? "bg-gradient-to-br from-[#fef3f2] to-[#fef7f0] border border-[#fecaca]/40" :
+                      "bg-white border border-gray-200/60 shadow-sm"
                   }`}>
+                  <blockquote className={`text-[15px] leading-relaxed font-light ${testimonial.variant === "warm" || testimonial.variant === "light" ? "text-[#0a2540]" : "text-[#425466]"
+                    }`}>
                     "{testimonial.quote}"
                   </blockquote>
                   <div className="flex items-center gap-3 mt-5">
@@ -354,7 +347,7 @@ export function StatsSection() {
       {/* Ready to get started Section */}
       <section className="relative bg-[#256eff] overflow-hidden py-16">
         <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "linear-gradient(#256eff 1px, transparent 1px), linear-gradient(90deg, #256eff 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
-        
+
         <div className="relative">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -364,7 +357,7 @@ export function StatsSection() {
                   Your patients<br />deserve better<br />monitoring.
                 </h2>
                 <p className="text-white/70 text-lg leading-relaxed mb-8 max-w-md">
-                  Join 1,000+ providers already using CCN Health to run RPM, CCM, BHI, RTM, and PCM programs — without the complexity.
+                  Join 1,000+ providers already using tele Health to run RPM, CCM, BHI, RTM, and PCM programs — without the complexity.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <button className="px-6 py-3 bg-white text-[#256eff] rounded-lg font-medium hover:bg-gray-50 transition-colors inline-flex items-center gap-2">

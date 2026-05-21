@@ -8,7 +8,7 @@ const staticBlogArticles = [
   {
     id: 1,
     title: "Ethizo RPM & CCM Integration Guide 2026",
-    description: "How CCN Health bridges Ethizo with PointClickCare, ALIS, MatrixCare, and August Health — enabling dual-EHR workflows purpose-built for senior care physicians managing patients across facilities.",
+    description: "How tele Health bridges Ethizo with PointClickCare, ALIS, MatrixCare, and August Health — enabling dual-EHR workflows purpose-built for senior care physicians managing patients across facilities.",
     date: "Apr 23, 2026",
     readTime: "13 min read",
     tags: ["integration-guides", "Ethizo", "RPM Integration"],
@@ -17,7 +17,7 @@ const staticBlogArticles = [
   {
     id: 2,
     title: "Epic RPM & CCM Integration Guide 2026",
-    description: "How CCN Health bridges Epic with PointClickCare, ALIS, MatrixCare, and August Health — enabling dual-EHR workflows for RPM, CCM, and all Medicare care management programs in enterprise health systems.",
+    description: "How tele Health bridges Epic with PointClickCare, ALIS, MatrixCare, and August Health — enabling dual-EHR workflows for RPM, CCM, and all Medicare care management programs in enterprise health systems.",
     date: "Apr 21, 2026",
     readTime: "14 min read",
     tags: ["integration-guides", "Epic", "RPM Integration"],
@@ -26,7 +26,7 @@ const staticBlogArticles = [
   {
     id: 3,
     title: "Charm Health RPM & CCM Integration Guide 2026",
-    description: "How CCN Health bridges Charm Health with PointClickCare, ALIS, MatrixCare, and August Health — enabling dual-EHR workflows for independent practices managing patients in senior care facilities.",
+    description: "How tele Health bridges Charm Health with PointClickCare, ALIS, MatrixCare, and August Health — enabling dual-EHR workflows for independent practices managing patients in senior care facilities.",
     date: "Apr 19, 2026",
     readTime: "13 min read",
     tags: ["integration-guides", "Charm Health", "RPM Integration"],
@@ -44,7 +44,7 @@ const staticBlogArticles = [
   {
     id: 5,
     title: "athenahealth RPM & CCM Integration Guide 2026",
-    description: "How CCN Health bridges athenahealth with PointClickCare, ALIS, MatrixCare, and August Health — enabling dual-EHR workflows for RPM, CCM, and all Medicare care management programs.",
+    description: "How tele Health bridges athenahealth with PointClickCare, ALIS, MatrixCare, and August Health — enabling dual-EHR workflows for RPM, CCM, and all Medicare care management programs.",
     date: "Apr 15, 2026",
     readTime: "14 min read",
     tags: ["integration-guides", "athenahealth", "RPM Integration"],
@@ -70,7 +70,7 @@ export default function LatestArticlesSection() {
       try {
         const response = await fetch("http://127.0.0.1:5000/api/blogs");
         const data = await response.json();
-        
+
         if (data.success && data.data?.blogs?.length > 0) {
           // Format backend data to match UI needs
           const formattedBlogs = data.data.blogs.map(blog => ({
@@ -107,7 +107,7 @@ export default function LatestArticlesSection() {
           <p className="text-base text-gray-600 leading-relaxed font-light mb-10 max-w-lg">
             Billing guides, clinical deep-dives, and program comparisons.
           </p>
-          
+
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {blogArticles.map((article) => (
               <Link key={article.id} href={article.href} className="group">
@@ -116,11 +116,10 @@ export default function LatestArticlesSection() {
                     {article.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className={`inline-flex items-center px-2.5 py-0.5 rounded-md text-[11px] font-medium ${
-                          index === 0
+                        className={`inline-flex items-center px-2.5 py-0.5 rounded-md text-[11px] font-medium ${index === 0
                             ? "bg-gray-100 text-gray-700"
                             : "bg-gray-50 text-gray-600"
-                        }`}
+                          }`}
                       >
                         {tag}
                       </span>

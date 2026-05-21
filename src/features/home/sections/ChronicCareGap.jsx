@@ -7,8 +7,8 @@ export function ChronicCareGap() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Heading */}
         <div className="text-center mb-16">
-          <Badge 
-            variant="blue" 
+          <Badge
+            variant="blue"
             icon={
               <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -19,7 +19,7 @@ export function ChronicCareGap() {
             Healthcare Crisis
           </Badge>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            The Chronic Care Gap Is 
+            The Chronic Care Gap Is
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Costing Us Billions</span>
           </h2>
@@ -39,8 +39,8 @@ export function ChronicCareGap() {
               </div>
               <div>
                 <div>
-                  <h3  className="flex items-baseline heading-black gap-2 mb-2">
-                  <span className="font-semibold text-blue-600 text-4xl">133M</span>Americans</h3>
+                  <h3 className="flex items-baseline heading-black gap-2 mb-2">
+                    <span className="font-semibold text-blue-600 text-4xl">133M</span>Americans</h3>
                 </div>
               </div>
             </div>

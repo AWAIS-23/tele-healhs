@@ -4,8 +4,8 @@ import { ArrowRight } from "lucide-react";
 const announcements = [
   {
     id: 1,
-    title: "CCN Health Ships Automated Reports — Daily, Weekly & Real-Time",
-    description: "Clinical teams were spending the first hour of every day pulling the same data manually. So the CCN Health team built four automated reports — out-of-range, compliance, all-patient summaries, and real-time alerts — that deliver everything automatically.",
+    title: "tele Health Ships Automated Reports — Daily, Weekly & Real-Time",
+    description: "Clinical teams were spending the first hour of every day pulling the same data manually. So the tele Health team built four automated reports — out-of-range, compliance, all-patient summaries, and real-time alerts — that deliver everything automatically.",
     date: "Mar 20, 2026",
     readTime: "4 min read",
     tags: ["Announcement", "Product", "Reporting"],
@@ -13,8 +13,8 @@ const announcements = [
   },
   {
     id: 2,
-    title: "CCN Health Ships Staff Activity Report",
-    description: "Program directors kept asking: 'What is my team actually doing all day?' So the CCN Health team built a hub that tracks every staff member across RPM, CCM, and PCM — with charts for everything.",
+    title: "tele Health Ships Staff Activity Report",
+    description: "Program directors kept asking: 'What is my team actually doing all day?' So the tele Health team built a hub that tracks every staff member across RPM, CCM, and PCM — with charts for everything.",
     date: "Mar 20, 2026",
     readTime: "4 min read",
     tags: ["Announcement", "Product", "Staff Productivity"],
@@ -22,7 +22,7 @@ const announcements = [
   },
   {
     id: 3,
-    title: "CCN Health Ships Audit Readiness Report",
+    title: "tele Health Ships Audit Readiness Report",
     description: "We noticed a client spending hours before every audit manually checking patient records. So we built a tool that scans every field, flags what's missing, and lets staff fix gaps right from the report.",
     date: "Mar 11, 2026",
     readTime: "3 min read",
@@ -31,8 +31,8 @@ const announcements = [
   },
   {
     id: 4,
-    title: "CCN Health Integrates Abbott FreeStyle Libre 3 CGM",
-    description: "CCN Health adds Abbott's FreeStyle Libre 3 CGM to its device ecosystem, bringing 14-day sensor wear, minute-by-minute glucose readings, and LibreView cloud integration to RPM programs.",
+    title: "tele Health Integrates Abbott FreeStyle Libre 3 CGM",
+    description: "tele Health adds Abbott's FreeStyle Libre 3 CGM to its device ecosystem, bringing 14-day sensor wear, minute-by-minute glucose readings, and LibreView cloud integration to RPM programs.",
     date: "Mar 9, 2026",
     readTime: "3 min read",
     tags: ["Announcement", "Integration", "FreeStyle Libre"],
@@ -40,8 +40,8 @@ const announcements = [
   },
   {
     id: 5,
-    title: "CCN Health Showcases Contactless RPM at HIMSS 2026",
-    description: "CCN Health, Tenovi, and Xandar Kardian partner to bring contactless radar-based patient monitoring to senior living, with a live demo at HIMSS 2026 Booth 4064.",
+    title: "tele Health Showcases Contactless RPM at HIMSS 2026",
+    description: "tele Health, Tenovi, and Xandar Kardian partner to bring contactless radar-based patient monitoring to senior living, with a live demo at HIMSS 2026 Booth 4064.",
     date: "Mar 9, 2026",
     readTime: "3 min read",
     tags: ["Announcement", "Partnership", "Tenovi"],
@@ -49,8 +49,8 @@ const announcements = [
   },
   {
     id: 6,
-    title: "CCN Health Adds August Health to Senior Living EHR Network",
-    description: "CCN Health integrates with August Health's senior living EHR to automate resident data sync, vital sign charting, and billing documentation.",
+    title: "tele Health Adds August Health to Senior Living EHR Network",
+    description: "tele Health integrates with August Health's senior living EHR to automate resident data sync, vital sign charting, and billing documentation.",
     date: "Feb 26, 2026",
     readTime: "3 min read",
     tags: ["Announcement", "Integration", "August Health"],
@@ -73,7 +73,7 @@ export default function NewsUpdatesSection() {
           <p className="text-base text-gray-600 leading-relaxed font-light mb-10 max-w-lg">
             Integration launches, product updates, milestones, and CMS regulatory updates.
           </p>
-          
+
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {announcements.map((item) => (
               <Link key={item.id} href={item.href} className="group">
@@ -82,11 +82,10 @@ export default function NewsUpdatesSection() {
                     {item.tags.map((tag, index) => (
                       <span
                         key={index}
-                        className={`inline-flex items-center px-2.5 py-0.5 rounded-md text-[11px] font-medium ${
-                          index === 0
+                        className={`inline-flex items-center px-2.5 py-0.5 rounded-md text-[11px] font-medium ${index === 0
                             ? "bg-pink-50 text-pink-600"
                             : "bg-gray-50 text-gray-600"
-                        }`}
+                          }`}
                       >
                         {tag}
                       </span>

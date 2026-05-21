@@ -58,14 +58,14 @@ export function Gener8torPartnership() {
             <span className="text-gray-400">+</span>
             <span className="text-emerald-600 font-semibold">Health Shield</span>
           </div>
-          
+
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
             gener8tor's Network +<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600">
               Health Shield's Platform
             </span>
           </h2>
-          
+
           <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             A partnership purpose-built to accelerate the leading AI-powered virtual chronic care platform in the country.
           </p>
@@ -76,18 +76,18 @@ export function Gener8torPartnership() {
           {benefits.map((benefit, index) => {
             const IconComponent = Icons[benefit.icon];
             return (
-              <div 
+              <div
                 key={index}
                 className="group relative bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:border-gray-200 transition-all duration-500 hover:-translate-y-2"
               >
                 {/* Gradient glow on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br from-${benefit.color}-50 to-${benefit.color}-50 rounded-2xl transition-all duration-500 opacity-0 group-hover:opacity-100`}></div>
-                
+
                 {/* Icon */}
                 <div className={`relative inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-${benefit.color}-100 text-${benefit.color}-600 mb-6 group-hover:scale-110 transition-transform duration-500`}>
                   <IconComponent />
                 </div>
-                
+
                 {/* Content */}
                 <h3 className="relative text-2xl font-bold text-gray-900 mb-4 whitespace-pre-line leading-tight group-hover:text-blue-600 transition-colors duration-300">
                   {benefit.title}

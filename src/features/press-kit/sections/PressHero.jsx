@@ -16,12 +16,12 @@ export function PressHero() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
-              CCN Health<br />
+              tele Health<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Media Resources</span>
             </h1>
 
             <p className="max-w-lg text-gray-600 text-lg leading-relaxed mb-8">
-              Access brand assets, company information, media coverage, and everything you need to tell the CCN Health story. Download our complete press kit for quick access to all resources.
+              Access brand assets, company information, media coverage, and everything you need to tell the tele Health story. Download our complete press kit for quick access to all resources.
             </p>
 
             <div className="flex flex-wrap gap-3 mb-8">
@@ -40,7 +40,7 @@ export function PressHero() {
           <div className="relative hidden lg:block">
             <div className="relative bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8 border border-blue-100 flex items-center justify-center">
               <svg className="w-64 h-64 text-blue-200/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/>
+                <path d="M12 2v4" /><path d="M12 18v4" /><path d="M4.93 4.93l2.83 2.83" /><path d="M16.24 16.24l2.83 2.83" /><path d="M2 12h4" /><path d="M18 12h4" /><path d="M4.93 19.07l2.83-2.83" /><path d="M16.24 7.76l2.83-2.83" /><circle cx="12" cy="12" r="3" />
               </svg>
             </div>
           </div>

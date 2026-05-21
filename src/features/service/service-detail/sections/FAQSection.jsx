@@ -9,7 +9,7 @@ export default function FAQSection({ data }) {
   if (data?.faqs) {
     try {
       faqs = typeof data.faqs === 'string' ? JSON.parse(data.faqs) : data.faqs;
-    } catch(e) {}
+    } catch (e) { }
   }
 
   if (!faqs || faqs.length === 0) return null;
@@ -47,9 +47,8 @@ export default function FAQSection({ data }) {
               >
                 <span className="font-medium text-gray-900 text-left pr-4">{faq.question}</span>
                 <svg
-                  className={`w-5 h-5 text-gray-500 transition-transform ${
-                    index === openIndex ? "rotate-180" : ""
-                  }`}
+                  className={`w-5 h-5 text-gray-500 transition-transform ${index === openIndex ? "rotate-180" : ""
+                    }`}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"

@@ -60,7 +60,7 @@ export function BentoGridSection() {
               One platform, every care environment
             </h2>
             <p className="text-lg text-[#6b7c93] mx-auto max-w-3xl">
-              From single-provider practices to 200-bed facilities — CCN Health adapts to how you operate.
+              From single-provider practices to 200-bed facilities — tele Health adapts to how you operate.
             </p>
           </div>
 
@@ -68,9 +68,8 @@ export function BentoGridSection() {
             {careSettings.map((setting, index) => (
               <div
                 key={index}
-                className={`relative rounded-2xl overflow-hidden group ${
-                  setting.colSpan === 2 ? "sm:col-span-2 lg:col-span-1" : ""
-                }`}
+                className={`relative rounded-2xl overflow-hidden group ${setting.colSpan === 2 ? "sm:col-span-2 lg:col-span-1" : ""
+                  }`}
                 style={{ minHeight: setting.minHeight }}
               >
                 <Image
@@ -80,10 +79,10 @@ export function BentoGridSection() {
                   src={setting.image}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
-                
+
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                
+
                 {/* Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <h3 className="text-lg font-semibold text-white tracking-tight leading-tight">

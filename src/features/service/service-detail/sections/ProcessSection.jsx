@@ -3,7 +3,7 @@ export default function ProcessSection({ data }) {
   if (data?.process) {
     try {
       process = typeof data.process === 'string' ? JSON.parse(data.process) : data.process;
-    } catch(e) {}
+    } catch (e) { }
   }
   if (!process || process.length === 0) return null;
 
@@ -52,14 +52,14 @@ export default function ProcessSection({ data }) {
               <>How {data?.title?.split(' ').slice(-1)[0] || "RPM"}<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Works</span></>
             )}
           </h2>
-         <div
-  className="text-gray-600 max-w-2xl mx-auto text-lg"
-  dangerouslySetInnerHTML={{
-    __html:
-      data?.processDescription ||
-      "A streamlined four-step process that turns remote vitals into actionable care and compliant billing.",
-  }}
-/>
+          <div
+            className="text-gray-600 max-w-2xl mx-auto text-lg"
+            dangerouslySetInnerHTML={{
+              __html:
+                data?.processDescription ||
+                "A streamlined four-step process that turns remote vitals into actionable care and compliant billing.",
+            }}
+          />
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {Array.isArray(process) ? process.map((step, index) => (

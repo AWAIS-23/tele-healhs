@@ -13,7 +13,7 @@ const downloads = [
   },
   {
     title: "Company Profile PDF",
-    description: "Comprehensive overview of CCN Health, mission, and achievements",
+    description: "Comprehensive overview of tele Health, mission, and achievements",
     format: "PDF",
     size: "2.5 MB",
     icon: "📄",

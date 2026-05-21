@@ -35,6 +35,7 @@ const navItems = [
     ],
   },
   { label: "Contact Us", href: "/contact" },
+  { label: "Partnership", href: "/patnership" },
   { label: "FAQ", href: "/faqs" },
   { label: "Press Kit", href: "/press-kit" },
 ];
@@ -106,7 +107,7 @@ export function Header() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center gap-3 group">
-              <img src="/assets/images/logo.png" alt="CCN Health Logo" className="w-[170px] h-12 object-contain group-hover:scale-105 transition-all duration-300" />
+              <img src="/assets/images/logo.png" alt="tele Health Logo" className="w-[170px] h-12 object-contain group-hover:scale-105 transition-all duration-300" />
             </Link>
           </div>
 
@@ -122,7 +123,7 @@ export function Header() {
                 >
                   <Link
                     href={item.href}
-                    className="relative inline-flex items-center gap-1.5 px-4 xl:px-5 py-3 text-[0.9rem] xl:text-[0.95rem] font-medium transition-all duration-300 text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 rounded-lg group font-sans"
+                    className="relative inline-flex items-center gap-1.5 px-4 xl:px-2 py-3 text-[0.9rem] xl:text-[0.95rem] font-medium transition-all duration-300 text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 rounded-lg group font-sans"
                   >
                     {item.label}
                     {item.hasDropdown && (

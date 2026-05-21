@@ -74,7 +74,7 @@ export function PressShowcase() {
         <Card variant="round" padding="lg" className="bg-white mb-12">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="font-bold text-gray-900 text-2xl mb-4">See CCN Health in Action</h3>
+              <h3 className="font-bold text-gray-900 text-2xl mb-4">See tele Health in Action</h3>
               <p className="text-gray-600 mb-6">
                 Watch our demo video to see how healthcare providers are transforming their care management workflows with our platform.
               </p>
@@ -84,7 +84,7 @@ export function PressShowcase() {
             </div>
             <div className="bg-gradient-to-br from-blue-100 to-indigo-100 rounded-xl aspect-video flex items-center justify-center">
               <svg className="w-20 h-20 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
+                <path d="M8 5v14l11-7z" />
               </svg>
             </div>
           </div>

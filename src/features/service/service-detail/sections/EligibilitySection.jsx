@@ -3,7 +3,7 @@ export default function EligibilitySection({ data }) {
   if (data?.eligibility) {
     try {
       eligibility = typeof data.eligibility === 'string' ? JSON.parse(data.eligibility) : data.eligibility;
-    } catch(e) {}
+    } catch (e) { }
   }
   if (!eligibility || eligibility.length === 0) return null;
 
@@ -24,14 +24,14 @@ export default function EligibilitySection({ data }) {
               <>Qualifying Conditions<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">& ICD-10 Codes</span></>
             )}
           </h2>
-         <div
-  className="text-gray-600 max-w-2xl mx-auto text-lg"
-  dangerouslySetInnerHTML={{
-    __html:
-      data?.eligibilityDescription ||
-      "RPM covers a wide range of chronic conditions...",
-  }}
-/>
+          <div
+            className="text-gray-600 max-w-2xl mx-auto text-lg"
+            dangerouslySetInnerHTML={{
+              __html:
+                data?.eligibilityDescription ||
+                "RPM covers a wide range of chronic conditions...",
+            }}
+          />
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {Array.isArray(eligibility) ? eligibility.map((condition, index) => (

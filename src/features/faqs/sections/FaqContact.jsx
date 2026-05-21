@@ -12,7 +12,7 @@ export function FaqContact() {
               Still have questions?
             </h2>
             <p className="text-blue-100 text-lg leading-relaxed mb-8">
-              Can't find what you're looking for? Our team is here to help. Contact us for personalized support, schedule a demo, or learn more about how CCN Health can transform your practice.
+              Can't find what you're looking for? Our team is here to help. Contact us for personalized support, schedule a demo, or learn more about how tele Health can transform your practice.
             </p>
             <div className="space-y-4">
               <div className="flex items-center gap-4">

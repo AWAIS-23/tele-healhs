@@ -3,7 +3,7 @@ export default function StatsBanner({ data }) {
   if (data?.stats) {
     try {
       stats = typeof data.stats === 'string' ? JSON.parse(data.stats) : data.stats;
-    } catch(e) {}
+    } catch (e) { }
   }
   if (!stats || stats.length === 0) return null;
 

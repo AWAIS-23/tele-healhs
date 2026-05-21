@@ -91,13 +91,13 @@ export default function SignUpPage() {
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
           <Link href="/" className="inline-block mb-6">
-            <img src="/assets/images/logo.png" alt="CCN Health" className="h-12 w-auto mx-auto" />
+            <img src="/assets/images/logo.png" alt="tele Health" className="h-12 w-auto mx-auto" />
           </Link>
           <h2 className="text-3xl font-extrabold text-gray-900">
             Create your account
           </h2>
           <p className="mt-2 text-sm text-gray-600">
-            Join CCN Health to manage your telehealth programs
+            Join tele Health to manage your telehealth programs
           </p>
         </div>
 

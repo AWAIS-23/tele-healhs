@@ -3,7 +3,7 @@ export default function BillingSection({ data }) {
   if (data?.billingCodes) {
     try {
       billingCodes = typeof data.billingCodes === 'string' ? JSON.parse(data.billingCodes) : data.billingCodes;
-    } catch(e) {}
+    } catch (e) { }
   }
   if (!billingCodes || billingCodes.length === 0) return null;
 

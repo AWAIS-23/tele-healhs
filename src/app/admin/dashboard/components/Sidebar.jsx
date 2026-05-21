@@ -1,13 +1,13 @@
 "use client";
-
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { 
-  LayoutDashboard, 
-  Users, 
-  Activity, 
-  FileText, 
-  Settings, 
+import {
+  LayoutDashboard,
+  Users,
+  Activity,
+  FileText,
+  Settings,
   LogOut,
   Menu,
   X,
@@ -18,10 +18,17 @@ import {
 } from "lucide-react";
 
 export default function Sidebar() {
+  
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const router = useRouter(); // ✅ ADD THIS
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    router.push("/");
+  };
   const menuItems = [
     {
       label: "Dashboard",
@@ -70,9 +77,8 @@ export default function Sidebar() {
 
       {/* Sidebar */}
       <aside
-        className={`fixed left-0 top-0 h-full bg-white border-r border-gray-200 z-50 transition-all duration-300 ${
-          mobileMenuOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
-        } ${isCollapsed ? "w-20" : "w-64"}`}
+        className={`fixed left-0 top-0 h-full bg-white border-r border-gray-200 z-50 transition-all duration-300 ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+          } ${isCollapsed ? "w-20" : "w-64"}`}
       >
         <div className="flex flex-col h-full">
           {/* Logo */}
@@ -83,7 +89,7 @@ export default function Sidebar() {
               </div>
               {!isCollapsed && (
                 <div>
-                  <span className="text-lg font-bold text-gray-900">CCN Health</span>
+                  <span className="text-lg font-bold text-gray-900">tele Health</span>
                   <p className="text-xs text-gray-500">Admin Portal</p>
                 </div>
               )}
@@ -96,9 +102,8 @@ export default function Sidebar() {
             className="absolute -right-3 top-20 bg-white border border-gray-200 rounded-full p-1 shadow-sm hidden lg:block"
           >
             <ChevronDown
-              className={`h-4 w-4 text-gray-500 transition-transform ${
-                isCollapsed ? "rotate-180" : ""
-              }`}
+              className={`h-4 w-4 text-gray-500 transition-transform ${isCollapsed ? "rotate-180" : ""
+                }`}
             />
           </button>
 
@@ -119,9 +124,8 @@ export default function Sidebar() {
                   {!isCollapsed && <span className="font-medium">{item.label}</span>}
                   {item.hasDropdown && !isCollapsed && (
                     <ChevronDown
-                      className={`h-4 w-4 ml-auto transition-transform ${
-                        openDropdown === item.label ? "rotate-180" : ""
-                      }`}
+                      className={`h-4 w-4 ml-auto transition-transform ${openDropdown === item.label ? "rotate-180" : ""
+                        }`}
                     />
                   )}
                 </Link>
@@ -157,6 +161,7 @@ export default function Sidebar() {
               )}
             </div>
             <button
+              onClick={handleLogout}
               className="mt-3 w-full flex items-center gap-2 px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-lg transition-colors"
             >
               <LogOut className="h-4 w-4" />

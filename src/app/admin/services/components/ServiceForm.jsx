@@ -315,7 +315,7 @@ export default function ServiceForm({ serviceId = null }) {
             <p className="text-sm text-gray-600 mb-4 font-sans">Easily customize the structured content sections of the service page below.</p>
 
 
-  
+
 
             <div className="space-y-4 pt-4 border-t">
               <StructuredArrayEditor
@@ -416,7 +416,7 @@ export default function ServiceForm({ serviceId = null }) {
               />
 
               <StructuredArrayEditor
-                label="Why CCN Health Strengths"
+                label="Why tele Health Strengths"
                 items={safeParse(formData.whyCCN)}
                 onChange={(items) => setFormData({ ...formData, whyCCN: JSON.stringify(items) })}
                 headerMeta={{ tag: formData.whyCCNTag, title: formData.whyCCNTitle, description: formData.whyCCNDescription }}

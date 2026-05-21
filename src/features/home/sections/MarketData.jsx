@@ -33,11 +33,11 @@ export default function MarketData() {
   useEffect(() => {
     const canvas = chartRef.current;
     if (!canvas) return;
-    
+
     // Set canvas dimensions
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
-    
+
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
@@ -142,8 +142,8 @@ export default function MarketData() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Heading */}
         <div className="text-center mb-16">
-          <Badge 
-            variant="blue" 
+          <Badge
+            variant="blue"
             icon={
               <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -156,7 +156,7 @@ export default function MarketData() {
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
             A Market Accelerating Toward <span className="text-blue-600">$83 Billion</span>
           </h2>
-        
+
         </div>
 
         {/* Main Content - Chart Left, Why Now Right */}
@@ -179,8 +179,8 @@ export default function MarketData() {
               ))}
             </div>
             <div className="relative h-80 w-full">
-              <canvas 
-                ref={chartRef} 
+              <canvas
+                ref={chartRef}
                 className="w-full h-full"
                 style={{ maxWidth: '100%', height: 'auto' }}
               />
@@ -189,8 +189,8 @@ export default function MarketData() {
 
           {/* Right - Why Now */}
           <div>
-            <Badge 
-              variant="emerald" 
+            <Badge
+              variant="emerald"
               icon={
                 <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
@@ -200,7 +200,7 @@ export default function MarketData() {
             >
               Why Now
             </Badge>
-            
+
             <div className="space-y-2">
               {[
                 {

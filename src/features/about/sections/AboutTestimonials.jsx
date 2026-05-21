@@ -3,12 +3,12 @@
 import { Card } from "@/components/Card";
 
 const testimonials = [
-  { quote: "When we brought Xandar Kardian integration to market with CCN Health, their team moved faster than any partner we've worked with. From technical integration to live patient monitoring in weeks.", name: "Andrew Wheeler", role: "VP, GTM Strategy & Operations", company: "Tenovi" },
+  { quote: "When we brought Xandar Kardian integration to market with tele Health, their team moved faster than any partner we've worked with. From technical integration to live patient monitoring in weeks.", name: "Andrew Wheeler", role: "VP, GTM Strategy & Operations", company: "Tenovi" },
   { quote: "Working with CCN was so easy. Their CEO took time to meet with our providers and walk them through how to use their clinical dashboard. We absolutely made the right decision to go with CCN.", name: "Robin Shelton", role: "Quality Assurance", company: "Rural Health Services" },
-  { quote: "Partnering with CCN Health has been a game-changer — they're everything we look for in an RPM vendor: highly organized, reliable, and incredibly fast at scaling.", name: "Steve Wheeler", role: "VP of Partnerships", company: "Tenovi" },
+  { quote: "Partnering with tele Health has been a game-changer — they're everything we look for in an RPM vendor: highly organized, reliable, and incredibly fast at scaling.", name: "Steve Wheeler", role: "VP of Partnerships", company: "Tenovi" },
   { quote: "This company is amazing! So easy to work with and very responsive to all requests. It's great to have all our patient vitals flowing directly into their charts.", name: "Stephanie Bryant-Lipp", role: "Senior Quality Manager", company: "Village Medical" },
-  { quote: "Heart failure admissions have decreased noticeably. Over the last three years, we've seen fewer heart attacks and hospitalizations, significantly due to our monitoring efforts with CCN Health.", name: "Dr. Dawn Atwal, MD", role: "Cardiologist", company: "Laguna Cardiology" },
-  { quote: "CCN Health's Caregiver App transformed our care delivery. It empowered our nursing teams to monitor numerous patients using minimal equipment, significantly reducing overhead costs.", name: "Facility Manager", role: "Operations", company: "Access Healthcare Associates" },
+  { quote: "Heart failure admissions have decreased noticeably. Over the last three years, we've seen fewer heart attacks and hospitalizations, significantly due to our monitoring efforts with tele Health.", name: "Dr. Dawn Atwal, MD", role: "Cardiologist", company: "Laguna Cardiology" },
+  { quote: "tele Health's Caregiver App transformed our care delivery. It empowered our nursing teams to monitor numerous patients using minimal equipment, significantly reducing overhead costs.", name: "Facility Manager", role: "Operations", company: "Access Healthcare Associates" },
 ];
 
 function TestimonialCard({ t }) {
@@ -25,7 +25,7 @@ function TestimonialCard({ t }) {
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shrink-0">
               <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
               </svg>
             </div>
             <div>
@@ -54,7 +54,7 @@ export function AboutTestimonials() {
             Trusted by<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">care teams.</span>
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed">
-            Hear what healthcare professionals and partners say about working with CCN Health.
+            Hear what healthcare professionals and partners say about working with tele Health.
           </p>
         </div>
 

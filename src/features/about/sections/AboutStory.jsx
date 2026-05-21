@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 
 const timeline = [
-  { year: "2020", title: "Founded in Los Angeles", desc: "CCN Health launched with a bold thesis: care management software was broken. We set out to build the most intuitive RPM platform from scratch, engineering-first.", dot: "bg-blue-500", badge: "bg-blue-100 text-blue-700 border-blue-200", card: "bg-gradient-to-br from-blue-50 to-white border-blue-100" },
+  { year: "2020", title: "Founded in Los Angeles", desc: "tele Health launched with a bold thesis: care management software was broken. We set out to build the most intuitive RPM platform from scratch, engineering-first.", dot: "bg-blue-500", badge: "bg-blue-100 text-blue-700 border-blue-200", card: "bg-gradient-to-br from-blue-50 to-white border-blue-100" },
   { year: "2020", title: "First EHR Integration", desc: "Shipped our first bi-directional EHR integration with PointClickCare, delivering real-time vital sign sync to senior living facilities across the US.", dot: "bg-indigo-500", badge: "bg-indigo-100 text-indigo-700 border-indigo-200", card: "bg-gradient-to-br from-indigo-50 to-white border-indigo-100" },
   { year: "2021", title: "Five Programs, One Platform", desc: "Expanded from RPM to deliver CCM, PCM, BHI, and RTM on a single unified platform — automated billing and clinical documentation across all five programs.", dot: "bg-purple-500", badge: "bg-purple-100 text-purple-700 border-purple-200", card: "bg-gradient-to-br from-purple-50 to-white border-purple-100" },
   { year: "2022", title: "Nationwide Coverage", desc: "Deployed across all 50 states with enterprise-grade HIPAA infrastructure. Supporting providers at every scale — from solo practices to health systems.", dot: "bg-pink-500", badge: "bg-pink-100 text-pink-700 border-pink-200", card: "bg-gradient-to-br from-pink-50 to-white border-pink-100" },
@@ -18,16 +18,16 @@ export function AboutStory() {
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    
+
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight / 2;
-      
+
       itemRefs.current.forEach((ref, index) => {
         if (ref) {
           const rect = ref.getBoundingClientRect();
           const elementTop = rect.top + window.scrollY;
           const elementBottom = elementTop + rect.height;
-          
+
           if (scrollPosition >= elementTop && scrollPosition <= elementBottom) {
             setActiveIndex(index);
           }
@@ -75,7 +75,7 @@ export function AboutStory() {
                   <div className={`absolute ${isLeft ? "md:left-1/2 md:-translate-x-1/2" : "md:left-1/2 md:-translate-x-1/2"} left-6 top-6 md:top-1/2 md:-translate-y-1/2 w-4 h-4 rounded-full ${item.dot} border-4 border-white shadow-lg z-10 transition-all duration-500 ${isActive ? "scale-150" : "scale-100"}`} />
 
                   {/* Card — left side on desktop for even items */}
-                  <div 
+                  <div
                     ref={el => itemRefs.current[i] = el}
                     className={`md:w-[45%] ${isLeft ? "md:pr-8" : "md:order-3 md:pl-8"}`}
                   >

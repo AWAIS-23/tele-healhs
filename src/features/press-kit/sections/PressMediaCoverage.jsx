@@ -6,7 +6,7 @@ const mediaCoverage = [
   {
     publication: "Forbes",
     type: "News Article",
-    title: "How CCN Health is Revolutionizing Remote Patient Monitoring",
+    title: "How tele Health is Revolutionizing Remote Patient Monitoring",
     date: "March 2024",
     link: "#",
   },

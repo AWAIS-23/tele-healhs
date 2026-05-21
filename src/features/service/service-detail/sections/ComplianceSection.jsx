@@ -3,14 +3,14 @@ export default function ComplianceSection({ data }) {
   if (data?.complianceNotes) {
     try {
       complianceNotes = typeof data.complianceNotes === 'string' ? JSON.parse(data.complianceNotes) : data.complianceNotes;
-    } catch(e) {}
+    } catch (e) { }
   }
-  
+
   let commonMistakes = [];
   if (data?.commonMistakes) {
     try {
       commonMistakes = typeof data.commonMistakes === 'string' ? JSON.parse(data.commonMistakes) : data.commonMistakes;
-    } catch(e) {}
+    } catch (e) { }
   }
 
   if ((!complianceNotes || complianceNotes.length === 0) && (!commonMistakes || commonMistakes.length === 0)) return null;

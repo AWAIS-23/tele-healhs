@@ -3,7 +3,7 @@ export default function KeyStats({ data }) {
   if (data?.keyStats) {
     try {
       keyStats = typeof data.keyStats === 'string' ? JSON.parse(data.keyStats) : data.keyStats;
-    } catch(e) {}
+    } catch (e) { }
   }
   if (!keyStats || keyStats.length === 0) return null;
 

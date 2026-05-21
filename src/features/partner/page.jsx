@@ -1,12 +1,10 @@
 "use client";
-
-import { PartnerHero } from "./sections/PartnerHero";
+import PartnerHero from "./sections/PartnerHero";
 import { PartnerStrategic } from "./sections/PartnerStrategic";
 import { PartnerOverview } from "./sections/PartnerOverview";
-import { PartnerBenefits } from "./sections/PartnerBenefits";
 import { PartnerWhy } from "./sections/patnerWhy";
-import { PartnerContact } from "./sections/PartnerContact";
-
+import { PartnerSheild } from "./sections/PartnerSheild";
+import { PartnerBeta } from "./sections/PartnerBeta";
 export default function PartnerPage() {
   return (
     <div className="flex min-h-screen flex-col">
@@ -14,9 +12,10 @@ export default function PartnerPage() {
         <PartnerHero />
         <PartnerStrategic />
         <PartnerOverview />
-        <PartnerBenefits />
+        <PartnerSheild />
+
         <PartnerWhy />
-        <PartnerContact />
+<PartnerBeta />
       </main>
     </div>
   );

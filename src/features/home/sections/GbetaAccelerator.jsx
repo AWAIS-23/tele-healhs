@@ -63,12 +63,12 @@ export function GbetaAccelerator() {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-50/50 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl"></div>
       </div>
-      
+
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <Badge 
-            variant="blue" 
+          <Badge
+            variant="blue"
             icon={
               <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -92,21 +92,21 @@ export function GbetaAccelerator() {
           <div className="group relative bg-gray-900 rounded-3xl p-8 lg:p-12 overflow-hidden">
             {/* Gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            
+
             <div className="relative">
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-500/20 mb-8">
                 <svg className="w-7 h-7 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              
+
               <h3 className="text-3xl font-bold text-white mb-6">
                 Why gBETA?
               </h3>
               <p className="text-gray-300 text-lg leading-relaxed mb-8">
                 We're seeking the 7-week accelerator to transform a clinically validated concept into an investor-ready, partner-ready company — fast.
               </p>
-              
+
               {/* Stats */}
               <div className="flex items-center gap-8 pt-6 border-t border-gray-800">
                 <div>
@@ -126,13 +126,13 @@ export function GbetaAccelerator() {
             <h3 className="text-2xl font-bold text-gray-900 mb-8">
               What We Need Most
             </h3>
-            
+
             <div className="space-y-6">
               {needsList.map((item, index) => {
                 const IconComponent = Icons[item.icon];
                 return (
-                  <div 
-                    key={index} 
+                  <div
+                    key={index}
                     className="group flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-all duration-300 cursor-pointer"
                   >
                     {/* Arrow */}
@@ -141,7 +141,7 @@ export function GbetaAccelerator() {
                         <IconComponent />
                       </div>
                     </div>
-                    
+
                     {/* Content */}
                     <div className="flex-1">
                       <h4 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
@@ -151,7 +151,7 @@ export function GbetaAccelerator() {
                         {item.description}
                       </p>
                     </div>
-                    
+
                     {/* Arrow indicator */}
                     <div className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">

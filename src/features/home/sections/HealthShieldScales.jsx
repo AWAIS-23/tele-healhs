@@ -71,13 +71,13 @@ export function HealthShieldScales() {
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-100 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-100 rounded-full blur-3xl"></div>
       </div>
-      
+
       <div className="relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
-            <Badge 
-              variant="blue" 
+            <Badge
+              variant="blue"
               icon={
                 <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
@@ -100,13 +100,13 @@ export function HealthShieldScales() {
             {scalingFeatures.map((feature, index) => {
               const IconComponent = Icons[feature.icon];
               return (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="group relative bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:border-gray-200 transition-all duration-300 hover:scale-[1.02]"
                 >
                   {/* Subtle gradient overlay on hover */}
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-50/0 via-emerald-50/0 to-blue-50/0 group-hover:from-blue-50/50 group-hover:via-emerald-50/30 group-hover:to-blue-50/50 rounded-2xl transition-all duration-500"></div>
-                  
+
                   <div className="relative">
                     {/* Icon */}
                     <div className={`w-14 h-14 rounded-2xl bg-${feature.color}-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
@@ -114,7 +114,7 @@ export function HealthShieldScales() {
                         <IconComponent />
                       </div>
                     </div>
-                    
+
                     {/* Content */}
                     <h3 className="text-2xl font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
                       {feature.title}
@@ -122,7 +122,7 @@ export function HealthShieldScales() {
                     <p className="text-gray-600 leading-relaxed text-base">
                       {feature.description}
                     </p>
-                    
+
                     {/* Arrow indicator */}
                     <div className="mt-6 flex items-center text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <span className="text-sm font-medium">Learn more</span>

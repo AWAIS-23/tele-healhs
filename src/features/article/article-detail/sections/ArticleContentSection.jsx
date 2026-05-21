@@ -13,7 +13,7 @@ export default function ArticleContentSection() {
                   <span className="text-xs font-semibold uppercase tracking-wider text-blue-600">Quick Answer</span>
                 </div>
                 <p className="leading-relaxed text-gray-900">
-                  CCN Health integrates Ethizo with facility EHRs (PointClickCare, ALIS, MatrixCare, August Health) via secure API. This dual-EHR architecture is purpose-built for senior care physicians — monitoring data flows to facility records while billing documentation routes to Ethizo for Medicare claims across RPM, CCM, PCM, BHI, and RTM programs.
+                  tele Health integrates Ethizo with facility EHRs (PointClickCare, ALIS, MatrixCare, August Health) via secure API. This dual-EHR architecture is purpose-built for senior care physicians — monitoring data flows to facility records while billing documentation routes to Ethizo for Medicare claims across RPM, CCM, PCM, BHI, and RTM programs.
                 </p>
               </div>
 
@@ -35,14 +35,14 @@ export default function ArticleContentSection() {
                   This is the dual-EHR reality. Patient clinical data lives in the facility EHR. Physician documentation and billing live in the practice EHR. And when you add remote patient monitoring or chronic care management to the equation, the question becomes: how does monitoring data reach both systems without manual transcription, faxing, or duplicate data entry?
                 </p>
                 <p className="text-gray-600 leading-relaxed mb-8">
-                  That is the problem CCN Health solves for Ethizo practices.
+                  That is the problem tele Health solves for Ethizo practices.
                 </p>
 
                 <hr className="my-8 border-gray-200" />
 
-                <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">How CCN Health Bridges Ethizo and Facility EHRs</h2>
+                <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">How tele Health Bridges Ethizo and Facility EHRs</h2>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  CCN Health sits between Ethizo and the facility EHR, integrating with both systems simultaneously via secure API. Monitoring data from RPM devices flows in two directions — clinical readings post to the facility EHR for nursing staff workflows, while CPT-ready billing documentation routes to Ethizo for the ordering physician's claims submission.
+                  tele Health sits between Ethizo and the facility EHR, integrating with both systems simultaneously via secure API. Monitoring data from RPM devices flows in two directions — clinical readings post to the facility EHR for nursing staff workflows, while CPT-ready billing documentation routes to Ethizo for the ordering physician's claims submission.
                 </p>
 
                 <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">Data Flow Architecture</h3>
@@ -60,7 +60,7 @@ export default function ArticleContentSection() {
                       <tr>
                         <td className="px-4 py-3 text-sm text-gray-700 border-b">Patient demographics</td>
                         <td className="px-4 py-3 text-sm text-gray-700 border-b">Facility EHR</td>
-                        <td className="px-4 py-3 text-sm text-gray-700 border-b">CCN Health</td>
+                        <td className="px-4 py-3 text-sm text-gray-700 border-b">tele Health</td>
                         <td className="px-4 py-3 text-sm text-gray-700 border-b">Auto-enrollment, resident identification</td>
                       </tr>
                       <tr>
@@ -72,30 +72,30 @@ export default function ArticleContentSection() {
                       <tr>
                         <td className="px-4 py-3 text-sm text-gray-700 border-b">ADT events</td>
                         <td className="px-4 py-3 text-sm text-gray-700 border-b">Facility EHR</td>
-                        <td className="px-4 py-3 text-sm text-gray-700 border-b">CCN Health</td>
+                        <td className="px-4 py-3 text-sm text-gray-700 border-b">tele Health</td>
                         <td className="px-4 py-3 text-sm text-gray-700 border-b">Protocol adjustments on admission, transfer, discharge</td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 text-sm text-gray-700 border-b">Care plan data</td>
                         <td className="px-4 py-3 text-sm text-gray-700 border-b">Facility EHR</td>
-                        <td className="px-4 py-3 text-sm text-gray-700 border-b">CCN Health</td>
+                        <td className="px-4 py-3 text-sm text-gray-700 border-b">tele Health</td>
                         <td className="px-4 py-3 text-sm text-gray-700 border-b">Monitoring thresholds informed by treatment goals</td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 text-sm text-gray-700 border-b">Billing documentation</td>
-                        <td className="px-4 py-3 text-sm text-gray-700 border-b">CCN Health</td>
+                        <td className="px-4 py-3 text-sm text-gray-700 border-b">tele Health</td>
                         <td className="px-4 py-3 text-sm text-gray-700 border-b">Ethizo</td>
                         <td className="px-4 py-3 text-sm text-gray-700 border-b">CPT-ready records for Medicare claims submission</td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 text-sm text-gray-700 border-b">Care coordination notes</td>
-                        <td className="px-4 py-3 text-sm text-gray-700 border-b">CCN Health</td>
+                        <td className="px-4 py-3 text-sm text-gray-700 border-b">tele Health</td>
                         <td className="px-4 py-3 text-sm text-gray-700 border-b">Facility EHR + Ethizo</td>
                         <td className="px-4 py-3 text-sm text-gray-700 border-b">Complete clinical context in both systems</td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 text-sm text-gray-700">Alert notifications</td>
-                        <td className="px-4 py-3 text-sm text-gray-700">CCN Health</td>
+                        <td className="px-4 py-3 text-sm text-gray-700">tele Health</td>
                         <td className="px-4 py-3 text-sm text-gray-700">Facility EHR + Ethizo</td>
                         <td className="px-4 py-3 text-sm text-gray-700">Threshold violations surfaced to nursing staff and physician</td>
                       </tr>
@@ -108,20 +108,20 @@ export default function ArticleContentSection() {
                   <strong>Vital Sign Dashboard</strong> — Device readings from all connected RPM monitors appear within Ethizo's patient vital sign dashboard. Physicians reviewing a patient chart in Ethizo see trending blood pressure, weight, glucose, and pulse oximetry data without opening a separate platform. This is critical for senior care physicians who manage large patient panels across facilities — switching between systems for every patient is not operationally feasible.
                 </p>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  <strong>Referral Management</strong> — Ethizo's referral management capabilities integrate with facility ADT events flowing through CCN Health. When a patient is admitted to a facility, the referral status updates in Ethizo. When a patient transfers from assisted living to skilled nursing, the physician's Ethizo record reflects the change and monitoring protocols adjust automatically. This keeps the physician's patient roster current across every facility they serve.
+                  <strong>Referral Management</strong> — Ethizo's referral management capabilities integrate with facility ADT events flowing through tele Health. When a patient is admitted to a facility, the referral status updates in Ethizo. When a patient transfers from assisted living to skilled nursing, the physician's Ethizo record reflects the change and monitoring protocols adjust automatically. This keeps the physician's patient roster current across every facility they serve.
                 </p>
                 <p className="text-gray-600 leading-relaxed mb-4">
-                  <strong>Automated Billing Documentation</strong> — CCN Health generates time-tracked, CPT-coded billing records for all five Medicare programs and routes them directly to Ethizo. The physician practice does not need to manually compile monitoring logs, calculate time thresholds, or select CPT codes. Documentation arrives in Ethizo ready for claims submission — 99453 through 99458 for RPM, 99490 and 99491 for CCM, and the corresponding codes for PCM, BHI, and RTM.
+                  <strong>Automated Billing Documentation</strong> — tele Health generates time-tracked, CPT-coded billing records for all five Medicare programs and routes them directly to Ethizo. The physician practice does not need to manually compile monitoring logs, calculate time thresholds, or select CPT codes. Documentation arrives in Ethizo ready for claims submission — 99453 through 99458 for RPM, 99490 and 99491 for CCM, and the corresponding codes for PCM, BHI, and RTM.
                 </p>
                 <p className="text-gray-600 leading-relaxed mb-8">
-                  <strong>Care Plan Synchronization</strong> — Care plans created in Ethizo and care plans documented in the facility EHR are both visible to CCN Health's monitoring engine. Alert thresholds, medication context, and treatment goals from both systems inform how device readings are evaluated. A blood pressure spike that would be routine for one patient might trigger an immediate escalation for another — the monitoring intelligence draws from both EHRs to make that determination.
+                  <strong>Care Plan Synchronization</strong> — Care plans created in Ethizo and care plans documented in the facility EHR are both visible to tele Health's monitoring engine. Alert thresholds, medication context, and treatment goals from both systems inform how device readings are evaluated. A blood pressure spike that would be routine for one patient might trigger an immediate escalation for another — the monitoring intelligence draws from both EHRs to make that determination.
                 </p>
 
                 <hr className="my-8 border-gray-200" />
 
                 <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">Facility EHR Pairings</h2>
                 <p className="text-gray-600 leading-relaxed">
-                  CCN Health currently integrates Ethizo with four leading facility EHR platforms:
+                  tele Health currently integrates Ethizo with four leading facility EHR platforms:
                 </p>
               </div>
             </div>
@@ -138,7 +138,7 @@ export default function ArticleContentSection() {
                     </li>
                     <li>
                       <a href="#how-ccn-health-bridges" className="text-gray-600 hover:text-blue-600 transition-colors">
-                        How CCN Health Bridges
+                        How tele Health Bridges
                       </a>
                     </li>
                     <li>
