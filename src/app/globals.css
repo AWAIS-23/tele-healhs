@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Strichpunkt+Sans:wght@400..900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #0e4060;
+  --primary-foreground: #ffffff;
+  --secondary: #407a9a;
+  --black: #000000;
+  --blue-600: #0e4060;  
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+   font-family: "Strichpunkt Sans", sans-serif;
+  color: #093d5c;
+}
+
+button, a {
+  font-family: "Strichpunkt Sans", sans-serif;
+
+}
+
+p, .font-body {
+  font-family: "Strichpunkt Sans", sans-serif;
+}
+
+/* Specific heading styles */
+h1 {
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+h5 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+h6 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Marquee animations for testimonials */
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
+}
+
+@keyframes marquee-right {
+  0% { transform: translateX(-33.33%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 45s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 45s linear infinite;
+}
+
+/* Heading Color Classes */
+.heading-black { color: #000000 !important; }
+.heading-white { color: #ffffff !important; }
+.heading-primary { color: var(--primary) !important; }
+.heading-secondary { color: var(--secondary) !important; }
+.heading-accent { color: #f97316 !important; }
+.heading-danger { color: #dc2626 !important; }
+.heading-muted { color: #6b7280 !important; }
+
+.heading-gradient {
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heading-gradient-orange {
+  background: linear-gradient(to right, #f97316, #dc2626);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Global Blue Overrides to match new Primary & Secondary Colors */
+.bg-blue-500, .bg-blue-600, .bg-blue-700 {
+  background-color: var(--primary) !important;
+}
+
+.text-blue-500, .text-blue-600, .text-blue-700 {
+  color: var(--primary) !important;
+}
+
+.border-blue-500, .border-blue-600, .border-blue-700 {
+  border-color: var(--primary) !important;
+}
+
+/* Override Tailwind Gradient Variables */
+.from-blue-600 {
+  --tw-gradient-from: var(--primary) !important;
+  --tw-gradient-to: var(--secondary) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+input,
+textarea,
+select {
+  color: #000000;
+}
+.to-blue-700 {
+  --tw-gradient-to: var(--secondary) !important;
+}
+
+.hover\:bg-blue-700:hover {
+  background-color: #0a2e45 !important;
+}
+
+.hover\:text-blue-600:hover {
+  color: var(--primary) !important;
+}
