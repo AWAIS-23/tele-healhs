@@ -91,7 +91,7 @@ export function PartnerWhy() {
           </div>
 
           {/* Feature Cards */}
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
+          <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
             {scalingFeatures.map((feature, index) => {
               const IconComponent = Icons[feature.icon];
               return (

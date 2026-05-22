@@ -213,8 +213,6 @@ export function PartnerOverview() {
                 </p>
               </div>
             </div>
-
-            {/* Year 2 */}
             <div className="flex gap-3">
               <div className="flex flex-col items-center">
                 <div className="w-7 h-7 rounded-full bg-teal-50 border border-teal-200 flex items-center justify-center text-xs font-medium text-teal-800 shrink-0">

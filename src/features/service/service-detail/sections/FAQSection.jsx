@@ -24,7 +24,7 @@ export default function FAQSection({ data }) {
             </svg>
             <span className="text-sm font-medium text-blue-800">{data?.faqTag || "FAQ"}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl max-w-[621px] mx-auto font-bold text-gray-900 mb-6">
             {data?.faqTitle ? (
               data.faqTitle
             ) : (

@@ -239,8 +239,47 @@ export default function ServiceForm({ serviceId = null }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 gap-6">
         <div className="lg:col-span-2 space-y-6">
+          <div className="bg-white rounded-xl border border-gray-200 p-6">
+            <h3 className="text-sm font-medium text-gray-700 mb-4">SEO</h3>
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm text-gray-600 mb-1">
+                  Meta Title
+                </label>
+                <input
+                  type="text"
+                  className="w-full text-black px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                  value={formData.metaTitle}
+                  onChange={(e) => setFormData({ ...formData, metaTitle: e.target.value })}
+                />
+              </div>
+              <div>
+                <label className="block text-sm text-gray-600 mb-1">
+                  Meta Description
+                </label>
+                <textarea
+                  className="w-full text-black px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                  rows={3}
+                  value={formData.metaDescription}
+                  onChange={(e) => setFormData({ ...formData, metaDescription: e.target.value })}
+                />
+              </div>
+              <div>
+                <label className="block text-sm text-gray-600 mb-1">
+                  Keywords
+                </label>
+                <input
+                  type="text"
+                  className="w-full text-black px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                  value={formData.keywords}
+                  onChange={(e) => setFormData({ ...formData, keywords: e.target.value })}
+                  placeholder="comma, separated, keywords"
+                />
+              </div>
+            </div>
+          </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Title *
@@ -308,162 +347,7 @@ export default function ServiceForm({ serviceId = null }) {
               <input type="text" className="w-full text-black px-3 py-2 border border-gray-300 rounded-lg text-sm" value={formData.tags} onChange={(e) => setFormData({ ...formData, tags: e.target.value })} placeholder="e.g. RPM, Medicare, Clinical" />
             </div>
           </div>
-
-          {/* New Service Detail Sections */}
-          <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 space-y-6">
-            <h3 className="text-lg font-bold text-gray-900 border-b pb-2">overview feature section</h3>
-            <p className="text-sm text-gray-600 mb-4 font-sans">Easily customize the structured content sections of the service page below.</p>
-
-
-
-
-            <div className="space-y-4 pt-4 border-t">
-              <StructuredArrayEditor
-                label="Stats Banner"
-                items={safeParse(formData.stats)}
-                onChange={(items) => setFormData({ ...formData, stats: JSON.stringify(items) })}
-                headerMeta={{ tag: formData.statsTag, title: formData.statsTitle, description: formData.statsDescription }}
-                onHeaderChange={(m) => setFormData({ ...formData, statsTag: m.tag || "", statsTitle: m.title || "", statsDescription: m.description || "" })}
-                placeholderItem={{ value: "", label: "" }}
-                fields={[
-                  { name: "value", label: "Stat Value (e.g. 50%)" },
-                  { name: "label", label: "Label/Description" }
-                ]}
-              />
-
-              <StructuredArrayEditor
-                label="Overview Features"
-                items={safeParse(formData.overviewFeatures)}
-                onChange={(items) => setFormData({ ...formData, overviewFeatures: JSON.stringify(items) })}
-                headerMeta={{ tag: formData.overviewTag, title: formData.overviewTitle, description: formData.overview }}
-                onHeaderChange={(m) => setFormData({ ...formData, overviewTag: m.tag || "", overviewTitle: m.title || "", overview: m.description || "" })}
-                placeholderItem=""
-                isStringArray={true}
-              />
-
-              <StructuredArrayEditor
-                label="Eligibility Conditions (ICD-10)"
-                items={safeParse(formData.eligibility)}
-                onChange={(items) => setFormData({ ...formData, eligibility: JSON.stringify(items) })}
-                headerMeta={{ tag: formData.eligibilityTag, title: formData.eligibilityTitle, description: formData.eligibilityDescription }}
-                onHeaderChange={(m) => setFormData({ ...formData, eligibilityTag: m.tag || "", eligibilityTitle: m.title || "", eligibilityDescription: m.description || "" })}
-                placeholderItem={{ id: "01", code: "", name: "", description: "" }}
-                fields={[
-                  { name: "id", label: "ID (e.g. 01)" },
-                  { name: "code", label: "ICD-10 Code" },
-                  { name: "name", label: "Condition Name", fullWidth: true },
-                  { name: "description", label: "Protocol Description", type: "textarea", fullWidth: true }
-                ]}
-              />
-
-              <StructuredArrayEditor
-                label="Process Steps"
-                items={safeParse(formData.process)}
-                onChange={(items) => setFormData({ ...formData, process: JSON.stringify(items) })}
-                headerMeta={{ tag: formData.processTag, title: formData.processTitle, description: formData.processDescription }}
-                onHeaderChange={(m) => setFormData({ ...formData, processTag: m.tag || "", processTitle: m.title || "", processDescription: m.description || "" })}
-                placeholderItem={{ id: "01", title: "", icon: "activity", description: "" }}
-                fields={[
-                  { name: "id", label: "Step Number (e.g. 01)" },
-                  { name: "title", label: "Step Title" },
-                  { name: "icon", label: "Icon Name", type: "select", options: ["activity", "wifi", "bell", "dollar-sign"] },
-                  { name: "description", label: "Step Description", type: "textarea", fullWidth: true }
-                ]}
-              />
-
-              <StructuredArrayEditor
-                label="Platform Monitor Dashboard Statuses"
-                items={safeParse(formData.platform)}
-                onChange={(items) => setFormData({ ...formData, platform: JSON.stringify(items) })}
-                headerMeta={{ tag: formData.platformTag, title: formData.platformTitle, description: formData.platformDescription }}
-                onHeaderChange={(m) => setFormData({ ...formData, platformTag: m.tag || "", platformTitle: m.title || "", platformDescription: m.description || "" })}
-                placeholderItem={{ id: "01", name: "", count: 0, color: "blue" }}
-                fields={[
-                  { name: "id", label: "ID" },
-                  { name: "name", label: "Status Name (e.g. Active)" },
-                  { name: "count", label: "Initial Count Value", type: "number" },
-                  { name: "color", label: "Badge Color Theme", type: "select", options: ["blue", "amber", "red", "gray"] }
-                ]}
-              />
-
-              <StructuredArrayEditor
-                label="Key Stats Banner"
-                items={safeParse(formData.keyStats)}
-                onChange={(items) => setFormData({ ...formData, keyStats: JSON.stringify(items) })}
-                headerMeta={{ tag: formData.keyStatsTag, title: formData.keyStatsTitle, description: formData.keyStatsDescription }}
-                onHeaderChange={(m) => setFormData({ ...formData, keyStatsTag: m.tag || "", keyStatsTitle: m.title || "", keyStatsDescription: m.description || "" })}
-                placeholderItem={{ stat: "", text: "" }}
-                fields={[
-                  { name: "stat", label: "Stat Value (e.g. 98%)" },
-                  { name: "text", label: "Stat Text" }
-                ]}
-              />
-
-              <StructuredArrayEditor
-                label="CPT Billing Codes"
-                items={safeParse(formData.billingCodes)}
-                onChange={(items) => setFormData({ ...formData, billingCodes: JSON.stringify(items) })}
-                headerMeta={{ tag: formData.billingTag, title: formData.billingTitle, description: formData.billingDescription }}
-                onHeaderChange={(m) => setFormData({ ...formData, billingTag: m.tag || "", billingTitle: m.title || "", billingDescription: m.description || "" })}
-                placeholderItem={{ code: "", price: "", title: "", description: "", frequency: "" }}
-                fields={[
-                  { name: "code", label: "CPT Code" },
-                  { name: "price", label: "Billing Price (e.g. ~$19.32)" },
-                  { name: "title", label: "Title" },
-                  { name: "frequency", label: "Frequency Details" },
-                  { name: "description", label: "Billing Rule Description", type: "textarea", fullWidth: true }
-                ]}
-              />
-
-              <StructuredArrayEditor
-                label="Why tele Health Strengths"
-                items={safeParse(formData.whyCCN)}
-                onChange={(items) => setFormData({ ...formData, whyCCN: JSON.stringify(items) })}
-                headerMeta={{ tag: formData.whyCCNTag, title: formData.whyCCNTitle, description: formData.whyCCNDescription }}
-                onHeaderChange={(m) => setFormData({ ...formData, whyCCNTag: m.tag || "", whyCCNTitle: m.title || "", whyCCNDescription: m.description || "" })}
-                placeholderItem={{ icon: "link2", title: "", description: "" }}
-                fields={[
-                  { name: "title", label: "Strength Title" },
-                  { name: "icon", label: "Feature Icon", type: "select", options: ["link2", "shield-check", "rocket", "dollar-sign", "monitor", "users"] },
-                  { name: "description", label: "Description", type: "textarea", fullWidth: true }
-                ]}
-              />
-
-              <StructuredArrayEditor
-                label="Compliance Notes"
-                items={safeParse(formData.complianceNotes)}
-                onChange={(items) => setFormData({ ...formData, complianceNotes: JSON.stringify(items) })}
-                isStringArray={true}
-                headerMeta={{ tag: formData.complianceTag, title: formData.complianceTitle, description: formData.complianceDescription }}
-                onHeaderChange={(m) => setFormData({ ...formData, complianceTag: m.tag || "", complianceTitle: m.title || "", complianceDescription: m.description || "" })}
-              />
-
-              <StructuredArrayEditor
-                label="Common Compliance Mistakes"
-                items={safeParse(formData.commonMistakes)}
-                onChange={(items) => setFormData({ ...formData, commonMistakes: JSON.stringify(items) })}
-                isStringArray={true}
-              />
-
-              <StructuredArrayEditor
-                label="Frequently Asked Questions (FAQs)"
-                items={safeParse(formData.faqs)}
-                onChange={(items) => setFormData({ ...formData, faqs: JSON.stringify(items) })}
-                headerMeta={{ tag: formData.faqTag, title: formData.faqTitle, description: formData.faqDescription }}
-                onHeaderChange={(m) => setFormData({ ...formData, faqTag: m.tag || "", faqTitle: m.title || "", faqDescription: m.description || "" })}
-                placeholderItem={{ question: "", answer: "" }}
-                fields={[
-                  { name: "question", label: "Question", fullWidth: true },
-                  { name: "answer", label: "Answer Summary", type: "textarea", fullWidth: true }
-                ]}
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="space-y-6">
-          {/* Featured Image */}
-          <div className="bg-white rounded-xl border border-gray-200 p-6">
+  <div className="bg-white rounded-xl border border-gray-200 p-6">
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Service Image
             </label>
@@ -507,8 +391,89 @@ export default function ServiceForm({ serviceId = null }) {
             </div>
           </div>
 
-          {/* Status */}
-          <div className="bg-white rounded-xl border border-gray-200 p-6">
+          {/* New Service Detail Sections */}
+          <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 space-y-6">
+            <h3 className="text-lg font-bold text-gray-900 border-b pb-2">overview feature section</h3>
+            <p className="text-sm text-gray-600 mb-4 font-sans">Easily customize the structured content sections of the service page below.</p>
+
+
+
+
+            <div className="space-y-4 pt-4 border-t">
+          
+
+              <StructuredArrayEditor
+                label="Overview Features"
+                items={safeParse(formData.overviewFeatures)}
+                onChange={(items) => setFormData({ ...formData, overviewFeatures: JSON.stringify(items) })}
+                headerMeta={{ tag: formData.overviewTag, title: formData.overviewTitle, description: formData.overview }}
+                onHeaderChange={(m) => setFormData({ ...formData, overviewTag: m.tag || "", overviewTitle: m.title || "", overview: m.description || "" })}
+                placeholderItem=""
+                isStringArray={true}
+              />
+
+              <StructuredArrayEditor
+                label="Qualifying Conditions"
+                items={safeParse(formData.eligibility)}
+                onChange={(items) => setFormData({ ...formData, eligibility: JSON.stringify(items) })}
+                headerMeta={{ tag: formData.eligibilityTag, title: formData.eligibilityTitle, description: formData.eligibilityDescription }}
+                onHeaderChange={(m) => setFormData({ ...formData, eligibilityTag: m.tag || "", eligibilityTitle: m.title || "", eligibilityDescription: m.description || "" })}
+                placeholderItem={{ id: "01", code: "", name: "", description: "" }}
+                fields={[
+                  { name: "id", label: "ID (e.g. 01)" },
+                  { name: "code", label: "ICD-10 Code" },
+                  { name: "name", label: "Condition Name", fullWidth: true },
+                  { name: "description", label: "Protocol Description", type: "textarea", fullWidth: true }
+                ]}
+              />
+
+              <StructuredArrayEditor
+                label="How Monitoring Works"
+                items={safeParse(formData.process)}
+                onChange={(items) => setFormData({ ...formData, process: JSON.stringify(items) })}
+                headerMeta={{ tag: formData.processTag, title: formData.processTitle, description: formData.processDescription }}
+                onHeaderChange={(m) => setFormData({ ...formData, processTag: m.tag || "", processTitle: m.title || "", processDescription: m.description || "" })}
+                placeholderItem={{ id: "01", title: "", icon: "activity", description: "" }}
+                fields={[
+                  { name: "id", label: "Step Number (e.g. 01)" },
+                  { name: "title", label: "Step Title" },
+                  { name: "icon", label: "Icon Name", type: "select", options: ["activity", "wifi", "bell", "dollar-sign"] },
+                  { name: "description", label: "Step Description", type: "textarea", fullWidth: true }
+                ]}
+              />
+
+          
+
+              <StructuredArrayEditor
+                label="Why choose us"
+                items={safeParse(formData.whyCCN)}
+                onChange={(items) => setFormData({ ...formData, whyCCN: JSON.stringify(items) })}
+                headerMeta={{ tag: formData.whyCCNTag, title: formData.whyCCNTitle, description: formData.whyCCNDescription }}
+                onHeaderChange={(m) => setFormData({ ...formData, whyCCNTag: m.tag || "", whyCCNTitle: m.title || "", whyCCNDescription: m.description || "" })}
+                placeholderItem={{ icon: "link2", title: "", description: "" }}
+                fields={[
+                  { name: "title", label: "Strength Title" },
+                  { name: "icon", label: "Feature Icon", type: "select", options: ["link2", "shield-check", "rocket", "dollar-sign", "monitor", "users"] },
+                  { name: "description", label: "Description", type: "textarea", fullWidth: true }
+                ]}
+              />
+
+          
+
+              <StructuredArrayEditor
+                label="Frequently Asked Questions (FAQs)"
+                items={safeParse(formData.faqs)}
+                onChange={(items) => setFormData({ ...formData, faqs: JSON.stringify(items) })}
+                headerMeta={{ tag: formData.faqTag, title: formData.faqTitle, description: formData.faqDescription }}
+                onHeaderChange={(m) => setFormData({ ...formData, faqTag: m.tag || "", faqTitle: m.title || "", faqDescription: m.description || "" })}
+                placeholderItem={{ question: "", answer: "" }}
+                fields={[
+                  { name: "question", label: "Question", fullWidth: true },
+                  { name: "answer", label: "Answer Summary", type: "textarea", fullWidth: true }
+                ]}
+              />
+            </div>
+             <div className="bg-white rounded-xl border border-gray-200 p-6">
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Status
             </label>
@@ -521,47 +486,17 @@ export default function ServiceForm({ serviceId = null }) {
               <option value="published">Published</option>
             </select>
           </div>
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          {/* Featured Image */}
+        
+          {/* Status */}
+         
 
           {/* SEO */}
-          <div className="bg-white rounded-xl border border-gray-200 p-6">
-            <h3 className="text-sm font-medium text-gray-700 mb-4">SEO</h3>
-            <div className="space-y-4">
-              <div>
-                <label className="block text-sm text-gray-600 mb-1">
-                  Meta Title
-                </label>
-                <input
-                  type="text"
-                  className="w-full text-black px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-                  value={formData.metaTitle}
-                  onChange={(e) => setFormData({ ...formData, metaTitle: e.target.value })}
-                />
-              </div>
-              <div>
-                <label className="block text-sm text-gray-600 mb-1">
-                  Meta Description
-                </label>
-                <textarea
-                  className="w-full text-black px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-                  rows={3}
-                  value={formData.metaDescription}
-                  onChange={(e) => setFormData({ ...formData, metaDescription: e.target.value })}
-                />
-              </div>
-              <div>
-                <label className="block text-sm text-gray-600 mb-1">
-                  Keywords
-                </label>
-                <input
-                  type="text"
-                  className="w-full text-black px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-                  value={formData.keywords}
-                  onChange={(e) => setFormData({ ...formData, keywords: e.target.value })}
-                  placeholder="comma, separated, keywords"
-                />
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
 
