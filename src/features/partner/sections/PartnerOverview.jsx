@@ -246,8 +246,7 @@ export function PartnerOverview() {
                   Year 3
                 </div>
                 <p className="text-sm text-gray-500 leading-relaxed">
-                  <span className="font-medium text-gray-900">50,000+ patients.</span> Multi-state
-                  licensing, white-label options &amp; new payer contracts.
+                  <span className="font-medium text-gray-900">50,000+ patients. Multi-state licensing, white-label options & new payer contracts.</span>
                 </p>
                 <span className="inline-flex items-center gap-1.5 mt-2 bg-teal-50 border border-teal-200 px-2.5 py-1 rounded-full text-xs font-medium text-teal-800">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F6E56" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
