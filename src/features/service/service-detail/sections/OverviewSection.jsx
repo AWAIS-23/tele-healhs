@@ -1,4 +1,17 @@
+"use client";
+
+import { useState } from "react";
+
 export default function OverviewSection({ data }) {
+  const [activeTab, setActiveTab] = useState("BP");
+  
+  const vitalData = {
+    BP: { value: "126/82", unit: "mmHg" },
+    Weight: { value: "72.5", unit: "kg" },
+    Glucose: { value: "115", unit: "mg/dL" },
+    SpO2: { value: "98", unit: "%" }
+  };
+
   if (!data || !data.overview) return null;
   const overview = data.overview;
   let overviewFeatures = [];
@@ -62,14 +75,18 @@ export default function OverviewSection({ data }) {
                 <h3 className="font-semibold text-gray-900 mb-4">Vitals Charting</h3>
                 <div className="flex gap-2 mb-4">
                   {["BP", "Weight", "Glucose", "SpO2"].map((tab) => (
-                    <button key={tab} className={`px-3 py-1.5 text-xs font-medium rounded-lg ${tab === "BP" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-600"}`}>
+                    <button 
+                      key={tab} 
+                      onClick={() => setActiveTab(tab)}
+                      className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${activeTab === tab ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"}`}
+                    >
                       {tab}
                     </button>
                   ))}
                 </div>
                 <div className="text-center py-8">
-                  <p className="text-4xl font-bold text-gray-900 mb-1">126/82</p>
-                  <p className="text-sm text-gray-500">mmHg</p>
+                  <p className="text-4xl font-bold text-gray-900 mb-1">{vitalData[activeTab].value}</p>
+                  <p className="text-sm text-gray-500">{vitalData[activeTab].unit}</p>
                 </div>
               </div>
             </div>
