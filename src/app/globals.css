@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Strichpunkt+Sans:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -20,21 +20,21 @@
 
 body {
   color: var(--foreground);
-  font-family: "Strichpunkt Sans", sans-serif !important;
+  font-family:  "Manrope", sans-serif !important;
 }
 
 h1, h2, h3, h4, h5, h6, .font-heading {
-   font-family: "Strichpunkt Sans", sans-serif;
+   font-family:  "Manrope", sans-serif;
   color: #093d5c;
 }
 
 button, a {
-  font-family: "Strichpunkt Sans", sans-serif;
+  font-family:  "Manrope", sans-serif;
 
 }
 
 p, .font-body {
-  font-family: "Strichpunkt Sans", sans-serif;
+  font-family:  "Manrope", sans-serif;
 }
 
 /* Specific heading styles */

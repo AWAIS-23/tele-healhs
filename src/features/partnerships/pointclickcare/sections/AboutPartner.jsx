@@ -20,7 +20,7 @@ export function AboutPartner({ partnerName = "PointClickCare" }) {
             </div>
 
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
-              The leading post-acute <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">EHR.</span>
+              The leading <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">{partnerName}</span>
             </h2>
 
             <p className="max-w-lg text-gray-600 text-lg leading-relaxed mb-8">
