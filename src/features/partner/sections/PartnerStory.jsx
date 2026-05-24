@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-
+import { useState,  useRef } from "react";
+import Link from "next/link";
 const timeline = [
   {
     number: "01",
@@ -9,7 +9,8 @@ const timeline = [
     desc: "Partnering with accountable care organizations to streamline remote patient monitoring, improve care coordination, and maximize value-based reimbursement outcomes.",
     dot: "bg-blue-500",
     badge: "bg-blue-100 text-blue-700 border-blue-200",
-    card: "bg-gradient-to-br from-blue-50 to-white border-blue-100"
+    card: "bg-gradient-to-br from-blue-50 to-white border-blue-100",
+    link: "/partnership/acos-value-based-organizations"
   },
   {
     number: "02",
@@ -17,7 +18,8 @@ const timeline = [
     desc: "Empowering federally qualified health centers and rural clinics with scalable RPM solutions designed to improve patient engagement and healthcare accessibility.",
     dot: "bg-indigo-500",
     badge: "bg-indigo-100 text-indigo-700 border-indigo-200",
-    card: "bg-gradient-to-br from-indigo-50 to-white border-indigo-100"
+    card: "bg-gradient-to-br from-indigo-50 to-white border-indigo-100",
+    link: "/partnership/fqhc-rural-health-clinics"
   },
   {
     number: "03",
@@ -25,7 +27,8 @@ const timeline = [
     desc: "Helping hospitals and enterprise health systems unify remote care delivery, automate workflows, and monitor patient populations efficiently.",
     dot: "bg-purple-500",
     badge: "bg-purple-100 text-purple-700 border-purple-200",
-    card: "bg-gradient-to-br from-purple-50 to-white border-purple-100"
+    card: "bg-gradient-to-br from-purple-50 to-white border-purple-100",
+    link: "/partnership/hospitals-health-systems"
   },
   {
     number: "04",
@@ -33,7 +36,8 @@ const timeline = [
     desc: "Delivering continuous patient monitoring and real-time clinical insights for skilled nursing facilities, rehabilitation centers, and post-acute care providers.",
     dot: "bg-pink-500",
     badge: "bg-pink-100 text-pink-700 border-pink-200",
-    card: "bg-gradient-to-br from-pink-50 to-white border-pink-100"
+    card: "bg-gradient-to-br from-pink-50 to-white border-pink-100",
+    link: "/partnership/post-acute-snfs-rehab-centers"
   },
   {
     number: "05",
@@ -41,7 +45,8 @@ const timeline = [
     desc: "Supporting home health organizations with connected care technologies that improve patient adherence, monitoring accuracy, and operational efficiency.",
     dot: "bg-orange-500",
     badge: "bg-orange-100 text-orange-700 border-orange-200",
-    card: "bg-gradient-to-br from-orange-50 to-white border-orange-100"
+    card: "bg-gradient-to-br from-orange-50 to-white border-orange-100",
+    link: "/partnership/home-health-agencies"
   },
   {
     number: "06",
@@ -49,7 +54,8 @@ const timeline = [
     desc: "Enabling primary care providers to manage chronic conditions proactively through automated RPM workflows, billing support, and patient engagement tools.",
     dot: "bg-emerald-500",
     badge: "bg-emerald-100 text-emerald-700 border-emerald-200",
-    card: "bg-gradient-to-br from-emerald-50 to-white border-emerald-100"
+    card: "bg-gradient-to-br from-emerald-50 to-white border-emerald-100",
+    link: "/partnership/primary-care-practices"
   },
   {
     number: "07",
@@ -57,7 +63,8 @@ const timeline = [
     desc: "Customizable monitoring solutions tailored for specialty clinics including cardiology, endocrinology, pulmonology, and other focused care programs.",
     dot: "bg-teal-500",
     badge: "bg-teal-100 text-teal-700 border-teal-200",
-    card: "bg-gradient-to-br from-teal-50 to-white border-teal-100"
+    card: "bg-gradient-to-br from-teal-50 to-white border-teal-100",
+    link: "/partnership/specialty-practices"
   },
   {
     number: "08",
@@ -65,7 +72,8 @@ const timeline = [
     desc: "Collaborating with payers and Medicare Advantage organizations to improve patient outcomes, reduce readmissions, and optimize care management programs.",
     dot: "bg-cyan-500",
     badge: "bg-cyan-100 text-cyan-700 border-cyan-200",
-    card: "bg-gradient-to-br from-cyan-50 to-white border-cyan-100"
+    card: "bg-gradient-to-br from-cyan-50 to-white border-cyan-100",
+    link: "/partnership/medicare-advantage-payers"
   },
 ];
 
@@ -92,17 +100,14 @@ export function PartnerStory() {
           </p>
         </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-  {timeline.map((item, i) => {
-
-    return (
+ {timeline.map((item, i) => {
+  return (
+    <Link key={i} href={item.link}>
       <div
-        key={i}
-        ref={el => itemRefs.current[i] = el}
+        ref={(el) => (itemRefs.current[i] = el)}
         className={`relative rounded-2xl border p-5 md:p-6 transition-all duration-500 
-        ${item.card} hover:shadow-lg hover:-translate-y-0.5`}
+        ${item.card} hover:shadow-lg hover:-translate-y-0.5 cursor-pointer`}
       >
-      
-
         <div className="flex items-center gap-3 mb-3">
           <span
             className={`text-xs font-bold px-2.5 py-1 rounded-lg border transition-all duration-500 ${item.badge}`}
@@ -110,7 +115,7 @@ export function PartnerStory() {
             {item.number}
           </span>
 
-          <h3 className="text-base md:text-[22px] font-semibold text-gray-900 tracking-tight">
+          <h3 className="text-base md:text-[22px] font-semibold text-gray-900 tracking-tight hover:text-blue-600 transition-colors">
             {item.title}
           </h3>
         </div>
@@ -119,8 +124,9 @@ export function PartnerStory() {
           {item.desc}
         </p>
       </div>
-    );
-  })}
+    </Link>
+  );
+})}
 </div>
       </div>
     </section>

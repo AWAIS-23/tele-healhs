@@ -1,10 +1,6 @@
 "use client";
 import PartnerHero from "./sections/PartnerHero";
 import { PartnerStrategic } from "./sections/PartnerStrategic";
-import { PartnerOverview } from "./sections/PartnerOverview";
-import { PartnerWhy } from "./sections/patnerWhy";
-import { PartnerSheild } from "./sections/PartnerSheild";
-import { PartnerBeta } from "./sections/PartnerBeta";
 import {PartnerStory} from "./sections/PartnerStory"
 export default function PartnerPage() {
   return (
@@ -13,11 +9,7 @@ export default function PartnerPage() {
         <PartnerHero />
         <PartnerStory/>
         <PartnerStrategic />
-        <PartnerOverview />
-        <PartnerSheild />
-
-        <PartnerWhy />
-<PartnerBeta />
+        
       </main>
     </div>
   );

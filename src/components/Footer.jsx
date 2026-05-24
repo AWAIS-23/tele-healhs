@@ -79,10 +79,7 @@ export function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-                <span className="text-white font-bold text-lg">T</span>
-              </div>
-              <span className="text-2xl font-bold text-gray-900">Tele Health</span>
+               <img src="/assets/images/logo.png" alt="tele Health Logo" className="w-[170px] h-12 object-contain group-hover:scale-105 transition-all duration-300" />
             </Link>
             <p className="text-gray-600 leading-relaxed max-w-sm mb-8">
               Powering the highest-impact remote patient monitoring and care management programs across all 50 states.

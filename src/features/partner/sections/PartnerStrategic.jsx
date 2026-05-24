@@ -150,7 +150,7 @@ export function PartnerStrategic() {
               <div className="flex flex-col h-full">
                 {/* Icon */}
                 <div
-                  className={`w-14 h-14 bg-gradexport function ient-to-br ${item.gradient} rounded-2xl flex items-center justify-center shadow-lg mb-6`}
+                  className={`w-14 h-14 bg-gradient-to-br ${item.gradient} rounded-2xl flex items-center justify-center shadow-lg mb-6`}
                 >
                   {item.icon}
                 </div>
