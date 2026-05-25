@@ -1,6 +1,8 @@
 "use client";
 
 import { Card } from "@/components/Card";
+import { SectionHeader } from "@/components";
+
 
 const testimonials = [
   { quote: "When we brought Xandar Kardian integration to market with tele Health, their team moved faster than any partner we've worked with. From technical integration to live patient monitoring in weeks.", name: "Andrew Wheeler", role: "VP, GTM Strategy & Operations", company: "Tenovi" },
@@ -43,20 +45,27 @@ export function AboutTestimonials() {
   return (
     <section className="relative bg-gradient-to-br from-gray-50 to-blue-50 py-16 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 border border-blue-200 mb-6">
+        <SectionHeader
+          align="center"
+          badgeText="Testimonials"
+          icon={
             <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
               <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
-            <span className="text-sm font-medium text-blue-800">Testimonials</span>
-          </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Trusted by<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">care teams.</span>
-          </h2>
-          <p className="text-gray-600 text-lg leading-relaxed">
-            Hear what healthcare professionals and partners say about working with tele Health.
-          </p>
-        </div>
+          }
+          title={
+            <>
+              Trusted by<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">care teams.</span>
+            </>
+          }
+          description="Hear what healthcare professionals and partners say about working with tele Health."
+          badgeIconBg="bg-blue-100 border border-blue-200"
+          titleClassName="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
+          descClassName="text-gray-600 text-lg leading-relaxed"
+          className="max-w-3xl mx-auto mb-16"
+        />
+
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (

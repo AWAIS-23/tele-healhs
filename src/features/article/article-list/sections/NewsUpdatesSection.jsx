@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { SectionHeader } from "@/components";
+
 import { ArrowRight } from "lucide-react";
 
 const announcements = [
@@ -63,16 +64,23 @@ export default function NewsUpdatesSection() {
     <section id="announcements" className="relative bg-gray-50 py-16 md:py-24 overflow-hidden">
       <div className="relative py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-1 h-5 rounded-full bg-pink-500"></div>
-            <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Announcements</p>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-light tracking-tight text-gray-900 leading-tight mb-3">
-            News & Updates
-          </h2>
-          <p className="text-base text-gray-600 leading-relaxed font-light mb-10 max-w-lg">
-            Integration launches, product updates, milestones, and CMS regulatory updates.
-          </p>
+                  <SectionHeader
+          align="center"
+          className="mb-6"
+          badge={
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-1 h-5 rounded-full bg-pink-500"></div>
+              <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Announcements</p>
+            </div>
+          }
+          title="News & Updates"
+          description="Integration launches, product updates, milestones, and CMS regulatory updates."
+          titleClassName="text-3xl sm:text-4xl font-light tracking-tight mb-3"
+          titleColor="text-gray-900"
+          descClassName="text-base text-gray-600 leading-relaxed font-light mb-10 max-w-lg"
+          descColor="text-gray-600"
+        />
+
 
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {announcements.map((item) => (

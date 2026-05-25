@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { Badge } from "@/components/Badge";
+import { SectionHeader } from "@/components";
+
 
 const faqs = [
   {
@@ -114,25 +116,34 @@ export function FaqAccordion() {
   return (
     <section className="relative bg-gray-50 py-16 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <Badge
-            variant="blue"
-            icon={
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            }
-            className="mb-6"
-          >
-            Common Questions
-          </Badge>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Frequently asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">questions.</span>
-          </h2>
-          <p className="max-w-2xl mx-auto text-gray-600 text-lg leading-relaxed">
-            Find answers to common questions about our platform, programs, and services.
-          </p>
-        </div>
+        <SectionHeader
+          align="center"
+          className="mb-16"
+          badge={
+            <Badge
+              variant="blue"
+              icon={
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              }
+              className="mb-6"
+            >
+              Common Questions
+            </Badge>
+          }
+          title={
+            <>
+              Frequently asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">questions.</span>
+            </>
+          }
+          description="Find answers to common questions about our platform, programs, and services."
+          titleClassName="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6"
+          titleColor="text-gray-900"
+          descClassName="max-w-2xl mx-auto text-lg leading-relaxed"
+          descColor="text-gray-600"
+        />
+
 
         <div className="max-w-4xl mx-auto">
           {/* Category Tabs */}

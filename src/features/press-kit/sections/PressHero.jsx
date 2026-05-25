@@ -20,7 +20,7 @@ export function PressHero() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Media Resources</span>
             </h1>
 
-            <p className="max-w-lg text-gray-600 text-lg leading-relaxed mb-8">
+            <p className=" text-gray-600 text-lg leading-relaxed mb-8">
               Access brand assets, company information, media coverage, and everything you need to tell the tele Health story. Download our complete press kit for quick access to all resources.
             </p>
 

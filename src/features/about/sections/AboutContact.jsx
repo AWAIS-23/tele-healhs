@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/Button";
+import { SectionHeader } from "@/components";
 
 const contacts = [
   {
@@ -49,21 +50,18 @@ export function AboutContact() {
   return (
     <section className="relative py-16 bg-[#f8faff] overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#256eff]/10">
-            <svg className="w-5 h-5 text-[#256eff]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <SectionHeader
+          badgeText="Get in Touch"
+          icon={
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" />
             </svg>
-          </div>
-          <p className="text-xs font-semibold uppercase tracking-wider text-[#6b7c93]">Get in Touch</p>
-        </div>
+          }
+          title="Contact us."
+          description="Ready to simplify care management? Reach out and our team will respond within 24 hours."
+          descClassName="text-lg text-[#6b7c93] mb-10 max-w-xl"
+        />
 
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#0a2540] mb-4">
-          Contact us.
-        </h2>
-        <p className="text-lg text-[#6b7c93] mb-10 max-w-xl">
-          Ready to simplify care management? Reach out and our team will respond within 24 hours.
-        </p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           {contacts.map((c) => {

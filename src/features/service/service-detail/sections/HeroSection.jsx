@@ -33,7 +33,7 @@ export default function HeroSection({ data }) {
             </h1>
 
             <div
-              className="max-w-lg text-gray-600 text-lg leading-relaxed mb-8"
+              className=" text-gray-600 text-lg leading-relaxed mb-8"
               dangerouslySetInnerHTML={{
                 __html: heroDescription,
               }}

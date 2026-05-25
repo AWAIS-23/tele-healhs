@@ -2,6 +2,8 @@
 
 import { Badge } from "../../../components/Badge";
 import { Card } from "../../../components/Card";
+import { SectionHeader } from "../../../components";
+
 
 const scalingFeatures = [
   {
@@ -54,25 +56,34 @@ export function PartnerWhy() {
     <section className="relative bg-white overflow-hidden py-16 md:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <Badge
-            variant="blue"
-            icon={
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-              </svg>
-            }
-            className="mb-6"
-          >
-            Scaling Advantage
-          </Badge>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Why Health Shield <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600">Scales Efficiently</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our infrastructure is built for growth — from day one to enterprise scale
-          </p>
-        </div>
+        <SectionHeader
+          align="center"
+          className="mb-16"
+          badge={
+            <Badge
+              variant="blue"
+              icon={
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+              }
+              className="mb-6"
+            >
+              Scaling Advantage
+            </Badge>
+          }
+          title={
+            <>
+              Why Health Shield <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-600">Scales Efficiently</span>
+            </>
+          }
+          description="Our infrastructure is built for growth — from day one to enterprise scale"
+          titleClassName="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+          titleColor="text-gray-900"
+          descClassName="text-xl max-w-3xl mx-auto"
+          descColor="text-gray-600"
+        />
+
 
         {/* Feature Cards */}
         <div className="grid lg:grid-cols-3 gap-8">

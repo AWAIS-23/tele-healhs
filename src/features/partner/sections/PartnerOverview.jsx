@@ -10,15 +10,19 @@ export function PartnerOverview() {
 
           {/* The Problem — col-span-2 */}
           <div className="md:col-span-2 bg-white border border-gray-100 rounded-2xl px-10 py-7">
-            <div className="flex items-center p-4 gap-1.5 mb-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-teal-500 shrink-0" />
-              <span className="text-[10px] font-medium tracking-widest uppercase text-teal-700">
-                Healthcare crisis
-              </span>
-            </div>
-            <h2 className="text-lg font-semibold text-gray-900 mb-2 leading-snug">
-              The Problem
-            </h2>
+            <SectionHeader
+              align="left"
+              badge={
+                <div className="flex items-center p-4 gap-1.5 mb-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-teal-500 shrink-0" />
+                  <span className="text-[10px] font-medium tracking-widest uppercase text-teal-700">
+                    Healthcare crisis
+                  </span>
+                </div>
+              }
+              title="The Problem"
+              titleClassName="text-lg font-semibold text-gray-900 mb-2 leading-snug"
+            />
             <p className="text-sm text-gray-500 leading-relaxed mb-4">
               Fragmented care, no scalable monitoring, and critical gaps between visits drive
               <span className="font-semibold text-gray-800">

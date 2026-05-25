@@ -1,5 +1,7 @@
+import { SectionHeader } from "@/components";
 
 const healthCards = [
+
   {
     id: 1,
     title: "FDA-Cleared Devices",
@@ -71,15 +73,21 @@ export function PartnerSheild() {
     <section className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Heading */}
-        <div className="text-center mb-16">
+        <SectionHeader
+          align="center"
+          className="mb-16"
+          title={
+            <>
+              One Fully Integrated <span className="heading-primary">Platform</span>
+            </>
+          }
+          description="Comprehensive remote patient monitoring and care management solution"
+          titleClassName="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6"
+          titleColor="text-gray-900"
+          descClassName="text-lg max-w-2xl mx-auto"
+          descColor="text-gray-600"
+        />
 
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            One Fully Integrated <span className="heading-primary">Platform</span>
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Comprehensive remote patient monitoring and care management solution
-          </p>
-        </div>
 
         {/* Three Image Cards */}
         <div className="grid md:grid-cols-3 gap-6">

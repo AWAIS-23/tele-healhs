@@ -20,7 +20,7 @@ export function AboutHero() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">care management.</span>
             </h1>
 
-            <p className="max-w-lg text-gray-600 text-lg leading-relaxed mb-8">
+            <p className=" text-gray-600 text-lg leading-relaxed mb-8">
               Founded in Los Angeles, California. tele Health powers five Medicare programs — RPM, CCM, PCM, BHI, and RTM — across all 50 states with 8 certified EHR integrations, 25+ FDA-cleared devices, and over 1 billion data transactions processed.
             </p>
 

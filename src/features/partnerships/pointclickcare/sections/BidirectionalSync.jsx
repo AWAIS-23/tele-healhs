@@ -1,5 +1,5 @@
 "use client";
-
+import { SectionHeader } from "@/components";
 import { Card } from "@/components/Card";
 
 export function BidirectionalSync({ partnerName = "PointClickCare" }) {
@@ -20,19 +20,26 @@ export function BidirectionalSync({ partnerName = "PointClickCare" }) {
     return (
         <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 py-16 md:py-20 lg:py-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-blue-200 mb-6 shadow-sm">
-                        <span className="text-sm font-medium text-blue-800">Bidirectional Sync</span>
-                    </div>
-                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-                        Data flows <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">both ways.</span>
-                    </h2>
-                    <p className="text-gray-600 text-lg leading-relaxed">
-                        This isn't a one-way data dump. {partnerName} shares clinical context with tele Health to inform
-                        monitoring protocols, and tele Health writes vitals, alerts, and billing documentation back — so
-                        caregivers never leave the EHR.
-                    </p>
-                </div>
+                <SectionHeader
+                    align="center"
+                    className="mb-6"
+                    badge={
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 border border-blue-200 mb-6">
+                            <span className="text-sm font-medium text-blue-800">Bidirectional Sync</span>
+                        </div>
+                    }
+                    title={<>
+                        Data flows <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">both ways</span>
+                    </>}
+                    description={
+                        `This isn't a one-way data dump. ${partnerName} shares clinical context with tele Health to inform monitoring protocols, and tele Health writes vitals, alerts, and billing documentation back — so caregivers never leave the EHR.`
+                    }
+                    titleClassName="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight"
+                    titleColor="text-gray-900"
+                    descClassName=" text-gray-600 text-lg leading-relaxed mb-8"
+                    descColor="text-gray-600"
+                />
+
 
                 <div className="grid md:grid-cols-2 gap-12">
                     {/* From Partner */}

@@ -1,6 +1,8 @@
 "use client";
 
 import { Button } from "@/components/Button";
+import { SectionHeader } from "@/components";
+
 
 export function FaqContact() {
   return (
@@ -8,12 +10,15 @@ export function FaqContact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight">
-              Still have questions?
-            </h2>
-            <p className="text-blue-100 text-lg leading-relaxed mb-8">
-              Can't find what you're looking for? Our team is here to help. Contact us for personalized support, schedule a demo, or learn more about how tele Health can transform your practice.
-            </p>
+            <SectionHeader
+              title="Still have questions?"
+              description="Can't find what you're looking for? Our team is here to help. Contact us for personalized support, schedule a demo, or learn more about how tele Health can transform your practice."
+              titleClassName="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-tight"
+              titleColor="text-white"
+              descClassName="text-lg leading-relaxed mb-8"
+              descColor="text-blue-100"
+            />
+
             <div className="space-y-4">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">

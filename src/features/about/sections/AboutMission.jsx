@@ -1,6 +1,8 @@
 "use client";
 
 import { Card } from "@/components/Card";
+import { SectionHeader } from "@/components";
+
 
 const missions = [
   {
@@ -46,17 +48,25 @@ export function AboutMission() {
   return (
     <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 py-16 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 border border-blue-200 mb-6">
+        <SectionHeader
+          align="center"
+          badgeText="Our Mission"
+          icon={
             <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
-            <span className="text-sm font-medium text-blue-800">Our Mission</span>
-          </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Simplifying<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">care management</span>
-          </h2>
-        </div>
+          }
+          title={
+            <>
+              Simplifying<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">care management</span>
+            </>
+          }
+          badgeIconBg="bg-blue-100 border border-blue-200"
+          titleClassName="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
+          className="mb-16"
+        />
+
 
         <div className="grid md:grid-cols-3 gap-8">
           {missions.map((m) => (

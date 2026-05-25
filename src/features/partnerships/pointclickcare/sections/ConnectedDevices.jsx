@@ -1,5 +1,5 @@
 "use client";
-
+import { SectionHeader } from "@/components";
 export function ConnectedDevices({ partnerName = "PointClickCare" }) {
     const devices = [
         {
@@ -47,18 +47,27 @@ export function ConnectedDevices({ partnerName = "PointClickCare" }) {
     return (
         <section className="relative overflow-hidden bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 lg:py-24">
-                <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 border border-blue-200 mb-6">
-                        <span className="text-sm font-medium text-blue-800">Connected Devices</span>
-                    </div>
-                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
+
+                <SectionHeader
+                    align="center"
+                    className="mb-6"
+                    badge={
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 border border-blue-200 mb-6">
+                            <span className="text-sm font-medium text-blue-800">Connected Devices</span>
+                        </div>
+                    }
+                    title={<>
                         Every reading, <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">charted automatically.</span>
-                    </h2>
-                    <p className="max-w-2xl mx-auto text-gray-600 text-lg leading-relaxed">
-                        Residents take a measurement. The device transmits to tele Health. tele Health writes the reading
-                        into their {partnerName} record. Nursing staff see it on their next chart check.
-                    </p>
-                </div>
+                    </>}
+                    description={
+                        `This isn't a one-way data dump. ${partnerName} shares clinical context with tele Health to inform monitoring protocols, and tele Health writes vitals, alerts, and billing documentation back — so caregivers never leave the EHR.`
+                    }
+                    titleClassName="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight"
+                    titleColor="text-gray-900"
+                    descClassName=" text-gray-600 text-lg leading-relaxed mb-8"
+                    descColor="text-gray-600"
+                />
+
 
                 {/* Device Table */}
                 <div className="rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-lg max-w-5xl mx-auto">

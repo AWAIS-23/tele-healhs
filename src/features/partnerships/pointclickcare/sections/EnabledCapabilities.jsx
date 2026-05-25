@@ -1,7 +1,7 @@
 "use client";
 
 import { Card } from "@/components/Card";
-
+import { SectionHeader } from "@/components";
 export function EnabledCapabilities({ partnerName = "PointClickCare" }) {
     const capabilities = [
         {
@@ -75,6 +75,7 @@ export function EnabledCapabilities({ partnerName = "PointClickCare" }) {
     return (
         <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 py-16 md:py-20 lg:py-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 border border-blue-200 mb-6">
                         <span className="text-sm font-medium text-blue-800">What This Enables</span>

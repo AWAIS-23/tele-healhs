@@ -1,5 +1,5 @@
 "use client";
-
+import { SectionHeader } from "@/components";
 import { useState, useEffect, useRef } from "react";
 
 const getPartnerships = (partnerName = "PointClickCare") => [
@@ -73,20 +73,27 @@ export function ImplementationTimeline({ partnerName = "PointClickCare" }) {
     return (
         <section className="relative bg-gray-50 py-16 md:py-20 lg:py-24 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 border border-blue-200 mb-6">
-                        <span className="text-sm font-medium text-blue-800">Trusted Partnerships</span>
-                    </div>
+                <SectionHeader
+                    align="center"
+                    className="mb-6"
+                    badge={
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 border border-blue-200 mb-6">
+                            <span className="text-sm font-medium text-blue-800">Trusted Partnerships</span>
+                        </div>
+                    }
+                    title={<>
+                        Trusted organizations <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">we support.</span>
+                    </>}
+                    description={
+                        `Partnering with post-acute care providers, senior living operators, and healthcare networks
+                nationwide to deliver seamless ${partnerName} integration and remote monitoring capabilities.`
+                    }
+                    titleClassName="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight"
+                    titleColor="text-gray-900"
+                    descClassName=" text-gray-600 text-lg leading-relaxed mb-8"
+                    descColor="text-gray-600"
+                />
 
-                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-                        Healthcare organizations <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">we support.</span>
-                    </h2>
-
-                    <p className="max-w-2xl mx-auto text-gray-600 text-lg leading-relaxed">
-                        Partnering with post-acute care providers, senior living operators, and healthcare networks
-                        nationwide to deliver seamless {partnerName} integration and remote monitoring capabilities.
-                    </p>
-                </div>
 
                 <div className="relative">
                     {/* Center line — desktop only */}

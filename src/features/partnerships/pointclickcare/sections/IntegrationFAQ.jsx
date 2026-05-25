@@ -1,5 +1,5 @@
 "use client";
-
+import { SectionHeader } from "@/components";
 import { useState } from "react";
 
 export function IntegrationFAQ({ partnerName = "PointClickCare" }) {
@@ -31,16 +31,23 @@ export function IntegrationFAQ({ partnerName = "PointClickCare" }) {
     return (
         <section className="relative py-16 md:py-20 lg:py-24 bg-[#f8faff] overflow-hidden">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center gap-3 mb-4">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#256eff]/10">
-                        <span className="text-xl font-bold text-blue-600">?</span>
-                    </div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-[#6b7c93]">FAQ</p>
-                </div>
+               <SectionHeader
+          align="left"
+          className="mb-6"
+          badge={
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 border border-blue-200 mb-6">
+              <span className="text-sm font-medium text-blue-800">FAQs</span>
+            </div>
+          }
+          title={<>
+            Frequently asked questions about the {partnerName} integration.
+          </>}
 
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0a2540] mb-8 tracking-tight">
-                    {partnerName} integration questions.
-                </h2>
+
+          titleClassName="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-tight"
+          titleColor="text-gray-900"
+
+        />
 
                 {/* FAQ Accordion */}
                 <div className="rounded-2xl border border-gray-200/60 bg-white overflow-hidden shadow-sm">

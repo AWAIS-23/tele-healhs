@@ -24,7 +24,7 @@ export default function HeroSection() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Learning Guides.</span>
             </h1>
 
-            <p className="max-w-lg text-gray-600 text-lg leading-relaxed mb-8">
+            <p className=" text-gray-600 text-lg leading-relaxed mb-8">
               Explore 168 blog articles on RPM, CCM, and Medicare billing plus 3,614+ integration guides across 8 EHR platforms, 11 care settings, and 9 specialties.
             </p>
 

@@ -1,6 +1,8 @@
 "use client";
 
 import { Card } from "@/components/Card";
+import { SectionHeader } from "@/components";
+
 
 const contactInfo = [
   {
@@ -48,15 +50,21 @@ export function ContactInfo() {
   return (
     <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900/50 overflow-hidden py-14 md:py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Have a <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">question?</span>
-          </h2>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Get in Touch
-            Whether you're ready to get started or just want to learn more, our team is here to help.
-          </p>
-        </div>
+        <SectionHeader
+          align="center"
+          className="mb-12"
+          title={
+            <>
+              Have a <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">question?</span>
+            </>
+          }
+          description="Whether you're ready to get started or just want to learn more, our team is here to help."
+          titleClassName="text-3xl sm:text-4xl font-bold mb-4"
+          titleColor="text-white"
+          descClassName="text-lg max-w-2xl mx-auto"
+          descColor="text-gray-300"
+        />
+
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {contactInfo.map((item) => (

@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { SectionHeader } from "@/components";
+
 
 const timeline = [
   { year: "2020", title: "Founded in Los Angeles", desc: "tele Health launched with a bold thesis: care management software was broken. We set out to build the most intuitive RPM platform from scratch, engineering-first.", dot: "bg-blue-500", badge: "bg-blue-100 text-blue-700 border-blue-200", card: "bg-gradient-to-br from-blue-50 to-white border-blue-100" },
@@ -43,20 +45,26 @@ export function AboutStory() {
   return (
     <section className="relative bg-gray-50 py-16 md:py-20 lg:py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 border border-blue-200 mb-6">
+        <SectionHeader
+          align="center"
+          badgeText="Our Story"
+          icon={
             <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <span className="text-sm font-medium text-blue-800">Our Story</span>
-          </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Seven years of <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">building.</span>
-          </h2>
-          <p className="max-w-2xl mx-auto text-gray-600 text-lg leading-relaxed">
-            From a simple idea in LA to a nationwide platform powering five Medicare programs across 50 states.
-          </p>
-        </div>
+          }
+          title={
+            <>
+              Seven years of <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">building.</span>
+            </>
+          }
+          description="From a simple idea in LA to a nationwide platform powering five Medicare programs across 50 states."
+          badgeIconBg="bg-blue-100 border border-blue-200"
+          titleClassName="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
+          descClassName="max-w-2xl mx-auto text-gray-600 text-lg leading-relaxed"
+          className="mb-16"
+        />
+
 
         <div className="relative">
           {/* Center line — desktop only */}

@@ -26,7 +26,7 @@ export function FaqHero() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">know about tele Health.</span>
             </h1>
 
-            <p className="max-w-lg text-gray-600 text-lg leading-relaxed mb-8">
+            <p className=" text-gray-600 text-lg leading-relaxed mb-8">
               Find answers to common questions about our remote patient monitoring platform, Medicare programs, device integrations, and how we help healthcare providers deliver better care.
             </p>
 

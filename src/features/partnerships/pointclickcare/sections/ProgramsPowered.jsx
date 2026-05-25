@@ -1,5 +1,5 @@
 "use client";
-
+import { SectionHeader } from "@/components";
 export function ProgramsPowered({ partnerName = "PointClickCare" }) {
   const programs = [
     {
@@ -63,18 +63,27 @@ export function ProgramsPowered({ partnerName = "PointClickCare" }) {
   return (
     <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 py-16 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-blue-200 mb-6 shadow-sm">
-            <span className="text-sm font-medium text-blue-800">Programs Powered</span>
-          </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Five programs, <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">every care setting.</span>
-          </h2>
-          <p className="text-gray-600 text-lg leading-relaxed">
-            The {partnerName} integration powers every Medicare-reimbursable remote care program tele Health 
-            offers — from RPM device monitoring to behavioral health integration — across the full continuum of post-acute care.
-          </p>
-        </div>
+        <SectionHeader
+          align="center"
+          badge={
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 border border-blue-200">
+              <span className="text-sm font-semibold uppercase tracking-wider text-blue-800">
+                Programs Powered
+              </span>
+            </div>
+
+          }
+          title="Five programs, every care setting."
+          description="The PointClickCare integration powers every Medicare-reimbursable remote care program tele Health 5
+
+            offers — from RPM device monitoring to behavioral health integration — across the full continuum of
+
+            post-acute care."
+          titleClassName="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#0a2540] leading-tight"
+          descClassName="text-lg text-[#6b7c93] leading-relaxed"
+        />
+
+
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {programs.map((s) => (

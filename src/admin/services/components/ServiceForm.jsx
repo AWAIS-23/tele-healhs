@@ -393,8 +393,8 @@ export default function ServiceForm({ serviceId = null }) {
 
           {/* New Service Detail Sections */}
           <div className="bg-gray-50 p-6 rounded-xl border border-gray-200 space-y-6">
-            <h3 className="text-lg font-bold text-gray-900 border-b pb-2">overview feature section</h3>
-            <p className="text-sm text-gray-600 mb-4 font-sans">Easily customize the structured content sections of the service page below.</p>
+            <h3 className="text-lg font-bold text-gray-900 border-b pb-2">Other Details</h3>
+            <p className="text-sm text-gray-600 mb-4 font-sans">Easily  the structured content sections of the service page below.</p>
 
 
 

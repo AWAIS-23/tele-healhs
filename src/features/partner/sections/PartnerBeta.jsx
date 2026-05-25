@@ -7,27 +7,29 @@ export function PartnerBeta() {
     <section className="relative py-16 md:py-20 lg:py-24 bg-[#f8faff] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          
+
           {/* Left: Text */}
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 border border-blue-200">
-              <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-blue-800">
-                Early Access · Beta Program
-              </span>
-            </div>
+            <SectionHeader
+              align="left"
+              badge={
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 border border-blue-200">
+                  <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+                  <span className="text-xs font-semibold uppercase tracking-wider text-blue-800">
+                    Early Access · Beta Program
+                  </span>
+                </div>
 
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#0a2540] leading-tight">
-              Invite your clinic to <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-                beta test
-              </span> Health Shield
-            </h2>
+              }
+              title="Invite your clinic to beta test Health Shield"
+              description="Get early access to a turnkey chronic care program that helps your team extend care between visits, improve adherence, and reduce avoidable hospitalizations."
+              titleClassName="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#0a2540] leading-tight"
+              descClassName="text-lg text-[#6b7c93] leading-relaxed"
+            />
 
-            <p className="text-lg text-[#6b7c93] max-w-xl leading-relaxed">
-              Get early access to a turnkey chronic care program that helps your team extend care
-              between visits, improve adherence, and reduce avoidable hospitalizations.
-            </p>
+
+
+
 
             <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <Button variant="primary" size="lg" showArrow>

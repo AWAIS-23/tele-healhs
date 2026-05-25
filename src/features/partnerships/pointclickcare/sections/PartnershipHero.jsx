@@ -17,7 +17,7 @@ export function PartnershipHero({ partnerName = "PointClickCare" }) {
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Post-Acute & Senior Living</span>
                         </h1>
 
-                        <p className="max-w-lg text-gray-600 text-lg leading-relaxed mb-8">
+                        <p className=" text-gray-600 text-lg leading-relaxed mb-8">
                             tele Health integrates directly with {partnerName} — the leading EHR for skilled nursing and
                             senior living — to power RPM, CCM, PCM, BHI, and RTM programs. Bidirectional API sync means vitals
                             flow into resident charts automatically, ADT events trigger protocol changes, and billing
@@ -42,8 +42,8 @@ export function PartnershipHero({ partnerName = "PointClickCare" }) {
                                 </div>
                                 <span className="text-gray-400 text-2xl font-light">×</span>
                                 <div className="flex items-center justify-center h-16 px-6 rounded-xl bg-white shadow-sm border border-gray-100">
-                                     <img src="/assets/images/logo.png" alt="tele Health Logo" className="w-[170px] h-12 object-contain group-hover:scale-105 transition-all duration-300" />
-       
+                                    <img src="/assets/images/logo.png" alt="tele Health Logo" className="w-[170px] h-12 object-contain group-hover:scale-105 transition-all duration-300" />
+
                                 </div>
                             </div>
                         </div>

@@ -1,4 +1,6 @@
-import Link from "next/link";
+import { SectionHeader } from "@/components";
+
+
 import { ArrowRight } from "lucide-react";
 
 const categories = [
@@ -216,16 +218,22 @@ export default function BrowseByCategorySection() {
     <section id="categories" className="relative bg-white py-16 md:py-24 overflow-hidden">
       <div className="relative py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-1 h-5 rounded-full bg-indigo-600"></div>
-            <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Integration Guides</p>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-light tracking-tight text-gray-900 leading-tight mb-3">
-            Browse by Category
-          </h2>
-          <p className="text-base text-gray-600 leading-relaxed font-light mb-10 max-w-lg">
-            3,614+ guides organized by EHR, service, care setting, specialty, device, and state.
-          </p>
+        <SectionHeader
+          align="center"
+          className="mb-6"
+          badge={
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-1 h-5 rounded-full bg-indigo-600"></div>
+              <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Integration Guides</p>
+            </div>
+          }
+          title="Browse by Category"
+          description="3,614+ guides organized by EHR, service, care setting, specialty, device, and state."
+          titleClassName="text-3xl sm:text-4xl font-light tracking-tight mb-3"
+          titleColor="text-gray-900"
+          descClassName="text-base leading-relaxed font-light mb-10 max-w-lg"
+          descColor="text-gray-600"
+        />
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {categories.map((category) => {

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { SectionHeader } from "@/components";
 import { ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -97,16 +98,22 @@ export default function LatestArticlesSection() {
     <section id="latest" className="relative bg-white py-16 md:py-24 overflow-hidden">
       <div className="relative py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-1 h-5 rounded-full bg-blue-600"></div>
-            <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Blog</p>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-light tracking-tight text-gray-900 leading-tight mb-3">
-            Latest Articles
-          </h2>
-          <p className="text-base text-gray-600 leading-relaxed font-light mb-10 max-w-lg">
-            Billing guides, clinical deep-dives, and program comparisons.
-          </p>
+                  <SectionHeader
+          align="center"
+          className="mb-6"
+          badge={
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-1 h-5 rounded-full bg-blue-600"></div>
+              <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">Blog</p>
+            </div>
+          }
+          title="Latest Articles"
+          description="Billing guides, clinical deep-dives, and program comparisons."
+          titleClassName="text-3xl sm:text-4xl font-light tracking-tight mb-3"
+          titleColor="text-gray-900"
+          descClassName="text-base text-gray-600 leading-relaxed font-light mb-10 max-w-lg"
+          descColor="text-gray-600"
+        />
 
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {blogArticles.map((article) => (

@@ -26,7 +26,7 @@ export function ContactHero() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">connect.</span>
             </h1>
 
-            <p className="max-w-lg text-gray-600 text-lg leading-relaxed mb-8">
+            <p className=" text-gray-600 text-lg leading-relaxed mb-8">
               Ready to transform your care delivery? Reach out to our team and discover how tele Health can help your practice thrive with our comprehensive care management platform.
             </p>
 

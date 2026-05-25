@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { Badge } from "@/components/Badge";
+import { SectionHeader } from "@/components";
+
 
 const formFields = [
   {
@@ -77,24 +79,33 @@ export function ContactForm() {
 
       <div className="relative max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-14">
-          <Badge 
-            className="bg-[#256eff]/10 border-[#256eff]/20 text-[#256eff] mb-6"
-            icon={
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-              </svg>
-            }
-          >
-            Get in Touch
-          </Badge>
-          <h2 className="text-4xl sm:text-5xl font-semibold text-[#0a2540] mb-4 font-['Plus_Jakarta_Sans']">
-            Send us a <span className="heading-gradient">message</span>
-          </h2>
-          <p className="text-[#6b7c93] text-lg max-w-lg mx-auto leading-relaxed">
-            Fill out the form below and our team will get back to you within 24 hours.
-          </p>
-        </div>
+        <SectionHeader
+          align="center"
+          className="mb-14"
+          badge={
+            <Badge 
+              className="bg-[#256eff]/10 border-[#256eff]/20 text-[#256eff] mb-6"
+              icon={
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+              }
+            >
+              Get in Touch
+            </Badge>
+          }
+          title={
+            <>
+              Send us a <span className="heading-gradient">message</span>
+            </>
+          }
+          description="Fill out the form below and our team will get back to you within 24 hours."
+          titleClassName="text-4xl sm:text-5xl font-semibold mb-4 font-['Plus_Jakarta_Sans']"
+          titleColor="text-[#0a2540]"
+          descClassName="text-lg max-w-lg mx-auto leading-relaxed"
+          descColor="text-[#6b7c93]"
+        />
+
 
         {/* Contact Form Card */}
         <Card variant="light" padding="lg" className="shadow-xl shadow-[#256eff]/5 relative">

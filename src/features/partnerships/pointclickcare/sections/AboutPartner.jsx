@@ -1,4 +1,6 @@
-"use client";
+import { SectionHeader } from "@/components";
+
+
 
 export function AboutPartner({ partnerName = "PointClickCare" }) {
   const features = [
@@ -15,20 +17,26 @@ export function AboutPartner({ partnerName = "PointClickCare" }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 lg:py-24">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 border border-blue-200 mb-6">
-              <span className="text-sm font-medium text-blue-800">About {partnerName}</span>
-            </div>
+            <SectionHeader
+              align="left"
+              className="mb-6"
+              badge={
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 border border-blue-200 mb-6">
+                  <span className="text-sm font-medium text-blue-800">About {partnerName}</span>
+                </div>
+              }
+              title={<>
+                The leading <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">{partnerName}</span>
+              </>}
+              description={
+                `${partnerName} is the leading cloud-based EHR platform for the long-term and post-acute care (LTPAC) industry. Serving over 27,000 facilities across North America, ${partnerName} provides an integrated platform for clinical documentation, financial management, care coordination, and business intelligence across the continuum of senior care.`
+              }
+              titleClassName="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight"
+              titleColor="text-gray-900"
+              descClassName=" text-gray-600 text-lg leading-relaxed mb-8"
+              descColor="text-gray-600"
+            />
 
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
-              The leading <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">{partnerName}</span>
-            </h2>
-
-            <p className="max-w-lg text-gray-600 text-lg leading-relaxed mb-8">
-              {partnerName} is the leading cloud-based EHR platform for the long-term and post-acute care 
-              (LTPAC) industry. Serving over 27,000 facilities across North America, {partnerName} provides 
-              an integrated platform for clinical documentation, financial management, care coordination, and 
-              business intelligence across the continuum of senior care.
-            </p>
 
             <div className="space-y-3 mb-8">
               {features.map((feature, index) => (
