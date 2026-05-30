@@ -23,7 +23,7 @@ export function HeroSection() {
 
       {/* Headline */}
       <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-[1.1] mb-6">
-        Your Health, Our Priority <br> Every Step of the Way
+        Your Health, Our Priority <br/> Every Step of the Way
       </h1>
 
       {/* Description */}
