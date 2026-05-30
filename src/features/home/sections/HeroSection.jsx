@@ -23,21 +23,19 @@ export function HeroSection() {
 
       {/* Headline */}
       <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-[1.1] mb-6">
-        We Take Care
-        <br />
-        of Person By Heart
+        Your Health, Our Priority <br> Every Step of the Way
       </h1>
 
       {/* Description */}
       <p className="max-w-md text-gray-600 text-lg md:text-xl leading-relaxed mb-8">
-        With more than 42+ specialties, you can find the care you need for your family.
+        With access to 42+ medical specialties, Health Shield connects your family to the care they deserve — right when they need it most.
       </p>
     </div>
 
             {/* CTA Button */}
             <div className="flex flex-wrap gap-4">
               <Button variant="primary" size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
-                Request an appointment
+                Book Your appointment
               </Button>
             </div>
 
