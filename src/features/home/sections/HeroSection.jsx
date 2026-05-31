@@ -1,4 +1,4 @@
-              "use client";
+"use client";
 
 import Image from "next/image";
 import { Button } from "../../../components/Button";
@@ -10,7 +10,6 @@ export function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-white">
       <Container className="relative py-16 md:py-20 lg:py-24">
-        
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
 
           {/* LEFT CONTENT */}
@@ -24,9 +23,9 @@ export function HeroSection() {
                 Better Health at Home <br /> Every Day
               </h1>
 
-              <p className="max-w-xl text-gray-600 text-lg md:text-xl leading-relaxed mb-8">
-                Living with chronic conditions like diabetes, heart disease, or
-                high blood pressure shouldn&apos;t mean constant worry or frequent hospital visits.
+              <p className="max-w-xl text-gray-600 text-lg md:text-xl leading-relaxed mb-6">
+                Living with chronic conditions like diabetes, heart disease, or high blood pressure
+                shouldn’t mean constant worry or frequent hospital visits.
               </p>
 
               <p className="max-w-xl text-gray-600 text-lg md:text-xl leading-relaxed mb-8">
@@ -80,14 +79,13 @@ export function HeroSection() {
               <Image
                 src={heroImage}
                 alt="Health Shield Remote Care"
-                className="w-full max-w-[450px] h-auto rounded-xl object-cover"
                 priority
+                className="w-full max-w-[450px] h-auto rounded-xl object-cover"
               />
             </div>
           </div>
 
         </div>
-
       </Container>
     </section>
   );
