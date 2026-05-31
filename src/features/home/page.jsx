@@ -11,14 +11,13 @@ import { Gener8torPartnership } from "./sections/Gener8torPartnership";
 import { CloseTheGap } from "./sections/CloseTheGap";
 import { PartnersSection } from "./sections/PartnersSection";
 import { ProgramsSection } from "./sections/ProgramsSection";
-import { ChallengeSection } from "./sections/TestimonialsSection";
-
+import ChallengeSection from "./sections/TestimonialsSection";
 export default function HomePage() {
   return (
     <div className="flex min-h-screen flex-col">
       <main className="flex-1">
         <HeroSection />
-        <ChallengeSection/>
+        <ChallengeSection />
         <PartnersSection />
         <ChronicCareGap />
         <HealthShield />
