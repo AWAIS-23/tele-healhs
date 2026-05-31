@@ -36,8 +36,7 @@ const navItems = [
   },
   { label: "Contact Us", href: "/contact" },
   { label: "Partnership", href: "/partnership" },
-  { label: "FAQ", href: "/faqs" },
-  { label: "Press Kit", href: "/press-kit" },
+  { label: "FAQ", href: "/faqs" }, 
 ];
 
 export function Header() {
