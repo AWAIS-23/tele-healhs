@@ -22,9 +22,9 @@ export function HeroSection() {
       </Badge>
 
       {/* Headline */}
-      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-[1.1] mb-6">
-        Your Health, Our Priority <br/> Every Step of the Way
-      </h1>
+    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-[1.1] mb-6">
+  Your Health, Our Priority <br /> Every Step of the Way
+</h1>
 
       {/* Description */}
       <p className="max-w-md text-gray-600 text-lg md:text-xl leading-relaxed mb-8">
