@@ -1,4 +1,4 @@
-"use client";
+              "use client";
 
 import Image from "next/image";
 import { Button } from "../../../components/Button";
@@ -10,8 +10,10 @@ export function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-white">
       <Container className="relative py-16 md:py-20 lg:py-24">
+        
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-          {/* Left Content */}
+
+          {/* LEFT CONTENT */}
           <div>
             <div className="mb-8">
               <Badge variant="gray" showDot className="mb-6">
@@ -24,13 +26,11 @@ export function HeroSection() {
 
               <p className="max-w-xl text-gray-600 text-lg md:text-xl leading-relaxed mb-8">
                 Living with chronic conditions like diabetes, heart disease, or
-                high blood pressure shouldn&apos;t mean constant worry or
-                frequent hospital visits.
+                high blood pressure shouldn&apos;t mean constant worry or frequent hospital visits.
               </p>
 
               <p className="max-w-xl text-gray-600 text-lg md:text-xl leading-relaxed mb-8">
-                Health Shield makes high-quality care simpler, safer, and more
-                personal — right from your home.
+                Health Shield makes high-quality care simpler, safer, and more personal — right from your home.
               </p>
 
               {/* Key Benefits */}
@@ -61,7 +61,7 @@ export function HeroSection() {
                 Ready to feel more confident about your health?
               </p>
 
-              {/* CTA Buttons */}
+              {/* CTA */}
               <div className="flex flex-wrap gap-4">
                 <Button
                   variant="primary"
@@ -72,11 +72,9 @@ export function HeroSection() {
                 </Button>
               </div>
             </div>
-            
-            </div>
           </div>
 
-          {/* Right Content - Hero Image */}
+          {/* RIGHT CONTENT */}
           <div className="relative hidden lg:block">
             <div className="relative bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8 border border-blue-100 flex items-center justify-center">
               <Image
@@ -87,7 +85,9 @@ export function HeroSection() {
               />
             </div>
           </div>
+
         </div>
+
       </Container>
     </section>
   );
