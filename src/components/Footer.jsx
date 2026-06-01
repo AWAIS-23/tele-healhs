@@ -18,13 +18,6 @@ const footerLinks = {
     { label: "Pulse Oximeters", href: "/devices/pulse-oximeter" },
     { label: "CGM Devices", href: "/devices/cgm" },
   ],
-  Integrations: [
-    { label: "PointClickCare", href: "/integrations/pointclickcare" },
-    { label: "athenahealth", href: "/integrations/athenahealth" },
-    { label: "Epic", href: "/integrations/epic" },
-    { label: "ALIS", href: "/integrations/alis" },
-    { label: "View All EHRs", href: "/integrations" },
-  ],
   Company: [
     { label: "About Us", href: "/about" },
     { label: "Articles", href: "/articles" },
@@ -75,7 +68,7 @@ export function Footer() {
 
       <Container className="relative py-16 lg:py-20">
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand column */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-flex items-center gap-2 mb-6">
