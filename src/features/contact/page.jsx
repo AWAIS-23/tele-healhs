@@ -2,7 +2,6 @@
 
 import { ContactHero } from "./sections/ContactHero";
 import { ContactInfo } from "./sections/ContactInfo";
-import { ContactForm } from "./sections/ContactForm";
 
 export default function ContactPage() {
   return (
@@ -10,7 +9,7 @@ export default function ContactPage() {
       <main className="flex-1">
       <ContactHero />
       <ContactInfo />
-      <ContactForm />
+   
       </main>
     </div>
   );

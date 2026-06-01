@@ -22,12 +22,12 @@ export function FaqHero() {
             </Badge>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
-              Everything you need to<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">know about tele Health.</span>
+              Frequently Asked<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Questions</span>
             </h1>
 
-            <p className=" text-gray-600 text-lg leading-relaxed mb-8">
-              Find answers to common questions about our remote patient monitoring platform, Medicare programs, device integrations, and how we help healthcare providers deliver better care.
+            <p className=" text-gray-600 text-[16px] leading-relaxed mb-8">
+              Here you’ll find clear answers to the most common questions about Health Shield, our Medicare remote care programs, technology, and how we support patients and healthcare providers.
             </p>
 
             <div className="flex flex-wrap gap-3 mb-8">

@@ -5,6 +5,7 @@ import { SectionHeader } from "../../../components/SectionHeader";
 import { Container } from "../../../components/Container";
 import { Button } from "../../../components/Button";
 import { Badge } from "../../../components/Badge";
+import { color } from "chart.js/helpers";
 
 export function ReadyToGetStartedSection() {
   const [formData, setFormData] = useState({
@@ -52,10 +53,10 @@ export function ReadyToGetStartedSection() {
             />
 
             <div className="space-y-6">
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <p className="text-gray-600 text-[16px] leading-relaxed">
                 Join thousands of Medicare patients who are already experiencing more proactive, supportive care.
               </p>
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <p className="text-gray-600 text-[16px] leading-relaxed">
                 Share your information and we’ll personally reach out within 24 hours to answer your questions and see if Health Shield is right for you.
               </p>
 
@@ -178,7 +179,7 @@ export function ReadyToGetStartedSection() {
         <div className="bg-[#0e4060] rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden shadow-xl">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-700/20 to-indigo-700/20 pointer-events-none" />
           <div className="relative z-10 max-w-4xl mx-auto space-y-4">
-            <h4 className="text-xl md:text-2xl font-bold tracking-wide text-white">
+            <h4 className="text-xl md:text-2xl font-bold tracking-wide text-white" style={{ color: "#fff" }}>
               Health Shield — Patient-First. Technology-Driven. Built for the Future of Care.
             </h4>
             <p className="text-blue-100 text-base md:text-lg">

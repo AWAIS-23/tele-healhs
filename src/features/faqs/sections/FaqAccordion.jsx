@@ -7,65 +7,95 @@ import { SectionHeader } from "@/components";
 
 const faqs = [
   {
-    category: "General",
+    category: "General Questions",
     questions: [
       {
-        q: "What is tele Health?",
-        a: "tele Health is a comprehensive remote patient monitoring platform that powers five Medicare programs — RPM, CCM, PCM, BHI, and RTM — across all 50 states. We provide healthcare providers with certified EHR integrations, FDA-cleared devices, and automated billing to deliver better patient care."
+        q: "What is Health Shield?",
+        a: "Health Shield is a modern, patient-first remote care platform that makes Medicare’s chronic care and remote monitoring programs simple and effective. We help doctors and care teams monitor patients between visits, reduce hospitalizations, and deliver better outcomes — all through one easy-to-use platform."
       },
       {
-        q: "How long has tele Health been in operation?",
-        a: "tele Health was founded in 2020 in Los Angeles, California. Since then, we've grown to support providers across all 50 states and have processed over 1 billion data transactions."
+        q: "Who is Health Shield for?",
+        a: "Health Shield serves two main groups: Medicare patients (or their families) living with chronic conditions who want proactive support at home, and healthcare providers — from solo practitioners and independent clinics to large health systems, ACOs, FQHCs, senior living facilities, and home health agencies."
       },
       {
-        q: "Is tele Health HIPAA compliant?",
-        a: "Yes, tele Health is fully HIPAA compliant. We maintain enterprise-grade security infrastructure to protect patient data and ensure compliance with all healthcare privacy regulations."
+        q: "How does Health Shield help patients?",
+        a: "We combine easy-to-use medical devices, a dedicated clinical care team, and smart technology to monitor your health daily. This helps catch issues early, reduces emergency hospital visits, improves communication with your doctor, and gives peace of mind to both patients and their adult children."
+      },
+      {
+        q: "Is Health Shield covered by Medicare?",
+        a: "Yes. Health Shield supports fully Medicare-reimbursed programs including CCM, RPM, RTM, TCM, PCM, APCM, and BHI. Most eligible patients pay little to no out-of-pocket cost."
       }
     ]
   },
   {
-    category: "Programs",
+    category: "Programs & Services",
     questions: [
       {
-        q: "What Medicare programs do you support?",
-        a: "We support all five major Medicare care management programs: Remote Patient Monitoring (RPM), Chronic Care Management (CCM), Principal Care Management (PCM), Behavioral Health Integration (BHI), and Remote Therapeutic Monitoring (RTM)."
+        q: "What Medicare programs does Health Shield support?",
+        a: "We offer all major remote and chronic care management programs on one unified platform: CCM, RPM, RTM, TCM, PCM, APCM, and BHI."
       },
       {
-        q: "What is Remote Patient Monitoring (RPM)?",
-        a: "RPM is a Medicare program that allows healthcare providers to monitor patients' health data remotely using FDA-cleared devices. Providers can bill for time spent monitoring and managing patient data, typically earning $20-30 per patient per month."
+        q: "Can I enroll in multiple programs?",
+        a: "Yes. Many patients benefit from a combination of programs (for example, RPM + CCM), which can be stacked for more comprehensive care and higher support levels."
       },
       {
-        q: "What is Chronic Care Management (CCM)?",
-        a: "CCM is a Medicare program for patients with two or more chronic conditions. It provides monthly reimbursement for care coordination services, typically around $42 per patient per month for 20+ minutes of care management."
-      },
-      {
-        q: "What is Principal Care Management (PCM)?",
-        a: "PCM is similar to CCM but focuses on patients with a single high-risk chronic condition. It provides higher reimbursement rates, typically around $93 per patient per month for 30+ minutes of care management."
-      },
-      {
-        q: "What is Behavioral Health Integration (BHI)?",
-        a: "BHI is a Medicare program that integrates behavioral health services with primary care. It provides reimbursement for psychiatric collaborative care management, typically around $83 per patient per month."
-      },
-      {
-        q: "What is Remote Therapeutic Monitoring (RTM)?",
-        a: "RTM is a newer Medicare program that allows monitoring of musculoskeletal and respiratory therapy. It's similar to RPM but focuses on therapy services rather than vital signs."
+        q: "How quickly can care start after enrollment?",
+        a: "Most patients receive their devices and begin monitoring within 3–7 days of enrollment."
       }
     ]
   },
   {
-    category: "Devices & Integration",
+    category: "Technology & Devices",
     questions: [
       {
-        q: "What devices are compatible with tele Health?",
-        a: "We support 25+ FDA-cleared devices from manufacturers including Tenovi, Omron, Dexcom, and more. Our platform is device-agnostic, meaning it works with virtually any FDA-cleared monitoring device."
+        q: "Do I need to use special devices?",
+        a: "We provide FDA-cleared, easy-to-use devices (blood pressure monitors, glucose meters, scales, pulse oximeters, etc.). The devices are simple, wireless, and designed for seniors. No complicated apps or tech skills required."
       },
       {
-        q: "Which EHR systems do you integrate with?",
-        a: "We have 8 certified EHR integrations including PointClickCare, Epic, Cerner, and others. Our bi-directional integrations ensure real-time data sync between devices, clinical staff, and EHR systems."
+        q: "Is Health Shield compatible with my doctor’s system?",
+        a: "Yes. We integrate with major EHR systems and can share data bi-directionally so your doctor sees your readings directly in their existing workflow."
       },
       {
-        q: "How do device integrations work?",
-        a: "Our platform automatically collects data from FDA-cleared devices and syncs it to your EHR system in real-time. Patients can use their own devices or we can provide devices through our partnerships with device manufacturers."
+        q: "What about data privacy?",
+        a: "Patient privacy and security are our top priorities. Health Shield is built to be HIPAA compliant with end-to-end encryption, secure data handling, and strict access controls."
+      }
+    ]
+  },
+  {
+    category: "For Patients & Families",
+    questions: [
+      {
+        q: "How does Health Shield provide peace of mind for adult children?",
+        a: "Adult children can rest easier knowing a clinical team is monitoring their aging parents daily. You’ll receive updates when needed, and proactive alerts help prevent crises — even if you live far away."
+      },
+      {
+        q: "Will someone actually check on me?",
+        a: "Yes. Our licensed clinical team reviews your data regularly and reaches out by phone or text if anything needs attention. You’re never just 'a number' — real people provide real support."
+      },
+      {
+        q: "What if I have questions or need help with my device?",
+        a: "Our patient support team is available to help with device setup, troubleshooting, and any questions. We make the process as simple as possible."
+      }
+    ]
+  },
+  {
+    category: "For Healthcare Providers & Partners",
+    questions: [
+      {
+        q: "How does Health Shield help my practice?",
+        a: "We handle the heavy lifting — patient enrollment, device shipping & setup, daily monitoring, clinical follow-up, and automated Medicare billing. This reduces your administrative burden while helping you generate additional revenue and improve patient outcomes."
+      },
+      {
+        q: "What kind of outcomes can we expect?",
+        a: "Partners typically see significantly reduced hospital readmissions, higher patient engagement, better quality scores, and strong recurring revenue through Medicare reimbursements."
+      },
+      {
+        q: "How long does it take to get started?",
+        a: "Many practices are up and running within 2–4 weeks. Our team provides full onboarding, training, and ongoing support."
+      },
+      {
+        q: "Do you work with small practices or only large systems?",
+        a: "We support providers of all sizes — from solo practitioners to large health systems. Our platform scales with you."
       }
     ]
   },
@@ -73,16 +103,12 @@ const faqs = [
     category: "Billing & Reimbursement",
     questions: [
       {
-        q: "How does billing work with tele Health?",
-        a: "We provide automated billing documentation and support for all Medicare programs. Our platform generates the necessary documentation and time tracking to ensure compliant billing for RPM, CCM, PCM, BHI, and RTM services."
+        q: "How does billing work?",
+        a: "We manage all Medicare billing and documentation on your behalf. Providers receive reimbursement for the services delivered, and we offer flexible revenue-share or fee-based partnership models."
       },
       {
-        q: "What are the reimbursement rates?",
-        a: "Reimbursement rates vary by program: RPM typically $20-30/patient/month, CCM ~$42/patient/month, PCM ~$93/patient/month, BHI ~$83/patient/month, and RTM varies by service. Contact us for specific rate information for your practice."
-      },
-      {
-        q: "Do you help with billing claims?",
-        a: "Yes, we provide comprehensive billing support including documentation generation, time tracking, and claim submission assistance to ensure you receive maximum reimbursement for care management services."
+        q: "Are there any upfront costs for providers?",
+        a: "No significant upfront costs. We focus on a success-based model where you only pay as you generate value."
       }
     ]
   },
@@ -90,27 +116,19 @@ const faqs = [
     category: "Getting Started",
     questions: [
       {
-        q: "How do I get started with tele Health?",
-        a: "Getting started is easy. Schedule a consultation with our team, we'll assess your practice's needs, set up the necessary integrations, and provide training for your staff. Most practices are up and running within 2-4 weeks."
+        q: "How do I get started as a patient?",
+        a: "The easiest way is to ask your doctor about Health Shield or submit your information on our website. We’ll verify your eligibility and coordinate with your provider."
       },
       {
-        q: "What is the implementation timeline?",
-        a: "Implementation typically takes 2-4 weeks depending on your practice size and existing systems. We handle all technical setup, EHR integrations, and provide comprehensive training for your clinical staff."
-      },
-      {
-        q: "What training and support do you provide?",
-        a: "We provide comprehensive onboarding training, ongoing support, and dedicated account managers. Our team is available to help with technical issues, billing questions, and best practices for maximizing program utilization."
-      },
-      {
-        q: "Do you offer a trial or demo?",
-        a: "Yes, we offer personalized demos and trial periods to help you evaluate our platform. Schedule a consultation to see how tele Health can benefit your practice."
+        q: "How do healthcare organizations partner with Health Shield?",
+        a: "Contact our partnerships team for a personalized demo. We’ll show you how our platform fits your specific needs and goals."
       }
     ]
   }
 ];
 
 export function FaqAccordion() {
-  const [openCategory, setOpenCategory] = useState("General");
+  const [openCategory, setOpenCategory] = useState("General Questions");
   const [openQuestion, setOpenQuestion] = useState(0);
 
   return (

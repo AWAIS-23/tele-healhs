@@ -61,7 +61,7 @@ export function AboutStory() {
           description="From a simple idea in LA to a nationwide platform powering five Medicare programs across 50 states."
           badgeIconBg="bg-blue-100 border border-blue-200"
           titleClassName="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
-          descClassName="max-w-2xl mx-auto text-gray-600 text-lg leading-relaxed"
+          descClassName="max-w-2xl mx-auto text-gray-600 text-[16px] leading-relaxed"
           className="mb-16"
         />
 

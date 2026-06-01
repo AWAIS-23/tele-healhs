@@ -12,7 +12,7 @@ export function FaqContact() {
           <div>
             <SectionHeader
               title="Still have questions?"
-              description="Can't find what you're looking for? Our team is here to help. Contact us for personalized support, schedule a demo, or learn more about how tele Health can transform your practice."
+              description="We’re here to help. Reach out for provider partnerships, patient inquiries, or to book a discovery call with our team."
               titleClassName="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-tight"
               titleColor="text-white"
               descClassName="text-lg leading-relaxed mb-8"
@@ -27,8 +27,8 @@ export function FaqContact() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-blue-200 text-sm">Email us at</p>
-                  <p className="text-white font-semibold">support@ccnhealth.com</p>
+                  <p className="text-blue-200 text-sm">Provider & partner inquiries</p>
+                  <p className="text-white font-semibold">sales@healthshield.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -38,8 +38,8 @@ export function FaqContact() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-blue-200 text-sm">Call us at</p>
-                  <p className="text-white font-semibold">(800) 123-4567</p>
+                  <p className="text-blue-200 text-sm">Patient inquiries</p>
+                  <p className="text-white font-semibold">support@healthshield.com</p>
                 </div>
               </div>
             </div>

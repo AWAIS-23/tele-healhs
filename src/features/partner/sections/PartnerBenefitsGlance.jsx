@@ -145,7 +145,7 @@ export function PartnerBenefitsGlance() {
                 className="mb-8"
               />
 
-              <div className="space-y-5 text-gray-600 text-lg leading-relaxed">
+              <div className="space-y-5 text-gray-600 text-[16px] leading-relaxed">
                 <p>
                   If you&apos;re passionate about improving chronic care outcomes and creating sustainable growth opportunities, let&apos;s talk.
                 </p>

@@ -28,7 +28,7 @@ export function ChallengeSection() {
             />
 
             <div className="space-y-6">
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <p className="text-gray-600 text-[16px] leading-relaxed">
                 If you or a loved one has a chronic condition, you know how easy it is to feel overlooked between doctor visits. Small changes in your health can turn into big problems — leading to unnecessary hospital stays and added stress.
               </p>
 
@@ -38,7 +38,7 @@ export function ChallengeSection() {
                 </p>
               </div>
 
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <p className="text-gray-600 text-[16px] leading-relaxed">
                 We use simple, proven technology and a dedicated care team to help you stay healthier at home — while making life easier for your doctors and caregivers.
               </p>
             </div>

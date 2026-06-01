@@ -41,6 +41,11 @@ export default function Sidebar() {
       icon: Layers,
     },
     {
+      label: "Partnerships",
+      href: "/admin/partnerships",
+      icon: FolderTree,
+    },
+    {
       label: "Articles",
       href: "/admin/articles",
       icon: FileTextIcon,

@@ -72,7 +72,7 @@ export function AboutSecurity() {
           description="Security is not an afterthought — it is foundational to how we build. Automated safeguards, continuous monitoring, and encryption at every layer."
           badgeIconBg="bg-white border border-blue-200 shadow-sm"
           titleClassName="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
-          descClassName="text-gray-600 text-lg leading-relaxed"
+          descClassName="text-gray-600 text-[16px] leading-relaxed"
           className="max-w-3xl mx-auto mb-16"
         />
 

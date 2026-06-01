@@ -116,7 +116,7 @@ export function PartnerWhoWeServe() {
           }
           description="Health Shield works across the entire healthcare ecosystem — from individual practices to enterprise health systems."
           titleClassName="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 text-center"
-          descClassName="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto text-center"
+          descClassName="text-gray-600 text-[16px] leading-relaxed max-w-3xl mx-auto text-center"
           className="mb-16"
         />
 

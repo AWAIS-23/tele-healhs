@@ -37,11 +37,11 @@ export function PartnerHeroNew() {
               AI-Powered Remote Care That Delivers Results — Together
             </p>
 
-            <p className="text-gray-600 text-lg leading-relaxed mb-5">
+            <p className="text-gray-600 text-[16px] leading-relaxed mb-5">
               We’re building more than technology — we’re building a movement to close the chronic care gap for millions of patients.
             </p>
 
-            <p className="text-gray-600 text-lg leading-relaxed mb-8">
+            <p className="text-gray-600 text-[16px] leading-relaxed mb-8">
               We’re actively seeking strategic partners who want to make care proactive, scalable, and financially sustainable.
             </p>
 

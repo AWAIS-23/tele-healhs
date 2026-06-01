@@ -9,7 +9,7 @@ import heroImage from "../../../../public/assets/images/hero-asset.png";
 export function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-white">
-      <Container className="relative py-16 md:py-20 lg:py-24">
+      <Container className="relative py-18">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
 
           {/* LEFT CONTENT */}
@@ -20,16 +20,16 @@ export function HeroSection() {
               </Badge>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-[1.15] mb-6">
-                Better Health at Home <br />
+                Better Health at Home —<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Every Day</span>
               </h1>
 
-              <p className="max-w-xl text-gray-600 text-lg md:text-xl leading-relaxed mb-4">
+              <p className="max-w-xl text-gray-600 text-lg md:text-[16px] leading-relaxed mb-4">
                 Living with chronic conditions like diabetes, heart disease, or high blood pressure
                 shouldn’t mean constant worry or frequent hospital visits.
               </p>
 
-              <p className="max-w-xl text-gray-600 text-lg md:text-xl leading-relaxed mb-8">
+              <p className="max-w-xl text-gray-600 text-lg md:text-[16px] leading-relaxed mb-8">
                 Health Shield makes high-quality care simpler, safer, and more personal — right from your home.
               </p>
 
@@ -69,9 +69,7 @@ export function HeroSection() {
                 </div>
               </div>
 
-              <p className="text-lg font-semibold text-gray-900 mb-6">
-                Ready to feel more confident about your health?
-              </p>
+              
 
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-4 items-center">

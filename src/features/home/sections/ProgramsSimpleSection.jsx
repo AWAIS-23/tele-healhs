@@ -93,7 +93,7 @@ export function ProgramsSimpleSection() {
           description="Health Shield supports all major Medicare remote care programs so you get the complete support you need:"
           badgeIconBg="bg-emerald-50 border border-emerald-200"
           titleClassName="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 text-center"
-          descClassName="max-w-3xl mx-auto text-gray-600 text-lg leading-relaxed text-center"
+          descClassName="max-w-3xl mx-auto text-gray-600 text-[16px] leading-relaxed text-center"
           className="mb-16"
         />
 

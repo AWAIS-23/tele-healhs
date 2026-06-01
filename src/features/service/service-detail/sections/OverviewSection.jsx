@@ -43,7 +43,7 @@ export default function OverviewSection({ data }) {
                 </>
               )}
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed mb-8">
+            <p className="text-gray-600 text-[16px] leading-relaxed mb-8">
               {overview}
             </p>
             <ul className="space-y-4">

@@ -11,9 +11,9 @@ export default function PartnerPage() {
     <div className="flex min-h-screen flex-col">
       <main className="flex-1">
         <PartnerHeroNew />
+        <PartnerWhoWeServe />
         <PartnerStrategic />
         <PartnerWhyUs />
-        <PartnerWhoWeServe />
         <PartnerBenefitsGlance />
       </main>
     </div>

@@ -62,7 +62,7 @@ export function AboutTestimonials() {
           description="Hear what healthcare professionals and partners say about working with tele Health."
           badgeIconBg="bg-blue-100 border border-blue-200"
           titleClassName="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
-          descClassName="text-gray-600 text-lg leading-relaxed"
+          descClassName="text-gray-600 text-[16px] leading-relaxed"
           className="max-w-3xl mx-auto mb-16"
         />
 
