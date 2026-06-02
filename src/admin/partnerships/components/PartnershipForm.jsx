@@ -27,24 +27,31 @@ const defaultFormData = {
   challengeTitle: "",
   challengeIntro: "",
   challengePoints: [],
+  challengeBadgeText: "The Challenge",
   solutionTitle: "",
   solutionIntro: "",
   solutionFeatures: [],
-  whyPartnerTitle: "",
-  scalabilityTitle: "",
-  partnersGetTitle: "",
+  solutionBadgeText: "Our Solution",
   resultsMetric: "",
   resultsTitle: "",
   resultsDescription: "",
+  resultsBadgeText: "Early Results",
+  whyPartnerTitle: "",
   reasons: [],
+  whyPartnerBadgeText: "Why Partner",
+  scalabilityTitle: "",
   whyScales: [],
+  scalabilityBadgeText: "Scalability",
+  partnersGetTitle: "",
   partnersGet: [],
+  partnersGetBadgeText: "Partner Benefits",
   finalCtaTitle: "",
   finalCtaDescription: "",
   finalCtaPrimaryLabel: "",
   finalCtaPrimaryUrl: "",
   finalCtaSecondaryLabel: "",
   finalCtaSecondaryUrl: "",
+  finalCtaBadgeText: "Ready to launch",
   trustFounder: "",
   trustMarketProjection: "",
   trustRPMProjection: "",
@@ -97,7 +104,6 @@ const editorInit = {
     'autolink',
     'lists',
     'link',
-    'paste',
     'help',
     'wordcount',
     'fullscreen',
@@ -155,24 +161,31 @@ export default function PartnershipForm({ partnershipId = null }) {
             challengeTitle: partnership.challengeTitle || "",
             challengeIntro: partnership.challengeIntro || "",
             challengePoints: parseArrayInput(partnership.challengePoints),
+            challengeBadgeText: partnership.challengeBadgeText || "The Challenge",
             solutionTitle: partnership.solutionTitle || "",
             solutionIntro: partnership.solutionIntro || "",
             solutionFeatures: parseArrayInput(partnership.solutionFeatures),
+            solutionBadgeText: partnership.solutionBadgeText || "Our Solution",
             whyPartnerTitle: partnership.whyPartnerTitle || "",
+            reasons: parseObjectArrayInput(partnership.reasons),
+            whyPartnerBadgeText: partnership.whyPartnerBadgeText || "Why Partner",
             scalabilityTitle: partnership.scalabilityTitle || "",
+            whyScales: parseArrayInput(partnership.whyScales),
+            scalabilityBadgeText: partnership.scalabilityBadgeText || "Scalability",
             partnersGetTitle: partnership.partnersGetTitle || "",
+            partnersGet: parseArrayInput(partnership.partnersGet),
+            partnersGetBadgeText: partnership.partnersGetBadgeText || "Partner Benefits",
             resultsMetric: partnership.resultsMetric || "",
             resultsTitle: partnership.resultsTitle || "",
             resultsDescription: partnership.resultsDescription || "",
-            reasons: parseObjectArrayInput(partnership.reasons),
-            whyScales: parseArrayInput(partnership.whyScales),
-            partnersGet: parseArrayInput(partnership.partnersGet),
+            resultsBadgeText: partnership.resultsBadgeText || "Early Results",
             finalCtaTitle: partnership.finalCtaTitle || "",
             finalCtaDescription: partnership.finalCtaDescription || "",
             finalCtaPrimaryLabel: partnership.finalCtaPrimaryLabel || "",
             finalCtaPrimaryUrl: partnership.finalCtaPrimaryUrl || "",
             finalCtaSecondaryLabel: partnership.finalCtaSecondaryLabel || "",
             finalCtaSecondaryUrl: partnership.finalCtaSecondaryUrl || "",
+            finalCtaBadgeText: partnership.finalCtaBadgeText || "Ready to launch",
             trustFounder: partnership.trustFounder || "",
             trustMarketProjection: partnership.trustMarketProjection || "",
             trustRPMProjection: partnership.trustRPMProjection || "",
@@ -273,9 +286,9 @@ export default function PartnershipForm({ partnershipId = null }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 ">
         <div className="space-y-4 bg-white rounded-xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-900">Basic details</h2>
+          <h2 className="text-lg font-semibold text-gray-900">Meta details</h2>
           <label className="block space-y-2 text-sm text-gray-700">
             Title
             <input
@@ -400,9 +413,18 @@ export default function PartnershipForm({ partnershipId = null }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 ">
         <div className="space-y-4 bg-white rounded-xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-900">Challenge section</h2>
+          <label className="block space-y-2 text-sm text-gray-700">
+            Badge text
+            <input
+              type="text"
+              value={formData.challengeBadgeText}
+              onChange={(e) => handleChange('challengeBadgeText', e.target.value)}
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </label>
           <label className="block space-y-2 text-sm text-gray-700">
             Challenge title
             <input
@@ -434,6 +456,15 @@ export default function PartnershipForm({ partnershipId = null }) {
         <div className="space-y-4 bg-white rounded-xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-900">Solution & results</h2>
           <label className="block space-y-2 text-sm text-gray-700">
+            Solution badge text
+            <input
+              type="text"
+              value={formData.solutionBadgeText}
+              onChange={(e) => handleChange('solutionBadgeText', e.target.value)}
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </label>
+          <label className="block space-y-2 text-sm text-gray-700">
             Solution title
             <input
               type="text"
@@ -459,6 +490,15 @@ export default function PartnershipForm({ partnershipId = null }) {
             onChange={(items) => handleChange('solutionFeatures', items)}
             isStringArray
           />
+          <label className="block space-y-2 text-sm text-gray-700">
+            Results badge text
+            <input
+              type="text"
+              value={formData.resultsBadgeText}
+              onChange={(e) => handleChange('resultsBadgeText', e.target.value)}
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </label>
           <div className="grid gap-4 sm:grid-cols-3">
             <label className="block space-y-2 text-sm text-gray-700">
               Results metric
@@ -493,9 +533,18 @@ export default function PartnershipForm({ partnershipId = null }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 ">
         <div className="space-y-4 bg-white rounded-xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-900">Why partner</h2>
+          <label className="block space-y-2 text-sm text-gray-700">
+            Badge text
+            <input
+              type="text"
+              value={formData.whyPartnerBadgeText}
+              onChange={(e) => handleChange('whyPartnerBadgeText', e.target.value)}
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </label>
           <label className="block space-y-2 text-sm text-gray-700">
             Section title
             <input
@@ -519,6 +568,15 @@ export default function PartnershipForm({ partnershipId = null }) {
         <div className="space-y-4 bg-white rounded-xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-900">Scaling benefits</h2>
           <label className="block space-y-2 text-sm text-gray-700">
+            Badge text
+            <input
+              type="text"
+              value={formData.scalabilityBadgeText}
+              onChange={(e) => handleChange('scalabilityBadgeText', e.target.value)}
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </label>
+          <label className="block space-y-2 text-sm text-gray-700">
             Section title
             <input
               type="text"
@@ -537,6 +595,15 @@ export default function PartnershipForm({ partnershipId = null }) {
         <div className="space-y-4 bg-white rounded-xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-900">Partnership benefits</h2>
           <label className="block space-y-2 text-sm text-gray-700">
+            Badge text
+            <input
+              type="text"
+              value={formData.partnersGetBadgeText}
+              onChange={(e) => handleChange('partnersGetBadgeText', e.target.value)}
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </label>
+          <label className="block space-y-2 text-sm text-gray-700">
             Section title
             <input
               type="text"
@@ -554,9 +621,18 @@ export default function PartnershipForm({ partnershipId = null }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 ">
         <div className="space-y-4 bg-white rounded-xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-900">Final CTA</h2>
+          <label className="block space-y-2 text-sm text-gray-700">
+            Badge text
+            <input
+              type="text"
+              value={formData.finalCtaBadgeText}
+              onChange={(e) => handleChange('finalCtaBadgeText', e.target.value)}
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </label>
           <label className="block space-y-2 text-sm text-gray-700">
             Final title
             <input

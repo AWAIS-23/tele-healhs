@@ -116,7 +116,7 @@ export function PartnershipPage({ partnership }) {
         <section className="py-16 bg-white">
           <Container>
             <SectionHeader
-              badgeText="The Challenge"
+              badgeText={partnership.challengeBadgeText || "The Challenge"}
               title={partnership.challengeTitle || "The Challenge for Medicare Advantage Plans & Payers"}
               description={partnership.challengeIntro && typeof partnership.challengeIntro === 'string' && partnership.challengeIntro.includes('<') ? 
                 <div className="prose prose-sm" dangerouslySetInnerHTML={{ __html: partnership.challengeIntro }} />
@@ -138,7 +138,7 @@ export function PartnershipPage({ partnership }) {
         <section className="py-16 bg-blue-50">
           <Container>
             <SectionHeader
-              badgeText="Our Solution"
+              badgeText={partnership.solutionBadgeText || "Our Solution"}
               title={partnership.solutionTitle || "One Integrated Platform"}
               description={partnership.solutionIntro && typeof partnership.solutionIntro === 'string' && partnership.solutionIntro.includes('<') ?
                 <div className="prose prose-sm" dangerouslySetInnerHTML={{ __html: partnership.solutionIntro }} />
@@ -161,7 +161,7 @@ export function PartnershipPage({ partnership }) {
         <section className="py-16 bg-white">
           <Container>
             <SectionHeader
-              badge="Early Results"
+              badge={partnership.resultsBadgeText || "Early Results"}
               title={partnership.resultsTitle}
               description={partnership.resultsDescription && typeof partnership.resultsDescription === 'string' && partnership.resultsDescription.includes('<') ?
                 <div className="prose prose-sm" dangerouslySetInnerHTML={{ __html: partnership.resultsDescription }} />
@@ -183,7 +183,7 @@ export function PartnershipPage({ partnership }) {
         <section className="py-16 bg-blue-50">
           <Container>
             <SectionHeader
-              badgeText="Why Partner"
+              badgeText={partnership.whyPartnerBadgeText || "Why Partner"}
               title={partnership.whyPartnerTitle || "Why Partner with Health Shield?"}
               align="center"
             />
@@ -209,7 +209,7 @@ export function PartnershipPage({ partnership }) {
         <section className="py-16 bg-white">
           <Container>
             <SectionHeader
-              badgeText="Scalability"
+              badgeText={partnership.scalabilityBadgeText || "Scalability"}
               title={partnership.scalabilityTitle || "Why Health Shield Scales With Your Organization"}
               align="center"
             />
@@ -228,7 +228,7 @@ export function PartnershipPage({ partnership }) {
         <section className="py-16 bg-blue-50">
           <Container>
             <SectionHeader
-              badgeText="Partner Benefits"
+              badgeText={partnership.partnersGetBadgeText || "Partner Benefits"}
               title={partnership.partnersGetTitle || "What Our Payer & Medicare Advantage Partners Get"}
               align="center"
             />
@@ -246,7 +246,7 @@ export function PartnershipPage({ partnership }) {
         <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
           <Container>
             <SectionHeader
-              badgeText="Ready to launch"
+              badgeText={partnership.finalCtaBadgeText || "Ready to launch"}
               title={partnership.finalCtaTitle}
               description={partnership.finalCtaDescription && typeof partnership.finalCtaDescription === 'string' && partnership.finalCtaDescription.includes('<') ?
                 <div className="prose prose-sm text-blue-100" dangerouslySetInnerHTML={{ __html: partnership.finalCtaDescription }} />
