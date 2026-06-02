@@ -10,7 +10,9 @@ export async function generateStaticParams() {
       return [];
     }
 
-    const res = await fetch(`${API_BASE_URL}/partnerships?limit=1000&status=published`);
+    const res = await fetch(`${API_BASE_URL}/partnerships?limit=1000&status=published`, {
+      cache: 'force-cache'
+    });
     const data = await res.json();
 
     if (data.success && Array.isArray(data.data)) {
@@ -28,7 +30,7 @@ export async function generateStaticParams() {
 export default async function PartnershipSlugPage({ params }) {
   const { slug } = await params;
   const res = await fetch(`${API_BASE_URL}/partnerships/${slug}`, {
-    cache: 'no-store'
+    cache: 'force-cache'
   });
 
   if (!res.ok) {
