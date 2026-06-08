@@ -99,7 +99,7 @@ export function FunnelHero() {
   return (
     <section className="relative overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 ">
           <div>
             <Badge
               variant="green"

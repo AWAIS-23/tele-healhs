@@ -1,9 +1,30 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "./Button";
+import { HeartPulse, Monitor, Bone, Activity, Brain, Smartphone, BarChart3, Video, FileText, BookOpen, Lightbulb, Cpu, ArrowRightLeft } from "lucide-react";
+
+const iconMap = {
+  monitor: Monitor,
+  heart: HeartPulse,
+  bone: Bone,
+  activity: Activity,
+  brain: Brain,
+  device: Smartphone,
+  chart: BarChart3,
+  video: Video,
+  article: FileText,
+  story: BookOpen,
+  tips: Lightbulb,
+  tech: Cpu,
+  transfer: ArrowRightLeft,
+};
+
+function getIcon(name) {
+  return iconMap[name] || Activity;
+}
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -46,6 +67,9 @@ export function Header() {
   const [mounted, setMounted] = useState(false);
   const [dynamicNavItems, setDynamicNavItems] = useState(navItems);
   const router = useRouter();
+  const navRef = useRef(null);
+  const dropdownContainerRef = useRef(null);
+  const dropdownTimeoutRef = useRef(null);
 
   useEffect(() => {
     setMounted(true);
@@ -57,6 +81,23 @@ export function Header() {
         console.error("Failed to parse user");
       }
     }
+
+    const handleClickOutside = (event) => {
+      const clickedNav = navRef.current?.contains(event.target);
+      const clickedDropdown = dropdownContainerRef.current?.contains(event.target);
+      if (!clickedNav && !clickedDropdown) {
+        setActiveDropdown(null);
+      }
+    };
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
 
     const fetchServices = async () => {
       try {
@@ -90,6 +131,14 @@ export function Header() {
     };
 
     fetchServices();
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+      if (dropdownTimeoutRef.current) {
+        clearTimeout(dropdownTimeoutRef.current);
+      }
+    };
   }, []);
 
   const handleLogout = () => {
@@ -100,7 +149,7 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-200/60 bg-white/95 backdrop-blur-xl shadow-sm">
+    <header className="relative sticky top-0 z-50 w-full border-b border-gray-200/60 bg-white/95 backdrop-blur-xl shadow-sm">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-[80px] items-center justify-between">
           {/* Logo */}
@@ -111,14 +160,25 @@ export function Header() {
           </div>
 
           {/* Centered Desktop Navigation */}
-          <div className="hidden lg:flex lg:items-center lg:justify-center lg:flex-1 lg:mx-8">
+          <div ref={navRef} className="hidden lg:flex lg:items-center lg:justify-center lg:flex-1 lg:mx-8">
             <div className="flex items-center gap-1">
               {dynamicNavItems.map((item) => (
                 <div
                   key={item.label}
                   className="relative"
-                  onMouseEnter={() => item.hasDropdown && setActiveDropdown(item.label)}
-                  onMouseLeave={() => setActiveDropdown(null)}
+                  onMouseEnter={() => {
+                    if (item.hasDropdown) {
+                      if (dropdownTimeoutRef.current) {
+                        clearTimeout(dropdownTimeoutRef.current);
+                      }
+                      setActiveDropdown(item.label);
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    dropdownTimeoutRef.current = setTimeout(() => {
+                      setActiveDropdown(null);
+                    }, 150);
+                  }}
                 >
                   <Link
                     href={item.href}
@@ -144,37 +204,6 @@ export function Header() {
                     )}
                   </Link>
 
-                  {/* Enhanced Dropdown */}
-                  {item.hasDropdown && activeDropdown === item.label && item.dropdownItems && (
-                    <div className="absolute left-1/2 transform -translate-x-1/2 top-full z-40 pt-3">
-                      <div className="border border-gray-200/60 bg-white/98 backdrop-blur-xl shadow-2xl shadow-gray-900/10 rounded-2xl min-w-[400px] p-6 border-t-2 border-t-blue-500">
-                        <div className="mb-4">
-                          <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-3 font-sans">{item.label}</h3>
-                        </div>
-                        <div className="space-y-1">
-                          {item.dropdownItems.map((dropItem) => (
-                            <Link
-                              key={dropItem.name}
-                              href={dropItem.href || "#"}
-                              className="group flex items-start gap-4 rounded-xl px-4 py-3.5 transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:shadow-md"
-                            >
-                              <div className={`mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg bg-gradient-to-br from-${dropItem.color}-50 to-${dropItem.color}-100 border border-${dropItem.color}-200`}>
-                                <span className="text-lg font-semibold text-${dropItem.color}-600 font-sans">●</span>
-                              </div>
-                              <div className="min-w-0">
-                                <p className="text-[0.875rem] font-semibold text-gray-900 transition-colors duration-300 group-hover:text-blue-600 font-sans">
-                                  {dropItem.name}
-                                </p>
-                                <p className="mt-1 text-[0.8125rem] leading-relaxed line-clamp-1 text-gray-600 font-sans">
-                                  {dropItem.desc}
-                                </p>
-                              </div>
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  )}
                 </div>
               ))}
             </div>
@@ -193,10 +222,10 @@ export function Header() {
               </>
             ) : mounted ? (
               <>
-                <Button href="/login" variant="ghost" size="sm" className="text-gray-700 hover:text-[#0e4060] hover:bg-transparent transition-all duration-300 font-sans px-4 py-2">
+                <Button href="https://health.healow.com/gethealthshield" variant="ghost" size="sm" className="text-gray-700 hover:text-[#0e4060] hover:bg-transparent transition-all duration-300 font-sans px-4 py-2">
                   Log In
                 </Button>
-                <Button href="/sign-up" variant="primary" size="sm" className="bg-[#0e4060] hover:bg-[#0a2e45] shadow-lg hover:shadow-xl transition-all duration-300 font-sans">
+                <Button href="https://mycw194.ecwcloud.com/portal31263/jsp/jspnew/preRegistration_new.jsp" variant="primary" size="sm" className="bg-[#0e4060] hover:bg-[#0a2e45] shadow-lg hover:shadow-xl transition-all duration-300 font-sans">
                   Get Started
                 </Button>
               </>
@@ -261,6 +290,54 @@ export function Header() {
           </div>
         )}
       </nav>
+
+      {/* Mega Menu Dropdown */}
+      {(() => {
+        const activeItem = dynamicNavItems.find((i) => i.label === activeDropdown);
+        if (!activeItem?.hasDropdown || !activeItem.dropdownItems) return null;
+        return (
+          <div
+            ref={dropdownContainerRef}
+            className="absolute left-1/2 -translate-x-1/2 top-full z-40 "
+            onMouseEnter={() => {
+              if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
+            }}
+            onMouseLeave={() => {
+              dropdownTimeoutRef.current = setTimeout(() => setActiveDropdown(null), 150);
+            }}
+          >
+            <div className="border border-gray-200/60 bg-white/98 backdrop-blur-xl shadow-2xl shadow-gray-900/10 rounded-2xl w-[1280px] max-w-[95vw] p-6 border-t-2 border-t-blue-500">
+              <div className="mb-4">
+                <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-3 font-sans">{activeItem.label}</h3>
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                {activeItem.dropdownItems.map((dropItem) => (
+                  <Link
+                    key={dropItem.name}
+                    href={dropItem.href || "#"}
+                    className="group flex items-start gap-3 rounded-xl px-3 py-3 transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:shadow-md"
+                  >
+                    <div className={`mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg bg-gradient-to-br from-${dropItem.color}-50 to-${dropItem.color}-100 border border-${dropItem.color}-200`}>
+                      {(() => {
+                        const IconComponent = getIcon(dropItem.icon);
+                        return <IconComponent className={`h-4 w-4 text-${dropItem.color}-600`} strokeWidth={2} />;
+                      })()}
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-[0.8rem] font-semibold text-gray-900 transition-colors duration-300 group-hover:text-blue-600 font-sans leading-tight">
+                        {dropItem.name}
+                      </p>
+                      <p className="mt-0.5 text-[0.75rem] leading-relaxed line-clamp-2 text-gray-500 font-sans">
+                        {dropItem.desc}
+                      </p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+      })()}
     </header>
   );
 }
