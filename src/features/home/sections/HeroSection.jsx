@@ -11,7 +11,7 @@ export function HeroSection() {
     <section className="relative overflow-hidden bg-white">
       <Container className="relative py-18">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-
+ 
           {/* LEFT CONTENT */}
           <div>
             <div className="mb-8">

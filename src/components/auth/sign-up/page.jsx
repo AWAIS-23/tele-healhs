@@ -37,10 +37,10 @@ export default function SignUpPage() {
       return;
     }
 
-    setLoading(true);
+    setLoading(true); 
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/api/auth/signup", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/auth/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -14,7 +14,8 @@ import {
   ChevronDown,
   Layers,
   FileText as FileTextIcon,
-  FolderTree
+  FolderTree,
+  PhoneCall
 } from "lucide-react";
 
 export default function Sidebar() {
@@ -54,6 +55,11 @@ export default function Sidebar() {
       label: "Categories",
       href: "/admin/categories",
       icon: FolderTree,
+    },
+    {
+      label: "Discovery Calls",
+      href: "/admin/discovery-calls",
+      icon: PhoneCall,
     },
     {
       label: "Settings",
