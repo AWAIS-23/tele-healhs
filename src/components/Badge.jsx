@@ -40,7 +40,7 @@ export function Badge({
       className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border ${variants[variant]} ${className}`}
       {...props}
     >
-      {showDot && <span className={`w-2 h-2 rounded-full ${dotColors[variant]}`} />}
+      
       {icon && <span className={`w-5 h-5 ${iconColors[variant]}`}>{icon}</span>}
       <span className="text-sm font-medium">{children}</span>
     </div>

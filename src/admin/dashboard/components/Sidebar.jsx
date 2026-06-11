@@ -15,7 +15,8 @@ import {
   Layers,
   FileText as FileTextIcon,
   FolderTree,
-  PhoneCall
+  PhoneCall,
+  TrendingUp
 } from "lucide-react";
 
 export default function Sidebar() {
@@ -60,6 +61,11 @@ export default function Sidebar() {
       label: "Discovery Calls",
       href: "/admin/discovery-calls",
       icon: PhoneCall,
+    },
+    {
+      label: "Leads Pipeline",
+      href: "/admin/leads",
+      icon: TrendingUp,
     },
     {
       label: "Settings",

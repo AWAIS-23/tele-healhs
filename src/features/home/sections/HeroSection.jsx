@@ -11,12 +11,12 @@ export function HeroSection() {
     <section className="relative overflow-hidden bg-white">
       <Container className="relative py-18">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
- 
+
           {/* LEFT CONTENT */}
           <div>
             <div className="mb-8">
               <Badge variant="gray" showDot className="mb-6">
-                Remote Patient Monitoring & Chronic Care
+                Remote Patient Monitoring & Chrone care
               </Badge>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-[1.15] mb-6">
@@ -94,7 +94,7 @@ export function HeroSection() {
 
           {/* RIGHT CONTENT */}
           <div className="relative hidden lg:block">
-            <div className="relative bg-gradient-to-br from-blue-50 to-indigo-100 rounded-3xl p-8 border border-blue-100 flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="">
               <Image
                 src={heroImage}
                 alt="Health Shield Remote Care"

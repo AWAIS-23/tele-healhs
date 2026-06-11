@@ -4,12 +4,11 @@ import Link from "next/link";
 import { Container } from "./Container";
 
 const footerLinks = {
-  Programs: [
-    { label: "Remote Patient Monitoring", href: "/programs/rpm" },
-    { label: "Chronic Care Management", href: "/programs/ccm" },
-    { label: "Remote Therapeutic Monitoring", href: "/programs/rtm" },
-    { label: "Principal Care Management", href: "/programs/pcm" },
-    { label: "Behavioral Health Integration", href: "/programs/bhi" },
+  Services: [
+    { label: "Remote Patient Monitoring", href: "/services/remote-patient-monitoring" },
+    { label: "Chronic Care Management", href: "/services/chronic-care-management" },
+    { label: "Principal Care Management", href: "/services/principal-care-management" },
+    { label: "Behavioral Health Integration", href: "/services/behavioral-health-integration" },
   ],
   Devices: [
     { label: "Blood Pressure Monitors", href: "/devices/bpm" },
@@ -18,19 +17,20 @@ const footerLinks = {
     { label: "Pulse Oximeters", href: "/devices/pulse-oximeter" },
     { label: "CGM Devices", href: "/devices/cgm" },
   ],
+
   Company: [
     { label: "About Us", href: "/about" },
-    { label: "Articles", href: "/articles" },
-    { label: "Contact", href: "/contact" },
-    { label: "Careers", href: "/careers" },
-    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Partnership", href: "/partnership" },
+{ label: "FAQs", href: "/faqs" },   
+{ label: "Contact", href: "/contact" },
+    
   ],
 };
 
 const socialLinks = [
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/company/ccn-health/",
+    href: "#",
     icon: () => (
       <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -120,44 +120,21 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Newsletter Section */}
-        <div className="mt-12 lg:mt-16 p-6 lg:p-8 bg-gray-50 rounded-2xl border border-gray-200">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-            <div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-2">Stay updated</h4>
-              <p className="text-gray-600 text-sm">Get the latest news and updates delivered to your inbox.</p>
-            </div>
-            <div className="flex w-full lg:w-auto gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 lg:w-64 px-4 py-3 bg-white border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors"
-              />
-              <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-purple-700 transition-all duration-300">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </div>
+     
 
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} Tele Health. All rights reserved.
+            © {new Date().getFullYear()} Health Sheild. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
               Privacy
             </Link>
-            <Link href="/terms" className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
+            <Link href="/terms-conditions" className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
               Terms
             </Link>
-            <Link href="/hipaa" className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
-              HIPAA
-            </Link>
-            <Link href="/security" className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
-              Security
-            </Link>
+            
           </div>
         </div>
       </Container>

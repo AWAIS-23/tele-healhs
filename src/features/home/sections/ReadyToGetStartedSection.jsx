@@ -15,6 +15,8 @@ export function ReadyToGetStartedSection() {
     message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -24,10 +26,28 @@ export function ReadyToGetStartedSection() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Patient Inquiry Submitted:", formData);
-    setIsSubmitted(true);
+    setIsLoading(true);
+    setErrorMsg("");
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/leads`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, source: "landing_page" }),
+      });
+      const data = await response.json();
+      if (data.success) {
+        setIsSubmitted(true);
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        setErrorMsg(data.message || "Something went wrong. Please try again.");
+      }
+    } catch {
+      setErrorMsg("Network error. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -161,13 +181,17 @@ export function ReadyToGetStartedSection() {
                     />
                   </div>
 
+                  {errorMsg && (
+                    <p className="text-sm text-red-600 text-center">{errorMsg}</p>
+                  )}
                   <Button
                     type="submit"
                     variant="primary"
                     size="lg"
-                    className="w-full bg-[#0e4060] hover:bg-[#0a2e45] text-white py-3.5 rounded-xl shadow-lg"
+                    disabled={isLoading}
+                    className="w-full bg-[#0e4060] hover:bg-[#0a2e45] text-white py-3.5 rounded-xl shadow-lg disabled:opacity-60"
                   >
-                    Submit Your Information
+                    {isLoading ? "Submitting..." : "Submit Your Information"}
                   </Button>
                 </form>
               )}

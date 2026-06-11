@@ -1,4 +1,4 @@
-import { Layout } from "@/components/Layout";
+import { FunnelLayout } from "@/components/FunnelLayout";
 import FunnelPage from "@/features/funnel/page";
 
 export const metadata = {
@@ -8,7 +8,8 @@ export const metadata = {
 
 export default function Page() {
   return (
-  
+    <FunnelLayout>
       <FunnelPage />
+    </FunnelLayout>
   );
 }

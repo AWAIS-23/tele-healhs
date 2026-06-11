@@ -54,6 +54,8 @@ export function ContactForm() {
     message: "",
   });
   const [focused, setFocused] = useState({});
+  const [status, setStatus] = useState("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -66,6 +68,30 @@ export function ContactForm() {
   const handleBlur = (name, value) => {
     if (!value) {
       setFocused({ ...focused, [name]: false });
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("loading");
+    setErrorMsg("");
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/leads`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, source: "contact_us" }),
+      });
+      const data = await response.json();
+      if (data.success) {
+        setStatus("success");
+        setFormData({ name: "", email: "", company: "", message: "" });
+      } else {
+        setStatus("error");
+        setErrorMsg(data.message || "Something went wrong. Please try again.");
+      }
+    } catch {
+      setStatus("error");
+      setErrorMsg("Network error. Please try again.");
     }
   };
 
@@ -112,7 +138,18 @@ export function ContactForm() {
           {/* Success indicator decoration */}
           <div className="absolute -top-3 -right-3 w-20 h-20 bg-gradient-to-br from-[#2E8B57] to-[#256eff] rounded-2xl opacity-20 blur-xl" />
 
-          <form className="relative space-y-8">
+          {status === "success" ? (
+            <div className="text-center py-10">
+              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-1">Message Sent!</h3>
+              <p className="text-sm text-gray-500">We'll get back to you within 24 hours.</p>
+            </div>
+          ) : (
+          <form onSubmit={handleSubmit} className="relative space-y-8">
             {/* Name & Email Row */}
             <div className="grid sm:grid-cols-2 gap-6">
               {formFields.slice(0, 2).map((field) => (
@@ -200,18 +237,24 @@ export function ContactForm() {
 
             {/* Submit Button */}
             <div className="pt-4">
+              {errorMsg && (
+                <p className="text-sm text-red-600 text-center mb-3">{errorMsg}</p>
+              )}
               <Button
+                type="submit"
                 size="lg"
-                className="w-full py-4 text-base font-semibold shadow-lg shadow-[#256eff]/25 hover:shadow-xl hover:shadow-[#256eff]/30 hover:-translate-y-0.5 transition-all duration-300"
+                disabled={status === "loading"}
+                className="w-full py-4 text-base font-semibold shadow-lg shadow-[#256eff]/25 hover:shadow-xl hover:shadow-[#256eff]/30 hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-60"
                 showArrow
               >
-                Send Message
+                {status === "loading" ? "Sending..." : "Send Message"}
               </Button>
               <p className="text-center text-sm text-[#6b7c93] mt-4">
                 We respect your privacy. Your information is secure with us.
               </p>
             </div>
           </form>
+          )}
         </Card>
 
         {/* Trust Badges */}

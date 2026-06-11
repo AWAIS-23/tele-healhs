@@ -44,20 +44,12 @@ const navItems = [
       { name: "Telehealth Consultations", desc: "Virtual doctor appointments", icon: "video", color: "red" },
     ],
   },
-  {
-    label: "Articles",
-    href: "/articles",
-    hasDropdown: true,
-    dropdownItems: [
-      { name: "Latest Articles", desc: "Most recent healthcare insights", icon: "article", color: "blue", href: "/articles" },
-      { name: "Patient Success Stories", desc: "Real patient experiences", icon: "story", color: "green", href: "/articles/success-stories" },
-      { name: "Healthcare Tips", desc: "Expert health advice", icon: "tips", color: "orange", href: "/articles/tips" },
-      { name: "Technology Updates", desc: "Latest in telehealth tech", icon: "tech", color: "purple", href: "/articles/tech" },
-    ],
-  },
-  { label: "Contact Us", href: "/contact" },
+ { label: "Products", href: "/" },
   { label: "Partnership", href: "/partnership" },
-  { label: "FAQ", href: "/faqs" }, 
+ { label: "FAQ", href: "/faqs" }, 
+  { label: "Contact Us", href: "/contact" },
+
+ 
 ];
 
 export function Header() {

@@ -55,6 +55,8 @@ export function ContactHero() {
     message: "",
   });
   const [focused, setFocused] = useState({});
+  const [status, setStatus] = useState("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -70,11 +72,35 @@ export function ContactHero() {
     }
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("loading");
+    setErrorMsg("");
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/leads`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, source: "contact_us" }),
+      });
+      const data = await response.json();
+      if (data.success) {
+        setStatus("success");
+        setFormData({ name: "", email: "", company: "", message: "" });
+      } else {
+        setStatus("error");
+        setErrorMsg(data.message || "Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      setStatus("error");
+      setErrorMsg("Network error. Please try again.");
+    }
+  };
+
 
   return (
     <section className="relative overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 ">
           <div>
             <Badge
               variant="blue"
@@ -116,7 +142,20 @@ export function ContactHero() {
           {/* Success indicator decoration */}
           <div className="absolute -top-3 -right-3 w-20 h-20 bg-gradient-to-br from-[#2E8B57] to-[#256eff] rounded-2xl opacity-20 blur-xl" />
 
-          <form className="relative space-y-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Us</h2>
+
+          {status === "success" ? (
+            <div className="text-center py-10">
+              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-1">Message Sent!</h3>
+              <p className="text-sm text-gray-500">We'll get back to you within 24 hours.</p>
+            </div>
+          ) : (
+          <form onSubmit={handleSubmit} className="relative space-y-8">
             {/* Name & Email Row */}
             <div className="grid sm:grid-cols-2 gap-6">
               {formFields.slice(0, 2).map((field) => (
@@ -204,18 +243,27 @@ export function ContactHero() {
 
             {/* Submit Button */}
             <div className="pt-4">
-              <Button
-                size="lg"
-                className="w-full py-4 text-base font-semibold shadow-lg shadow-[#256eff]/25 hover:shadow-xl hover:shadow-[#256eff]/30 hover:-translate-y-0.5 transition-all duration-300"
-                showArrow
+              {errorMsg && (
+                <p className="text-sm text-red-600 text-center mb-3">{errorMsg}</p>
+              )}
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className="w-full inline-flex items-center justify-center gap-2 py-4 text-base font-semibold text-white rounded-lg shadow-lg bg-gradient-to-r from-[#256eff] to-[#2E8B57] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Send Message
-              </Button>
+                {status === "loading" ? "Sending..." : "Send Message"}
+                {status !== "loading" && (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                  </svg>
+                )}
+              </button>
               <p className="text-center text-sm text-[#6b7c93] mt-4">
                 We respect your privacy. Your information is secure with us.
               </p>
             </div>
           </form>
+          )}
         </Card>
 
             </div>

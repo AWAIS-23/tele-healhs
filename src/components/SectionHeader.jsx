@@ -29,11 +29,7 @@ export function SectionHeader({
       ) : (
         (badgeText || icon) && (
           <div className="flex items-center gap-3 mb-4">
-            {icon && (
-              <div className={`flex items-center justify-center w-10 h-10 rounded-full ${badgeIconBg} ${badgeIconColor}`}>
-                {icon}
-              </div>
-            )}
+            
             {badgeText && (
               <p className={`text-xs font-semibold  uppercase tracking-wider ${badgeTextColor}`}>
                 {badgeText}

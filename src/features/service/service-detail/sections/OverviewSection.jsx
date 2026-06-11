@@ -43,9 +43,7 @@ export default function OverviewSection({ data }) {
                 </>
               )}
             </h2>
-            <p className="text-gray-600 text-[16px] leading-relaxed mb-8">
-              {overview}
-            </p>
+            <p className="text-gray-600 text-[16px] leading-relaxed mb-8" dangerouslySetInnerHTML={{ __html: overview }} />
             <ul className="space-y-4">
               {Array.isArray(overviewFeatures)
                 ? overviewFeatures.map((item, index) => (
