@@ -17,8 +17,6 @@ export default function AboutPage() {
         <AboutMission />
         <AboutStory />
         <AboutSecurity />
-        <AboutTestimonials />
-        <AboutContact />
       </main>
     </div>
   );

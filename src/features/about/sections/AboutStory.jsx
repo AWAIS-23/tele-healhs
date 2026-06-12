@@ -1,106 +1,99 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { SectionHeader } from "@/components";
+import Image from "next/image";
+import whatWeDoImg from "../../../assets/images/about/what-we-do.webp";
 
-
-const timeline = [
-  { year: "2020", title: "Founded in Los Angeles", desc: "tele Health launched with a bold thesis: care management software was broken. We set out to build the most intuitive RPM platform from scratch, engineering-first.", dot: "bg-blue-500", badge: "bg-blue-100 text-blue-700 border-blue-200", card: "bg-gradient-to-br from-blue-50 to-white border-blue-100" },
-  { year: "2020", title: "First EHR Integration", desc: "Shipped our first bi-directional EHR integration with PointClickCare, delivering real-time vital sign sync to senior living facilities across the US.", dot: "bg-indigo-500", badge: "bg-indigo-100 text-indigo-700 border-indigo-200", card: "bg-gradient-to-br from-indigo-50 to-white border-indigo-100" },
-  { year: "2021", title: "Five Programs, One Platform", desc: "Expanded from RPM to deliver CCM, PCM, BHI, and RTM on a single unified platform — automated billing and clinical documentation across all five programs.", dot: "bg-purple-500", badge: "bg-purple-100 text-purple-700 border-purple-200", card: "bg-gradient-to-br from-purple-50 to-white border-purple-100" },
-  { year: "2022", title: "Nationwide Coverage", desc: "Deployed across all 50 states with enterprise-grade HIPAA infrastructure. Supporting providers at every scale — from solo practices to health systems.", dot: "bg-pink-500", badge: "bg-pink-100 text-pink-700 border-pink-200", card: "bg-gradient-to-br from-pink-50 to-white border-pink-100" },
-  { year: "2023", title: "25+ FDA Devices", desc: "Built the industry's most device-agnostic platform: 25+ FDA-cleared monitors from Tenovi, Omron, Dexcom, and more. Any device, any patient.", dot: "bg-orange-500", badge: "bg-orange-100 text-orange-700 border-orange-200", card: "bg-gradient-to-br from-orange-50 to-white border-orange-100" },
-  { year: "2024", title: "1B+ Transactions", desc: "Surpassed one billion data transactions flowing in real time between devices, clinical staff, EHR systems, and Medicare programs.", dot: "bg-emerald-500", badge: "bg-emerald-100 text-emerald-700 border-emerald-200", card: "bg-gradient-to-br from-emerald-50 to-white border-emerald-100" },
-  { year: "2025", title: "Next-Gen Integration", desc: "Pioneering contactless radar-based vital sign detection, continuous glucose monitoring, and AI-driven predictive alerting.", dot: "bg-teal-500", badge: "bg-teal-100 text-teal-700 border-teal-200", card: "bg-gradient-to-br from-teal-50 to-white border-teal-100" },
+const whatWeHelp = [
+  { text: "Stay healthier at home", color: "bg-blue-100 text-blue-600" },
+  { text: "Better manage chronic conditions", color: "bg-emerald-100 text-emerald-600" },
+  { text: "Receive regular support from a dedicated care team", color: "bg-purple-100 text-purple-600" },
+  { text: "Avoid unnecessary hospital visits", color: "bg-orange-100 text-orange-600" },
+  { text: "Stay connected with your doctors", color: "bg-teal-100 text-teal-600" },
+  { text: "Give family members greater peace of mind", color: "bg-pink-100 text-pink-600" },
 ];
 
+const conditions = ["diabetes", "heart disease", "COPD", "high blood pressure", "multiple chronic conditions"];
+
 export function AboutStory() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const itemRefs = useRef([]);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
-
-      itemRefs.current.forEach((ref, index) => {
-        if (ref) {
-          const rect = ref.getBoundingClientRect();
-          const elementTop = rect.top + window.scrollY;
-          const elementBottom = elementTop + rect.height;
-
-          if (scrollPosition >= elementTop && scrollPosition <= elementBottom) {
-            setActiveIndex(index);
-          }
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <section className="relative bg-gray-50 py-16 md:py-20 lg:py-24 overflow-hidden">
+    <section className="relative bg-white py-16 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          align="center"
-          badgeText="Our Story"
-          icon={
-            <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          }
-          title={
-            <>
-              Seven years of <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">building.</span>
-            </>
-          }
-          description="From a simple idea in LA to a nationwide platform powering five Medicare programs across 50 states."
-          badgeIconBg="bg-blue-100 border border-blue-200"
-          titleClassName="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
-          descClassName="max-w-2xl mx-auto text-gray-600 text-[16px] leading-relaxed"
-          className="mb-16"
-        />
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          {/* Left: What We Do */}
+          <div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 border border-emerald-200 mb-6">
+              <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-sm font-medium text-emerald-800">What We Do</span>
+            </div>
 
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+              We Help You
+            </h2>
+            <p className="text-gray-500 text-[15px] mb-8">Our dedicated care team supports you every step of the way.</p>
 
-        <div className="relative">
-          {/* Center line — desktop only */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-gradient-to-b from-blue-300 via-indigo-300 via-purple-300 via-pink-300 via-orange-300 via-emerald-300 to-teal-300 rounded-full" />
-
-          {/* Mobile line */}
-          <div className="md:hidden absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-300 via-indigo-300 via-purple-300 via-pink-300 via-orange-300 via-emerald-300 to-teal-300 rounded-full" />
-
-          <div className="space-y-8 md:space-y-12">
-            {timeline.map((item, i) => {
-              const isActive = activeIndex === i;
-              const isLeft = i % 2 === 0;
-              return (
-                <div key={i} className="relative md:flex md:items-center md:justify-between">
-                  {/* Dot */}
-                  <div className={`absolute ${isLeft ? "md:left-1/2 md:-translate-x-1/2" : "md:left-1/2 md:-translate-x-1/2"} left-6 top-6 md:top-1/2 md:-translate-y-1/2 w-4 h-4 rounded-full ${item.dot} border-4 border-white shadow-lg z-10 transition-all duration-500 ${isActive ? "scale-150" : "scale-100"}`} />
-
-                  {/* Card — left side on desktop for even items */}
-                  <div
-                    ref={el => itemRefs.current[i] = el}
-                    className={`md:w-[45%] ${isLeft ? "md:pr-8" : "md:order-3 md:pl-8"}`}
-                  >
-                    <div className={`relative rounded-2xl border p-5 md:p-6 transition-all duration-500 ${item.card} hover:shadow-lg hover:-translate-y-0.5`}>
-                      <div className="flex items-center gap-3 mb-3">
-                        <span className={`text-xs font-bold px-2.5 py-1 rounded-lg border transition-all duration-500 ${item.badge}`}>{item.year}</span>
-                        <h3 className="text-base md:text-lg font-semibold text-gray-900 tracking-tight">{item.title}</h3>
-                      </div>
-                      <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
-                    </div>
+            <div className="space-y-3 mb-10">
+              {whatWeHelp.map((item, i) => (
+                <div key={i} className="flex items-center gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all duration-200">
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${item.color}`}>
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
                   </div>
-
-                  {/* Spacer for opposite side */}
-                  <div className={`hidden md:block md:w-[45%] ${isLeft ? "md:order-3" : "md:order-1"}`} />
+                  <span className="text-gray-700 font-medium text-[15px]">{item.text}</span>
                 </div>
-              );
-            })}
+              ))}
+            </div>
+
+            <div className="p-5 rounded-2xl bg-blue-50 border border-blue-100">
+              <p className="text-gray-700 text-[15px] leading-relaxed">
+                Whether you're managing{" "}
+                {conditions.map((c, i) => (
+                  <span key={i}>
+                    <strong className="text-blue-700">{c}</strong>
+                    {i < conditions.length - 1 ? ", " : ""}
+                  </span>
+                ))}, our goal is simple:{" "}
+                <strong className="text-gray-900">Help you live healthier and more independently.</strong>
+              </p>
+            </div>
+          </div>
+
+          {/* Right: Image + Partner + Peace of Mind */}
+          <div className="space-y-8">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+            
+            </div>
+            <div className="rounded-2xl bg-gradient-to-br from-indigo-50 to-blue-50 border border-indigo-100 p-8">
+              <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-5 shadow-md">
+                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">A Partner to Your Existing Doctor</h3>
+              <p className="text-gray-600 text-[15px] leading-relaxed mb-4">
+                Health Shield does <strong className="text-gray-800">not</strong> replace your doctor. Instead, we work alongside your healthcare providers to help monitor your progress, coordinate your care, and identify concerns early.
+              </p>
+              <p className="text-gray-600 text-[15px] leading-relaxed">
+                By keeping everyone connected, we help ensure nothing falls through the cracks.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-100 p-8">
+              <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-5 shadow-md">
+                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Peace of Mind for Patients and Families</h3>
+              <p className="text-gray-600 text-[15px] leading-relaxed">
+                Many of our patients aren't the only ones benefiting from Health Shield. Adult children, spouses, and caregivers often tell us they feel more confident knowing someone is regularly checking in and helping monitor their loved one's health.
+              </p>
+              <p className="mt-3 text-emerald-700 font-medium text-[15px]">
+                Because better care should bring peace of mind to the entire family.
+              </p>
+            </div>
           </div>
         </div>
       </div>

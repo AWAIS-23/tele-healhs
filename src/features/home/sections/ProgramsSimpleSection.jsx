@@ -8,10 +8,10 @@ import { Badge } from "../../../components/Badge";
 const programs = [
   {
     id: "ccm",
-    name: "Chronic Care Management (CCM)",
-    short: "CCM",
-    desc: "Ongoing support for your long-term conditions",
-    details: "CCM coordinates care for patients living with multiple chronic conditions. Our team works with you regularly to help manage medication, appointments, and care plans.",
+    name: "Ongoing Support for Long-Term Conditions",
+    short: "Chronic Care",
+    desc: "Personal care coordination for your ongoing health needs",
+    details: "Our care team works with you regularly to help manage medications, coordinate appointments, and keep your care plan on track — all from the comfort of home.",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
@@ -24,10 +24,10 @@ const programs = [
   },
   {
     id: "rpm",
-    name: "Remote Patient Monitoring (RPM)",
-    short: "RPM",
-    desc: "Devices that track blood pressure, blood sugar, weight, and more",
-    details: "RPM provides you with easy-to-use FDA-cleared devices. Vitals are sent directly to our clinicians in real-time, allowing for proactive, daily check-ins.",
+    name: "Daily Health Monitoring From Home",
+    short: "Health Monitoring",
+    desc: "Simple devices that track your vitals every day",
+    details: "We provide easy-to-use devices to track blood pressure, blood sugar, weight, and more. Your readings are sent to our care team so we can catch concerns early.",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
@@ -40,10 +40,10 @@ const programs = [
   },
   {
     id: "rtm",
-    name: "Remote Therapeutic Monitoring (RTM)",
-    short: "RTM",
-    desc: "Support for therapy and medication adherence",
-    details: "RTM tracks therapy responses and drug efficacy. We monitor pain levels, respiratory status, and medication compliance to ensure optimal therapeutic outcomes.",
+    name: "Therapy & Recovery Support",
+    short: "Therapy Support",
+    desc: "Help with medications, therapy, and recovery progress",
+    details: "We track how you're responding to treatments, monitor pain levels, and help you stay on track with medications — ensuring the best results from your care plan.",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
         <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 9.172V5L8 4z" />
@@ -56,10 +56,10 @@ const programs = [
   },
   {
     id: "tcm",
-    name: "Transitional Care Management (TCM)",
-    short: "TCM",
-    desc: "Extra help after a hospital stay",
-    details: "TCM ensures a safe transition back home. We help schedule follow-ups, coordinate care, avoid medication conflicts, and prevent unnecessary re-hospitalizations.",
+    name: "Extra Support After a Hospital Stay",
+    short: "Post-Hospital Care",
+    desc: "Smooth transition home with dedicated follow-up care",
+    details: "After a hospital stay, we help ensure a safe recovery at home. We coordinate follow-up appointments, manage medications, and prevent readmissions.",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
         <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />

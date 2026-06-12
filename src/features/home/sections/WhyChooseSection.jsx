@@ -68,9 +68,6 @@ export function WhyChooseSection() {
     <section className="relative bg-gray-50 py-16 md:py-20 lg:py-24 overflow-hidden border-t border-gray-100">
       <Container>
         <div className="flex items-center justify-center">
-          <Badge variant="blue" showDot className="mb-6" >
-            Why Choose Health Shield?
-          </Badge>
         </div>
         <SectionHeader
           align="center"

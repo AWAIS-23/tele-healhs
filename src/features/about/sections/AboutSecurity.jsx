@@ -1,93 +1,57 @@
 "use client";
 
-import { Card } from "@/components/Card";
-import { SectionHeader } from "@/components";
-
-
-const securityItems = [
-  {
-    title: "HIPAA Compliant",
-    desc: "Every layer of the platform is engineered for HIPAA compliance from the ground up. Automated safeguards and continuous monitoring.",
-    icon: (
-      <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
-      </svg>
-    ),
-    iconBg: "bg-gradient-to-br from-blue-500 to-blue-600",
-    cardBg: "bg-gradient-to-br from-blue-50 to-white border-blue-100",
-  },
-  {
-    title: "End-to-End Encryption",
-    desc: "Data encrypted in transit and at rest. TLS 1.3, AES-256, role-based access controls, and zero-knowledge architecture.",
-    icon: (
-      <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <rect width="18" height="11" x="3" y="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" />
-      </svg>
-    ),
-    iconBg: "bg-gradient-to-br from-emerald-500 to-emerald-600",
-    cardBg: "bg-gradient-to-br from-emerald-50 to-white border-emerald-100",
-  },
-  {
-    title: "BAA Included",
-    desc: "Business Associate Agreements with every infrastructure partner and customer. Full legal compliance documentation.",
-    icon: (
-      <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" /><path d="M14 2v5a1 1 0 0 0 1 1h5" /><path d="m9 15 2 2 4-4" />
-      </svg>
-    ),
-    iconBg: "bg-gradient-to-br from-purple-500 to-purple-600",
-    cardBg: "bg-gradient-to-br from-purple-50 to-white border-purple-100",
-  },
-  {
-    title: "SOC 2 In Progress",
-    desc: "Actively pursuing SOC 2 Type II certification with continuous monitoring and audit-ready documentation.",
-    icon: (
-      <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <rect width="20" height="8" x="2" y="2" rx="2" ry="2" /><rect width="20" height="8" x="2" y="14" rx="2" ry="2" /><line x1="6" x2="6.01" y1="6" y2="6" /><line x1="6" x2="6.01" y1="18" y2="18" />
-      </svg>
-    ),
-    iconBg: "bg-gradient-to-br from-orange-500 to-orange-600",
-    cardBg: "bg-gradient-to-br from-orange-50 to-white border-orange-100",
-  },
-];
+import { Button } from "@/components/Button";
 
 export function AboutSecurity() {
   return (
-    <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 py-16 md:py-20 lg:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          align="center"
-          badgeText="Security & Compliance"
-          icon={
-            <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-              <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
-          }
-          title={
-            <>
-              HIPAA compliant<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">by design.</span>
-            </>
-          }
-          description="Security is not an afterthought — it is foundational to how we build. Automated safeguards, continuous monitoring, and encryption at every layer."
-          badgeIconBg="bg-white border border-blue-200 shadow-sm"
-          titleClassName="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
-          descClassName="text-gray-600 text-[16px] leading-relaxed"
-          className="max-w-3xl mx-auto mb-16"
-        />
+    <section className="relative bg-[#0e4060] py-16 md:py-20 lg:py-24 overflow-hidden">
+      {/* Background decorative circles */}
+      <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/3 pointer-events-none" />
 
+      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-8">
+          <svg className="w-5 h-5 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          <span className="text-sm font-medium text-blue-100">Our Mission</span>
+        </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {securityItems.map((s) => (
-            <div key={s.title} className={`relative rounded-2xl border-2 ${s.cardBg} p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}>
-              <div className={`w-10 h-10 ${s.iconBg} rounded-xl flex items-center justify-center shadow-md mb-4`}>
-                {s.icon}
-              </div>
-              <h3 className="text-[21px!important] !font-semibold text-gray-900 tracking-tight mb-2" style={{ fontSize: '21px!important' }}>{s.title}</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">{s.desc}</p>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold !text-white mb-4 leading-tight">
+          Helping People Stay Healthier, Longer
+        </h2>
+
+        <p className="text-blue-100 text-[17px] leading-relaxed mb-6 max-w-3xl mx-auto">
+          At Health Shield, our mission is to reduce the gap between doctor visits by providing compassionate, continuous support that helps patients stay healthier, safer, and more independent at home.
+        </p>
+
+        <div className="flex items-center justify-center gap-3 mb-10">
+          <div className="h-px w-16 bg-white/30" />
+          <p className="text-white/80 text-[15px] font-medium italic">
+            Continuous Care. Better Health. Peace of Mind.
+          </p>
+          <div className="h-px w-16 bg-white/30" />
+        </div>
+
+        <div className="grid sm:grid-cols-3 gap-5 mb-10">
+          {[
+            { label: "Continuous Care", desc: "Regular check-ins and daily monitoring support", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" },
+            { label: "Better Health", desc: "Proactive support before problems become emergencies", icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" },
+            { label: "Peace of Mind", desc: "For patients, families, and caregivers", icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },
+          ].map((item, i) => (
+            <div key={i} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-left hover:bg-white/15 transition-all duration-300">
+              <svg className="w-8 h-8 text-blue-300 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
+              </svg>
+              <h4 className="!text-white font-bold text-[16px] mb-2">{item.label}</h4>
+              <p className="text-blue-200 text-sm leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
+
+        <Button href="/contact" variant="onDark" size="lg" className="font-semibold shadow-xl hover:bg-blue-50">
+          Get Started with Health Shield
+        </Button>
       </div>
     </section>
   );

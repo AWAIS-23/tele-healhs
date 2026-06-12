@@ -1,91 +1,56 @@
 "use client";
 
-import { Card } from "@/components/Card";
-import { SectionHeader } from "@/components";
-
-
-const missions = [
-  {
-    num: "01",
-    title: "Mission-Driven",
-    desc: "We exist to make remote care management accessible, efficient, and scalable for healthcare teams of every size.",
-    iconBg: "bg-gradient-to-br from-blue-500 to-blue-600",
-    titleColor: "text-blue-600",
-    icon: (
-      <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" />
-      </svg>
-    ),
-  },
-  {
-    num: "02",
-    title: "Engineering-First",
-    desc: "We automate the mundane so clinical staff can focus on what matters most — their patients. Every feature reduces clicks, not adds them.",
-    iconBg: "bg-gradient-to-br from-emerald-500 to-emerald-600",
-    titleColor: "text-emerald-600",
-    icon: (
-      <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <rect x="4" y="4" width="16" height="16" rx="2" /><rect x="8" y="8" width="8" height="8" rx="1" />
-        <path d="M12 20v2" /><path d="M12 2v2" /><path d="M17 20v2" /><path d="M17 2v2" /><path d="M2 12h2" /><path d="M2 17h2" /><path d="M2 7h2" /><path d="M20 12h2" /><path d="M20 17h2" /><path d="M20 7h2" /><path d="M7 20v2" /><path d="M7 2v2" />
-      </svg>
-    ),
-  },
-  {
-    num: "03",
-    title: "User-First Design",
-    desc: "Every workflow, every screen, every interaction is designed around the people who use our platform every day.",
-    iconBg: "bg-gradient-to-br from-purple-500 to-purple-600",
-    titleColor: "text-purple-600",
-    icon: (
-      <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><path d="M16 3.128a4 4 0 0 1 0 7.744" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><circle cx="9" cy="7" r="4" />
-      </svg>
-    ),
-  },
-];
+import Image from "next/image";
+import whyImg from "../../../assets/images/about/why-we-start.webp";
 
 export function AboutMission() {
   return (
-    <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 py-16 md:py-20 lg:py-24">
+    <section id="why-we-started" className="relative bg-gradient-to-br from-blue-50 to-indigo-100 py-16 md:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          align="center"
-          badgeText="Our Mission"
-          icon={
-            <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-          }
-          title={
-            <>
-              Simplifying<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">care management</span>
-            </>
-          }
-          badgeIconBg="bg-blue-100 border border-blue-200"
-          titleClassName="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
-          className="mb-16"
-        />
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Left: Why We Started */}
+          <div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-blue-200 shadow-sm mb-6">
+              <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-sm font-medium text-blue-800">Why We Started</span>
+            </div>
 
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              Why We Started{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Health Shield</span>
+            </h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {missions.map((m) => (
-            <Card key={m.title} variant="round" padding="lg" hover={true}>
-              <div className="flex items-start gap-4 mb-6">
-                <div className="flex-shrink-0">
-                  <div className={`w-12 h-12 ${m.iconBg} rounded-xl flex items-center justify-center shadow-lg`}>
-                    {m.icon}
-                  </div>
+            <p className="text-gray-600 text-[16px] leading-relaxed mb-6">
+              Too often, small health concerns become major problems simply because nobody was checking in.
+            </p>
+
+            <div className="space-y-4 mb-8">
+              {["A missed medication.", "A rising blood pressure.", "A change in symptoms."].map((item, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-blue-500 shrink-0" />
+                  <span className="text-gray-700 text-[16px] font-medium">{item}</span>
                 </div>
-                <div>
-                  <h3 className={`font-bold ${m.titleColor} text-lg`}>{m.title}</h3>
-                </div>
-              </div>
-              <p className="text-gray-600 leading-relaxed">
-                {m.desc}
-              </p>
-            </Card>
-          ))}
+              ))}
+            </div>
+
+            <p className="text-gray-600 text-[16px] leading-relaxed">
+              These issues can lead to unnecessary emergency room visits, hospitalizations, and stress for patients and families.
+              Health Shield was created to close that gap by providing proactive support <strong className="text-gray-800">before problems become emergencies.</strong>
+            </p>
+          </div>
+
+          {/* Right: Image */}
+          <div className="relative hidden lg:block">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src={whyImg}
+                alt="Why we started Health Shield"
+                className="w-full h-auto object-cover rounded-2xl"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

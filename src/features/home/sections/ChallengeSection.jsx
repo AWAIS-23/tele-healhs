@@ -12,15 +12,13 @@ export function ChallengeSection() {
           
           {/* LEFT SIDE: Content */}
           <div>
-            <Badge variant="orange" showDot className="mb-6">
-              The Challenge We&apos;re Solving
-            </Badge>
+            
             <SectionHeader
 
               title={
                 <>
-                  Millions of Americans<br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-rose-500">Deserve Better Support</span>
+                 Between Doctor Visits,<br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-rose-500"> You're Often On Your Owns</span>
                 </>
               }
               titleClassName="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6"
@@ -29,17 +27,15 @@ export function ChallengeSection() {
 
             <div className="space-y-6">
               <p className="text-gray-600 text-[16px] leading-relaxed">
-                If you or a loved one has a chronic condition, you know how easy it is to feel overlooked between doctor visits. Small changes in your health can turn into big problems — leading to unnecessary hospital stays and added stress.
+                Many people living with diabetes, heart disease, COPD, or high blood pressure only see their doctor a few times each year.
               </p>
 
-              <div className="relative pl-6 border-l-4 border-blue-500 py-2 my-6">
-                <p className="text-xl font-semibold text-gray-900 leading-relaxed">
-                  Health Shield closes that gap.
-                </p>
-              </div>
+              <p className="text-gray-600 text-[16px] leading-relaxed">
+                But health problems don't wait for appointments.
+              </p>
 
               <p className="text-gray-600 text-[16px] leading-relaxed">
-                We use simple, proven technology and a dedicated care team to help you stay healthier at home — while making life easier for your doctors and caregivers.
+                Health Shield provides ongoing support between visits, helping catch concerns early and keeping you connected to a care team that knows you.
               </p>
             </div>
 

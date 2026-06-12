@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "./Button";
 import { HeartPulse, Monitor, Bone, Activity, Brain, Smartphone, BarChart3, Video, FileText, BookOpen, Lightbulb, Cpu, ArrowRightLeft } from "lucide-react";
+import logo from "../assets/images/logo.png";
 
 const iconMap = {
   monitor: Monitor,
@@ -147,7 +149,7 @@ export function Header() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center gap-3 group">
-              <img src="/assets/images/logo.png" alt="tele Health Logo" className="w-[170px] h-12 object-contain group-hover:scale-105 transition-all duration-300" />
+              <Image src={logo} alt="Health Shield Logo" width={170} height={48} className="w-[170px] h-12 object-contain group-hover:scale-105 transition-all duration-300" />
             </Link>
           </div>
 
