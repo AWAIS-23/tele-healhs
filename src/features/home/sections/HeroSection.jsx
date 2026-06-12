@@ -109,7 +109,7 @@ export function HeroSection() {
                 src={heroImage}
                 alt="Health Shield Remote Care"
                 priority
-                className="w-full max-w-[450px] h-auto rounded-2xl object-cover shadow-md"
+                className="w-full  h-auto rounded-2xl object-cover shadow-md"
               />
             </div>
           </div>
