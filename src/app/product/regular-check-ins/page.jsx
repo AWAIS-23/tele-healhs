@@ -1,7 +1,7 @@
 "use client";
 
 import { Layout } from "@/components/Layout";
-import { RegularCheckInsSection } from "@/features/product2/sections/RegularCheckInsSection";
+import { RegularCheckInsSection } from "@/features/HowItWork/sections/RegularCheckInsSection";
 
 export default function RegularCheckInsPage() {
   return (

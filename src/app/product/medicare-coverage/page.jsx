@@ -1,7 +1,7 @@
 "use client";
 
 import { Layout } from "@/components/Layout";
-import { MedicareCoverageSection } from "@/features/product2/sections/MedicareCoverageSection";
+import { MedicareCoverageSection } from "@/features/HowItWork/sections/MedicareCoverageSection";
 
 export default function MedicareCoveragePage() {
   return (

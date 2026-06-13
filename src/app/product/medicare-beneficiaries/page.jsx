@@ -1,7 +1,7 @@
 "use client";
 
 import { Layout } from "@/components/Layout";
-import { MedicareBeneficiariesSection } from "@/features/product1/sections/MedicareBeneficiariesSection";
+import { MedicareBeneficiariesSection } from "@/features/howWeHelp/sections/MedicareBeneficiariesSection";
 
 export default function MedicareBeneficiariesPage() {
   return (

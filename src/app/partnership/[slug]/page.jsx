@@ -7,7 +7,8 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 export async function generateStaticParams() {
   try {
     if (!API_BASE_URL) {
-      return [];
+      // Return placeholder for static export when API is not available
+      return [{ slug: 'example' }];
     }
 
     const res = await fetch(`${API_BASE_URL}/partnerships?limit=1000&status=published`, {
@@ -24,7 +25,8 @@ export async function generateStaticParams() {
     console.error('Failed to generate static params for partnerships:', error);
   }
 
-  return [];
+  // Return placeholder for static export
+  return [{ slug: 'example' }];
 }
 
 export default async function PartnershipSlugPage({ params }) {

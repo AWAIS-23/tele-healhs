@@ -1,7 +1,7 @@
 "use client";
 
 import { Layout } from "@/components/Layout";
-import { HospitalizedPatientsSection } from "@/features/product1/sections/HospitalizedPatientsSection";
+import { HospitalizedPatientsSection } from "@/features/howWeHelp/sections/HospitalizedPatientsSection";
 
 export default function HospitalizedPatientsPage() {
   return (

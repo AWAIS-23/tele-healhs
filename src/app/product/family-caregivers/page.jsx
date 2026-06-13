@@ -1,7 +1,7 @@
 "use client";
 
 import { Layout } from "@/components/Layout";
-import { FamilyCaregiversSection } from "@/features/product1/sections/FamilyCaregiversSection";
+import { FamilyCaregiversSection } from "@/features/howWeHelp/sections/FamilyCaregiversSection";
 
 export default function FamilyCaregiversPage() {
   return (
