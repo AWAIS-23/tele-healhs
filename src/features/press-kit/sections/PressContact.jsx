@@ -92,7 +92,7 @@ export function PressContact() {
                 </div>
                 <div>
                   <p className="font-medium text-gray-900">LinkedIn</p>
-                  <a href="#" className="text-blue-600 hover:underline">tele Health</a>
+                  <a href="#" className="text-blue-600 hover:underline">Health Shield</a>
                 </div>
               </div>
 

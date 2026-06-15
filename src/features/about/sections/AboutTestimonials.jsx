@@ -5,12 +5,12 @@ import { SectionHeader } from "@/components";
 
 
 const testimonials = [
-  { quote: "When we brought Xandar Kardian integration to market with tele Health, their team moved faster than any partner we've worked with. From technical integration to live patient monitoring in weeks.", name: "Andrew Wheeler", role: "VP, GTM Strategy & Operations", company: "Tenovi" },
+  { quote: "When we brought Xandar Kardian integration to market with Health Shield, their team moved faster than any partner we've worked with. From technical integration to live patient monitoring in weeks.", name: "Andrew Wheeler", role: "VP, GTM Strategy & Operations", company: "Tenovi" },
   { quote: "Working with CCN was so easy. Their CEO took time to meet with our providers and walk them through how to use their clinical dashboard. We absolutely made the right decision to go with CCN.", name: "Robin Shelton", role: "Quality Assurance", company: "Rural Health Services" },
-  { quote: "Partnering with tele Health has been a game-changer — they're everything we look for in an RPM vendor: highly organized, reliable, and incredibly fast at scaling.", name: "Steve Wheeler", role: "VP of Partnerships", company: "Tenovi" },
+  { quote: "Partnering with Health Shield has been a game-changer — they're everything we look for in an RPM vendor: highly organized, reliable, and incredibly fast at scaling.", name: "Steve Wheeler", role: "VP of Partnerships", company: "Tenovi" },
   { quote: "This company is amazing! So easy to work with and very responsive to all requests. It's great to have all our patient vitals flowing directly into their charts.", name: "Stephanie Bryant-Lipp", role: "Senior Quality Manager", company: "Village Medical" },
-  { quote: "Heart failure admissions have decreased noticeably. Over the last three years, we've seen fewer heart attacks and hospitalizations, significantly due to our monitoring efforts with tele Health.", name: "Dr. Dawn Atwal, MD", role: "Cardiologist", company: "Laguna Cardiology" },
-  { quote: "tele Health's Caregiver App transformed our care delivery. It empowered our nursing teams to monitor numerous patients using minimal equipment, significantly reducing overhead costs.", name: "Facility Manager", role: "Operations", company: "Access Healthcare Associates" },
+  { quote: "Heart failure admissions have decreased noticeably. Over the last three years, we've seen fewer heart attacks and hospitalizations, significantly due to our monitoring efforts with Health Shield.", name: "Dr. Dawn Atwal, MD", role: "Cardiologist", company: "Laguna Cardiology" },
+  { quote: "Health Shield's Caregiver App transformed our care delivery. It empowered our nursing teams to monitor numerous patients using minimal equipment, significantly reducing overhead costs.", name: "Facility Manager", role: "Operations", company: "Access Healthcare Associates" },
 ];
 
 function TestimonialCard({ t }) {
@@ -59,7 +59,7 @@ export function AboutTestimonials() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">care teams.</span>
             </>
           }
-          description="Hear what healthcare professionals and partners say about working with tele Health."
+          description="Hear what healthcare professionals and partners say about working with Health Shield."
           badgeIconBg="bg-blue-100 border border-blue-200"
           titleClassName="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
           descClassName="text-gray-600 text-[16px] leading-relaxed"

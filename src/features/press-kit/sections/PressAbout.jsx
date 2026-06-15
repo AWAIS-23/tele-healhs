@@ -11,7 +11,7 @@ export function PressAbout() {
             <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <span className="text-sm font-medium text-blue-800">About tele Health</span>
+            <span className="text-sm font-medium text-blue-800">About Health Shield</span>
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
             Transforming<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">healthcare delivery</span>
@@ -29,7 +29,7 @@ export function PressAbout() {
               <h3 className="font-bold text-blue-600 text-xl">Our Story</h3>
             </div>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Founded in 2020 in Los Angeles, California, tele Health was born from a simple observation: healthcare providers were drowning in administrative tasks while patients struggled to access quality remote care.
+              Founded in 2020 in Los Angeles, California, Health Shield was born from a simple observation: healthcare providers were drowning in administrative tasks while patients struggled to access quality remote care.
             </p>
             <p className="text-gray-600 leading-relaxed">
               We set out to build an engineering-first platform that would automate care management workflows, allowing clinical staff to focus on what matters most — their patients.
@@ -64,7 +64,7 @@ export function PressAbout() {
             <h3 className="font-bold text-purple-600 text-xl">The Problem We Solve</h3>
           </div>
           <p className="text-gray-600 leading-relaxed">
-            Healthcare providers face overwhelming administrative burdens managing chronic care programs. Manual processes, fragmented systems, and lack of automation lead to burnout, reduced patient engagement, and missed revenue opportunities. tele Health solves this by providing an integrated, automated platform that streamlines RPM, CCM, PCM, BHI, and RTM programs across all 50 states.
+            Healthcare providers face overwhelming administrative burdens managing chronic care programs. Manual processes, fragmented systems, and lack of automation lead to burnout, reduced patient engagement, and missed revenue opportunities. Health Shield solves this by providing an integrated, automated platform that streamlines RPM, CCM, PCM, BHI, and RTM programs across all 50 states.
           </p>
         </Card>
       </div>

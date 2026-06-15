@@ -5,28 +5,28 @@ import { Card } from "@/components/Card";
 
 const faqs = [
   {
-    question: "How can I request an interview with tele Health leadership?",
+    question: "How can I request an interview with Health Shield leadership?",
     answer: "To request an interview with our CEO, CTO, or other executives, please email our PR team at press@ccnhealth.com. Include your publication, deadline, and specific topics you'd like to discuss. We typically respond within 24-48 hours.",
   },
   {
-    question: "What Medicare programs does tele Health support?",
-    answer: "tele Health powers five Medicare programs: Remote Patient Monitoring (RPM), Chronic Care Management (CCM), Principal Care Management (PCM), Behavioral Health Integration (BHI), and Remote Therapeutic Monitoring (RTM). Our platform supports all 50 states.",
+    question: "What Medicare programs does Health Shield support?",
+    answer: "Health Shield powers five Medicare programs: Remote Patient Monitoring (RPM), Chronic Care Management (CCM), Principal Care Management (PCM), Behavioral Health Integration (BHI), and Remote Therapeutic Monitoring (RTM). Our platform supports all 50 states.",
   },
   {
     question: "How do I access high-resolution images for publication?",
     answer: "High-resolution images are available in our press kit download. For specific image requests or custom shots, please contact our PR team at press@ccnhealth.com with details about your publication and usage requirements.",
   },
   {
-    question: "Can I use tele Health logos and brand assets?",
+    question: "Can I use Health Shield logos and brand assets?",
     answer: "Yes, our logos and brand assets are available for media use. Please follow our brand guidelines included in the press kit. For custom usage or questions about brand implementation, contact our PR team for approval.",
   },
   {
-    question: "How can healthcare providers partner with tele Health?",
-    answer: "Healthcare providers interested in partnering with tele Health can schedule a consultation through our website or contact our partnerships team at partners@ccnhealth.com. We offer demos, pilot programs, and customized implementation plans.",
+    question: "How can healthcare providers partner with Health Shield?",
+    answer: "Healthcare providers interested in partnering with Health Shield can schedule a consultation through our website or contact our partnerships team at partners@ccnhealth.com. We offer demos, pilot programs, and customized implementation plans.",
   },
   {
-    question: "What is tele Health's stance on data privacy and security?",
-    answer: "tele Health is HIPAA compliant and SOC 2 Type II certified. We maintain the highest standards of data security and privacy. All patient data is encrypted, and we follow strict protocols to protect healthcare information.",
+    question: "What is Health Shield's stance on data privacy and security?",
+    answer: "Health Shield is HIPAA compliant and SOC 2 Type II certified. We maintain the highest standards of data security and privacy. All patient data is encrypted, and we follow strict protocols to protect healthcare information.",
   },
 ];
 

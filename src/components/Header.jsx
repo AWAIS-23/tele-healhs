@@ -46,7 +46,7 @@ const navItems = [
       { name: "Telehealth Consultations", desc: "Virtual doctor appointments", icon: "video", color: "red" },
     ],
   },
- { label: "Products", href: "/" },
+ { label: "Devices", href: "/devices" },
   { label: "Partnership", href: "/partnership" },
  { label: "FAQ", href: "/faqs" }, 
   { label: "Contact Us", href: "/contact" },

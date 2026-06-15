@@ -1,7 +1,7 @@
 import ErrorPage from "@/components/ErrorPage";
 
 export const metadata = {
-  title: "Bad Gateway | Tele Health",
+  title: "Bad Gateway | Health Shield",
   description: "Our server is temporarily unavailable.",
 };
 

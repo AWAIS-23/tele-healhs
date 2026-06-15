@@ -2,8 +2,8 @@ import { Layout } from "@/components/Layout";
 import AboutPage from "@/features/about/page";
 
 export const metadata = {
-  title: "About Us | tele Health",
-  description: "Learn about tele Health — engineering-first care management powering RPM, CCM, PCM, BHI, and RTM across all 50 states.",
+  title: "Continuous Remote Care & Patient Support | Health Shield",
+  description: "Discover Health Shield. We provide continuous remote health monitoring and dedicated care coordination to support patients between doctor visits.",
 };
 
 export default function Page() {

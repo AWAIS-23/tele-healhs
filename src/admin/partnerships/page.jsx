@@ -14,6 +14,14 @@ export default function PartnershipsListPage() {
   const [statusFilter, setStatusFilter] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [permissions, setPermissions] = useState([]);
+
+  useEffect(() => {
+    const storedPermissions = localStorage.getItem("permissions");
+    if (storedPermissions) {
+      setPermissions(JSON.parse(storedPermissions));
+    }
+  }, []);
 
   useEffect(() => {
     fetchPartnerships();
@@ -72,13 +80,15 @@ export default function PartnershipsListPage() {
               <h1 className="text-3xl font-bold text-gray-900">Partnerships</h1>
               <p className="text-gray-600 mt-1">Manage partnership page content</p>
             </div>
-            <Link
-              href="/admin/partnerships/create"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              <Plus className="h-5 w-5" />
-              Create Partnership
-            </Link>
+            {permissions.includes('create_partnerships') && (
+              <Link
+                href="/admin/partnerships/create"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              >
+                <Plus className="h-5 w-5" />
+                Create Partnership
+              </Link>
+            )}
           </div>
 
           <div className="bg-white rounded-xl border border-gray-200 p-4 mb-6">
@@ -148,20 +158,24 @@ export default function PartnershipsListPage() {
                             >
                               <Eye className="h-4 w-4" />
                             </Link>
-                            <Link
-                              href={`/admin/partnerships/edit?id=${item.id}`}
-                              className="p-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg"
-                              title="Edit"
-                            >
-                              <Edit className="h-4 w-4" />
-                            </Link>
-                            <button
-                              onClick={() => handleDelete(item.id)}
-                              className="p-2 text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-lg"
-                              title="Delete"
-                            >
-                              <Trash2 className="h-4 w-4" />
-                            </button>
+                            {permissions.includes('update_partnerships') && (
+                              <Link
+                                href={`/admin/partnerships/edit?id=${item.id}`}
+                                className="p-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg"
+                                title="Edit"
+                              >
+                                <Edit className="h-4 w-4" />
+                              </Link>
+                            )}
+                            {permissions.includes('delete_partnerships') && (
+                              <button
+                                onClick={() => handleDelete(item.id)}
+                                className="p-2 text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-lg"
+                                title="Delete"
+                              >
+                                <Trash2 className="h-4 w-4" />
+                              </button>
+                            )}
                           </div>
                         </td>
                       </tr>

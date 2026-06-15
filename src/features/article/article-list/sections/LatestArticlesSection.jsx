@@ -9,7 +9,7 @@ const staticBlogArticles = [
   {
     id: 1,
     title: "Ethizo RPM & CCM Integration Guide 2026",
-    description: "How tele Health bridges Ethizo with PointClickCare, ALIS, MatrixCare, and August Health — enabling dual-EHR workflows purpose-built for senior care physicians managing patients across facilities.",
+    description: "How Health Shield bridges Ethizo with PointClickCare, ALIS, MatrixCare, and August Health — enabling dual-EHR workflows purpose-built for senior care physicians managing patients across facilities.",
     date: "Apr 23, 2026",
     readTime: "13 min read",
     tags: ["integration-guides", "Ethizo", "RPM Integration"],
@@ -18,7 +18,7 @@ const staticBlogArticles = [
   {
     id: 2,
     title: "Epic RPM & CCM Integration Guide 2026",
-    description: "How tele Health bridges Epic with PointClickCare, ALIS, MatrixCare, and August Health — enabling dual-EHR workflows for RPM, CCM, and all Medicare care management programs in enterprise health systems.",
+    description: "How Health Shield bridges Epic with PointClickCare, ALIS, MatrixCare, and August Health — enabling dual-EHR workflows for RPM, CCM, and all Medicare care management programs in enterprise health systems.",
     date: "Apr 21, 2026",
     readTime: "14 min read",
     tags: ["integration-guides", "Epic", "RPM Integration"],
@@ -27,7 +27,7 @@ const staticBlogArticles = [
   {
     id: 3,
     title: "Charm Health RPM & CCM Integration Guide 2026",
-    description: "How tele Health bridges Charm Health with PointClickCare, ALIS, MatrixCare, and August Health — enabling dual-EHR workflows for independent practices managing patients in senior care facilities.",
+    description: "How Health Shield bridges Charm Health with PointClickCare, ALIS, MatrixCare, and August Health — enabling dual-EHR workflows for independent practices managing patients in senior care facilities.",
     date: "Apr 19, 2026",
     readTime: "13 min read",
     tags: ["integration-guides", "Charm Health", "RPM Integration"],
@@ -45,7 +45,7 @@ const staticBlogArticles = [
   {
     id: 5,
     title: "athenahealth RPM & CCM Integration Guide 2026",
-    description: "How tele Health bridges athenahealth with PointClickCare, ALIS, MatrixCare, and August Health — enabling dual-EHR workflows for RPM, CCM, and all Medicare care management programs.",
+    description: "How Health Shield bridges athenahealth with PointClickCare, ALIS, MatrixCare, and August Health — enabling dual-EHR workflows for RPM, CCM, and all Medicare care management programs.",
     date: "Apr 15, 2026",
     readTime: "14 min read",
     tags: ["integration-guides", "athenahealth", "RPM Integration"],

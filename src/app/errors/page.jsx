@@ -4,7 +4,7 @@ import { Container } from "@/components/Container";
 import ErrorPage from "@/components/ErrorPage";
 
 export const metadata = {
-  title: "Error Pages | Tele Health",
+  title: "Error Pages | Health Shield",
   description: "Error handling pages for various HTTP status codes.",
 };
 

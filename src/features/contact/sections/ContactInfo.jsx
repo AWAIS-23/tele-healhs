@@ -38,7 +38,7 @@ const contactInfo = [
       </svg>
     ),
     title: "LinkedIn",
-    value: "tele Health",
+    value: "Health Shield",
     href: "https://www.linkedin.com/company/ccn-health",
     bg: "bg-white",
     border: "border-purple-200",

@@ -39,7 +39,7 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: "Service Details | tele Health",
+    title: "Service Details | Health Shield",
     description: "Learn more about our remote patient monitoring and chronic care management services.",
   };
 }

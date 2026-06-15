@@ -16,12 +16,12 @@ export function PressHero() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
-              tele Health<br />
+              Health Shield<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Media Resources</span>
             </h1>
 
             <p className=" text-gray-600 text-[16px] leading-relaxed mb-8">
-              Access brand assets, company information, media coverage, and everything you need to tell the tele Health story. Download our complete press kit for quick access to all resources.
+              Access brand assets, company information, media coverage, and everything you need to tell the Health Shield story. Download our complete press kit for quick access to all resources.
             </p>
 
             <div className="flex flex-wrap gap-3 mb-8">

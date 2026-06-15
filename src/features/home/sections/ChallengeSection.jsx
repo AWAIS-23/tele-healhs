@@ -18,7 +18,7 @@ export function ChallengeSection() {
               title={
                 <>
                  Between Doctor Visits,<br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-rose-500"> You're Often On Your Owns</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-rose-500"> You're Often On Your Own</span>
                 </>
               }
               titleClassName="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6"

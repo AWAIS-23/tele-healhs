@@ -2,8 +2,8 @@ import { Layout } from "@/components/Layout";
 import PartnerPage from "@/features/partner/page";
 
 export const metadata = {
-    title: "Partnership | Tele Health",
-    description: "Get in touch with Tele Health — engineering-first care management powering RPM, CCM, PCM, BHI, and RTM across all 50 states.",
+    title: "Healthcare Remote Care Partnerships | Health Shield",
+    description: "Partner with Health Shield to deliver scalable, AI-powered remote care. Boost value-based care revenue for ACOs, hospitals, and medical practices.",
 };
 
 export default function Page() {

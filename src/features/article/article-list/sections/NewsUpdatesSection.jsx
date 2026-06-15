@@ -5,8 +5,8 @@ import { ArrowRight } from "lucide-react";
 const announcements = [
   {
     id: 1,
-    title: "tele Health Ships Automated Reports — Daily, Weekly & Real-Time",
-    description: "Clinical teams were spending the first hour of every day pulling the same data manually. So the tele Health team built four automated reports — out-of-range, compliance, all-patient summaries, and real-time alerts — that deliver everything automatically.",
+    title: "Health Shield Ships Automated Reports — Daily, Weekly & Real-Time",
+    description: "Clinical teams were spending the first hour of every day pulling the same data manually. So the Health Shield team built four automated reports — out-of-range, compliance, all-patient summaries, and real-time alerts — that deliver everything automatically.",
     date: "Mar 20, 2026",
     readTime: "4 min read",
     tags: ["Announcement", "Product", "Reporting"],
@@ -14,8 +14,8 @@ const announcements = [
   },
   {
     id: 2,
-    title: "tele Health Ships Staff Activity Report",
-    description: "Program directors kept asking: 'What is my team actually doing all day?' So the tele Health team built a hub that tracks every staff member across RPM, CCM, and PCM — with charts for everything.",
+    title: "Health Shield Ships Staff Activity Report",
+    description: "Program directors kept asking: 'What is my team actually doing all day?' So the Health Shield team built a hub that tracks every staff member across RPM, CCM, and PCM — with charts for everything.",
     date: "Mar 20, 2026",
     readTime: "4 min read",
     tags: ["Announcement", "Product", "Staff Productivity"],
@@ -23,7 +23,7 @@ const announcements = [
   },
   {
     id: 3,
-    title: "tele Health Ships Audit Readiness Report",
+    title: "Health Shield Ships Audit Readiness Report",
     description: "We noticed a client spending hours before every audit manually checking patient records. So we built a tool that scans every field, flags what's missing, and lets staff fix gaps right from the report.",
     date: "Mar 11, 2026",
     readTime: "3 min read",
@@ -32,8 +32,8 @@ const announcements = [
   },
   {
     id: 4,
-    title: "tele Health Integrates Abbott FreeStyle Libre 3 CGM",
-    description: "tele Health adds Abbott's FreeStyle Libre 3 CGM to its device ecosystem, bringing 14-day sensor wear, minute-by-minute glucose readings, and LibreView cloud integration to RPM programs.",
+    title: "Health Shield Integrates Abbott FreeStyle Libre 3 CGM",
+    description: "Health Shield adds Abbott's FreeStyle Libre 3 CGM to its device ecosystem, bringing 14-day sensor wear, minute-by-minute glucose readings, and LibreView cloud integration to RPM programs.",
     date: "Mar 9, 2026",
     readTime: "3 min read",
     tags: ["Announcement", "Integration", "FreeStyle Libre"],
@@ -41,8 +41,8 @@ const announcements = [
   },
   {
     id: 5,
-    title: "tele Health Showcases Contactless RPM at HIMSS 2026",
-    description: "tele Health, Tenovi, and Xandar Kardian partner to bring contactless radar-based patient monitoring to senior living, with a live demo at HIMSS 2026 Booth 4064.",
+    title: "Health Shield Showcases Contactless RPM at HIMSS 2026",
+    description: "Health Shield, Tenovi, and Xandar Kardian partner to bring contactless radar-based patient monitoring to senior living, with a live demo at HIMSS 2026 Booth 4064.",
     date: "Mar 9, 2026",
     readTime: "3 min read",
     tags: ["Announcement", "Partnership", "Tenovi"],
@@ -50,8 +50,8 @@ const announcements = [
   },
   {
     id: 6,
-    title: "tele Health Adds August Health to Senior Living EHR Network",
-    description: "tele Health integrates with August Health's senior living EHR to automate resident data sync, vital sign charting, and billing documentation.",
+    title: "Health Shield Adds August Health to Senior Living EHR Network",
+    description: "Health Shield integrates with August Health's senior living EHR to automate resident data sync, vital sign charting, and billing documentation.",
     date: "Feb 26, 2026",
     readTime: "3 min read",
     tags: ["Announcement", "Integration", "August Health"],

@@ -3,7 +3,7 @@ import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 
 export const metadata = {
-  title: "Page Not Found | Tele Health",
+  title: "Page Not Found | Health Shield",
   description: "The page you're looking for doesn't exist.",
 };
 

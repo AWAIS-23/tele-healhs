@@ -23,6 +23,14 @@ export default function ServicesListPage() {
   const [statusFilter, setStatusFilter] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [permissions, setPermissions] = useState([]);
+
+  useEffect(() => {
+    const storedPermissions = localStorage.getItem("permissions");
+    if (storedPermissions) {
+      setPermissions(JSON.parse(storedPermissions));
+    }
+  }, []);
 
   useEffect(() => {
     fetchServices();
@@ -84,13 +92,15 @@ export default function ServicesListPage() {
               <h1 className="text-3xl font-bold text-gray-900">Services</h1>
               <p className="text-gray-600 mt-1">Manage your services</p>
             </div>
-            <Link
-              href="/admin/services/create"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              <Plus className="h-5 w-5" />
-              Create Service
-            </Link>
+            {permissions.includes('create_services') && (
+              <Link
+                href="/admin/services/create"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              >
+                <Plus className="h-5 w-5" />
+                Create Service
+              </Link>
+            )}
           </div>
 
           {/* Filters */}
@@ -191,20 +201,24 @@ export default function ServicesListPage() {
                               >
                                 <Eye className="h-4 w-4" />
                               </Link>
-                              <Link
-                                href={`/admin/services/edit?id=${service.id}`}
-                                className="p-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg"
-                                title="Edit"
-                              >
-                                <Edit className="h-4 w-4" />
-                              </Link>
-                              <button
-                                onClick={() => handleDelete(service.id)}
-                                className="p-2 text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-lg"
-                                title="Delete"
-                              >
-                                <Trash2 className="h-4 w-4" />
-                              </button>
+                              {permissions.includes('update_services') && (
+                                <Link
+                                  href={`/admin/services/edit?id=${service.id}`}
+                                  className="p-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg"
+                                  title="Edit"
+                                >
+                                  <Edit className="h-4 w-4" />
+                                </Link>
+                              )}
+                              {permissions.includes('delete_services') && (
+                                <button
+                                  onClick={() => handleDelete(service.id)}
+                                  className="p-2 text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-lg"
+                                  title="Delete"
+                                >
+                                  <Trash2 className="h-4 w-4" />
+                                </button>
+                              )}
                             </div>
                           </td>
                         </tr>

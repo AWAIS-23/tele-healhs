@@ -1,7 +1,7 @@
 import ErrorPage from "@/components/ErrorPage";
 
 export const metadata = {
-  title: "Too Many Requests | Tele Health",
+  title: "Too Many Requests | Health Shield",
   description: "You've made too many requests. Please try again later.",
 };
 

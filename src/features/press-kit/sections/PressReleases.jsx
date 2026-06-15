@@ -4,13 +4,13 @@ import { Card } from "@/components/Card";
 
 const pressReleases = [
   {
-    title: "tele Health Expands to All 50 States with New Medicare Program Coverage",
+    title: "Health Shield Expands to All 50 States with New Medicare Program Coverage",
     date: "April 2024",
     category: "Expansion",
     excerpt: "Leading care management platform now supports RPM, CCM, PCM, BHI, and RTM programs nationwide.",
   },
   {
-    title: "tele Health Secures $50M Series B Funding to Accelerate Growth",
+    title: "Health Shield Secures $50M Series B Funding to Accelerate Growth",
     date: "March 2024",
     category: "Funding",
     excerpt: "New funding will fuel product development, team expansion, and market penetration across healthcare verticals.",
@@ -22,7 +22,7 @@ const pressReleases = [
     excerpt: "Strategic collaboration to support healthcare startups and drive innovation in digital health.",
   },
   {
-    title: "tele Health Achieves SOC 2 Type II Certification",
+    title: "Health Shield Achieves SOC 2 Type II Certification",
     date: "January 2024",
     category: "Security",
     excerpt: "Certification reinforces commitment to data security and compliance for healthcare providers.",

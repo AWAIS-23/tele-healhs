@@ -1,5 +1,12 @@
 import PrivacyPolicyPage from "@/features/privacy-policy/page";
+import { Layout } from "@/components/Layout";
 
 export default function PrivacyPage() {
-  return <PrivacyPolicyPage />;
+  return (
+    <Layout>
+      <div>
+        <PrivacyPolicyPage />
+      </div>
+    </Layout>
+  );
 }

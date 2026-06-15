@@ -68,11 +68,11 @@ export function FunnelHero() {
     setErrorMsg("");
 
     try {
-      console.log("🚀 Sending request to:", `${API_BASE_URL}/discovery-calls`);
-      const response = await fetch(`${API_BASE_URL}/discovery-calls`, {
+      console.log("🚀 Sending request to:", `${API_BASE_URL}/leads`);
+      const response = await fetch(`${API_BASE_URL}/leads`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({ ...formData, source: "funnel" })
       });
 
       console.log("📡 Response status:", response.status);

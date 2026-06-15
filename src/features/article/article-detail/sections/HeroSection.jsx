@@ -12,7 +12,7 @@ export default function HeroSection() {
             Ethizo RPM & CCM Integration Guide 2026
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-gray-600">
-            How tele Health bridges Ethizo with PointClickCare, ALIS, MatrixCare, and August Health — enabling dual-EHR workflows purpose-built for senior care physicians managing patients across facilities.
+            How Health Shield bridges Ethizo with PointClickCare, ALIS, MatrixCare, and August Health — enabling dual-EHR workflows purpose-built for senior care physicians managing patients across facilities.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-gray-500">
@@ -20,7 +20,7 @@ export default function HeroSection() {
               <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
                 <span className="text-blue-600 font-semibold text-sm">C</span>
               </div>
-              <span className="font-medium text-gray-900">tele Health Editorial</span>
+              <span className="font-medium text-gray-900">Health Shield Editorial</span>
             </div>
             <div className="flex items-center gap-1.5">
               <Calendar className="h-4 w-4" />

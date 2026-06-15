@@ -42,19 +42,17 @@ export default function LoginPage() {
       }
 
       const userObj = data.data?.user || data.user;
+      const permissions = data.data?.permissions || data.permissions || [];
 
-      // Save token and user info
+      // Save token, user info, and permissions
       localStorage.setItem("token", data.data?.token || data.token);
       localStorage.setItem("user", JSON.stringify(userObj));
+      localStorage.setItem("permissions", JSON.stringify(permissions));
 
       console.log("Login successful:", data);
 
-      // Redirect based on user role
-      if (userObj?.role === "admin") {
-        router.push("/admin/dashboard");
-      } else {
-        router.push("/client/dashboard");
-      }
+      // Redirect all users to admin dashboard
+      router.push("/admin/dashboard");
     } catch (err) {
       setError(err.message);
       console.error("Login error:", err);
@@ -68,13 +66,13 @@ export default function LoginPage() {
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
           <Link href="/" className="inline-block mb-6">
-            <img src="/assets/images/logo.png" alt="tele Health" className="h-12 w-auto mx-auto" />
+            <img src="/assets/images/logo.png" alt="Health Shield" className="h-12 w-auto mx-auto" />
           </Link>
           <h2 className="text-3xl font-extrabold text-gray-900">
             Sign in to your account
           </h2>
           <p className="mt-2 text-sm text-gray-600">
-            Welcome back to tele Health
+            Welcome back to Health Shield
           </p>
         </div>
 

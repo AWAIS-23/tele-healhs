@@ -120,7 +120,7 @@ export function ContactHero() {
             </h1>
 
             <p className=" text-gray-600 text-[16px] leading-relaxed mb-8">
-              Ready to transform your care delivery? Reach out to our team and discover how tele Health can help your practice thrive with our comprehensive care management platform.
+              Ready to transform your care delivery? Reach out to our team and discover how Health Shield can help your practice thrive with our comprehensive care management platform.
             </p>
 
             <div className="flex flex-wrap gap-3 mb-8">

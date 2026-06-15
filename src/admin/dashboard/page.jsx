@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Sidebar from "./components/Sidebar";
 import StatsCard from "./components/StatsCard";
 import Link from "next/link";
@@ -20,6 +21,7 @@ import {
 const API = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 export default function AdminDashboardPage() {
+  const router = useRouter();
   const [counts, setCounts] = useState({
     users: "—",
     services: "—",
@@ -33,15 +35,45 @@ export default function AdminDashboardPage() {
     { id: 3, patient: "Michael Brown", date: "May 16, 2026", time: "9:00 AM",  type: "Device Setup" },
   ]);
   const [loading, setLoading] = useState(true);
+  const [permissions, setPermissions] = useState([]);
+
+  useEffect(() => {
+    // Check if user is logged in and load permissions
+    const user = JSON.parse(localStorage.getItem('user'));
+    const userPermissions = JSON.parse(localStorage.getItem('permissions') || '[]');
+    if (!user) {
+      router.push('/');
+      return;
+    }
+    setPermissions(userPermissions);
+  }, [router]);
 
   useEffect(() => {
     async function fetchAll() {
       try {
-        const [usersRes, servicesRes, articlesRes] = await Promise.allSettled([
-          fetch(`${API}/users`),
-          fetch(`${API}/services`),
-          fetch(`${API}/articles`),
-        ]);
+        const permissions = JSON.parse(localStorage.getItem('permissions') || '[]');
+        
+        // Only fetch data if user has read permissions
+        const fetchPromises = [];
+        if (permissions.includes('read_users')) {
+          fetchPromises.push(fetch(`${API}/users`));
+        } else {
+          fetchPromises.push(Promise.resolve({ status: 'rejected' }));
+        }
+        
+        if (permissions.includes('read_services')) {
+          fetchPromises.push(fetch(`${API}/services`));
+        } else {
+          fetchPromises.push(Promise.resolve({ status: 'rejected' }));
+        }
+        
+        if (permissions.includes('read_articles')) {
+          fetchPromises.push(fetch(`${API}/articles`));
+        } else {
+          fetchPromises.push(Promise.resolve({ status: 'rejected' }));
+        }
+
+        const [usersRes, servicesRes, articlesRes] = await Promise.allSettled(fetchPromises);
 
         const parseCount = async (res) => {
           if (res.status === "fulfilled" && res.value.ok) {
@@ -57,19 +89,31 @@ export default function AdminDashboardPage() {
           parseCount(articlesRes),
         ]);
 
-        setCounts({ users: uCount, services: sCount, articles: aCount, alerts: "23" });
+        setCounts({ 
+          users: permissions.includes('read_users') ? uCount : '—', 
+          services: permissions.includes('read_services') ? sCount : '—', 
+          articles: permissions.includes('read_articles') ? aCount : '—', 
+          alerts: "23" 
+        });
 
         // Build recent activity from articles + services
         const activities = [];
-        if (servicesRes.status === "fulfilled" && servicesRes.value.ok) {
-          const sd = await servicesRes.value.clone ? null : null; // already consumed — use raw data from parseCount
+        
+        // Fetch again to build activity list (only if user has permissions)
+        const activityPromises = [];
+        if (permissions.includes('read_services')) {
+          activityPromises.push(fetch(`${API}/services`).then((r) => r.json()));
+        } else {
+          activityPromises.push(Promise.resolve({ status: 'rejected' }));
+        }
+        
+        if (permissions.includes('read_articles')) {
+          activityPromises.push(fetch(`${API}/articles`).then((r) => r.json()));
+        } else {
+          activityPromises.push(Promise.resolve({ status: 'rejected' }));
         }
 
-        // Fetch again to build activity list
-        const [sData, aData] = await Promise.allSettled([
-          fetch(`${API}/services`).then((r) => r.json()),
-          fetch(`${API}/articles`).then((r) => r.json()),
-        ]);
+        const [sData, aData] = await Promise.allSettled(activityPromises);
 
         if (sData.status === "fulfilled" && sData.value?.data) {
           sData.value.data.slice(0, 3).forEach((s, i) => {
@@ -230,56 +274,64 @@ export default function AdminDashboardPage() {
             <h2 className="text-xl font-semibold text-gray-900 mb-6">Quick Actions</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {/* Add Service */}
-              <Link
-                href="/admin/services/create"
-                className="flex items-center gap-3 p-4 bg-green-50 rounded-lg hover:bg-green-100 transition-colors group"
-              >
-                <Layers className="h-5 w-5 text-green-600" />
-                <div className="flex-1">
-                  <span className="font-medium text-gray-900 block">Add Service</span>
-                  <span className="text-xs text-gray-500">Create a new service</span>
-                </div>
-                <ArrowRight className="h-4 w-4 text-green-600 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </Link>
+              {permissions.includes('create_services') && (
+                <Link
+                  href="/admin/services/create"
+                  className="flex items-center gap-3 p-4 bg-green-50 rounded-lg hover:bg-green-100 transition-colors group"
+                >
+                  <Layers className="h-5 w-5 text-green-600" />
+                  <div className="flex-1">
+                    <span className="font-medium text-gray-900 block">Add Service</span>
+                    <span className="text-xs text-gray-500">Create a new service</span>
+                  </div>
+                  <ArrowRight className="h-4 w-4 text-green-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              )}
 
               {/* Manage Services */}
-              <Link
-                href="/admin/services"
-                className="flex items-center gap-3 p-4 bg-teal-50 rounded-lg hover:bg-teal-100 transition-colors group"
-              >
-                <Layers className="h-5 w-5 text-teal-600" />
-                <div className="flex-1">
-                  <span className="font-medium text-gray-900 block">Manage Services</span>
-                  <span className="text-xs text-gray-500">View all services</span>
-                </div>
-                <ArrowRight className="h-4 w-4 text-teal-600 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </Link>
+              {permissions.includes('read_services') && (
+                <Link
+                  href="/admin/services"
+                  className="flex items-center gap-3 p-4 bg-teal-50 rounded-lg hover:bg-teal-100 transition-colors group"
+                >
+                  <Layers className="h-5 w-5 text-teal-600" />
+                  <div className="flex-1">
+                    <span className="font-medium text-gray-900 block">Manage Services</span>
+                    <span className="text-xs text-gray-500">View all services</span>
+                  </div>
+                  <ArrowRight className="h-4 w-4 text-teal-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              )}
 
               {/* Add Article */}
-              <Link
-                href="/admin/articles/create"
-                className="flex items-center gap-3 p-4 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors group"
-              >
-                <Plus className="h-5 w-5 text-purple-600" />
-                <div className="flex-1">
-                  <span className="font-medium text-gray-900 block">Add Article</span>
-                  <span className="text-xs text-gray-500">Write a new article</span>
-                </div>
-                <ArrowRight className="h-4 w-4 text-purple-600 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </Link>
+              {permissions.includes('create_articles') && (
+                <Link
+                  href="/admin/articles/create"
+                  className="flex items-center gap-3 p-4 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors group"
+                >
+                  <Plus className="h-5 w-5 text-purple-600" />
+                  <div className="flex-1">
+                    <span className="font-medium text-gray-900 block">Add Article</span>
+                    <span className="text-xs text-gray-500">Write a new article</span>
+                  </div>
+                  <ArrowRight className="h-4 w-4 text-purple-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              )}
 
               {/* Manage Articles */}
-              <Link
-                href="/admin/articles"
-                className="flex items-center gap-3 p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors group"
-              >
-                <FileText className="h-5 w-5 text-blue-600" />
-                <div className="flex-1">
-                  <span className="font-medium text-gray-900 block">Manage Articles</span>
-                  <span className="text-xs text-gray-500">View all articles</span>
-                </div>
-                <ArrowRight className="h-4 w-4 text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </Link>
+              {permissions.includes('read_articles') && (
+                <Link
+                  href="/admin/articles"
+                  className="flex items-center gap-3 p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors group"
+                >
+                  <FileText className="h-5 w-5 text-blue-600" />
+                  <div className="flex-1">
+                    <span className="font-medium text-gray-900 block">Manage Articles</span>
+                    <span className="text-xs text-gray-500">View all articles</span>
+                  </div>
+                  <ArrowRight className="h-4 w-4 text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              )}
             </div>
           </div>
 

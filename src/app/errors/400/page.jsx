@@ -1,7 +1,7 @@
 import ErrorPage from "@/components/ErrorPage";
 
 export const metadata = {
-  title: "Bad Request | Tele Health",
+  title: "Bad Request | Health Shield",
   description: "The request was invalid or malformed.",
 };
 

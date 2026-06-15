@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import { Trash2, ChevronLeft, ChevronRight, User, Mail, Phone, Calendar, Clock } from "lucide-react";
 import Sidebar from "../dashboard/components/Sidebar";
 
@@ -22,7 +23,25 @@ const STATUS_COLORS = {
 };
 
 export default function LeadsPipelinePage() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const tabParam = searchParams ? searchParams.get("tab") : null;
   const [activeTab, setActiveTab]     = useState("landing_page");
+  const [permissions, setPermissions] = useState([]);
+
+  useEffect(() => {
+    const storedPermissions = localStorage.getItem("permissions");
+    if (storedPermissions) {
+      setPermissions(JSON.parse(storedPermissions));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (tabParam && ["landing_page", "contact_us", "funnel"].includes(tabParam)) {
+      setActiveTab(tabParam);
+    }
+  }, [tabParam]);
+
   const [leads, setLeads]             = useState([]);
   const [adminUsers, setAdminUsers]   = useState([]);
   const [loading, setLoading]         = useState(true);
@@ -34,28 +53,14 @@ export default function LeadsPipelinePage() {
     setLoading(true);
     try {
       const token = localStorage.getItem("token");
-      let url, data;
-
-      if (activeTab === "funnel") {
-        const res = await fetch(`${API}/discovery-calls?page=${currentPage}&limit=20`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        data = await res.json();
-        if (data.success) {
-          setLeads(data.data.map(d => ({ ...d, source: "funnel" })));
-          setTotalPages(data.pagination?.totalPages || 1);
-          setTotalCount(data.pagination?.total || data.data.length);
-        }
-      } else {
-        const res = await fetch(`${API}/leads?source=${activeTab}&page=${currentPage}&limit=20`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        data = await res.json();
-        if (data.success) {
-          setLeads(data.data);
-          setTotalPages(data.pagination?.totalPages || 1);
-          setTotalCount(data.pagination?.total || data.data.length);
-        }
+      const res = await fetch(`${API}/leads?source=${activeTab}&page=${currentPage}&limit=20`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      const data = await res.json();
+      if (data.success) {
+        setLeads(data.data);
+        setTotalPages(data.pagination?.totalPages || 1);
+        setTotalCount(data.pagination?.total || data.data.length);
       }
     } catch (err) {
       console.error("Error fetching leads:", err);
@@ -91,9 +96,8 @@ export default function LeadsPipelinePage() {
   const handleDelete = async (id) => {
     if (!confirm("Delete this lead?")) return;
     const token = localStorage.getItem("token");
-    const endpoint = activeTab === "funnel" ? "discovery-calls" : "leads";
     try {
-      await fetch(`${API}/${endpoint}/${id}`, {
+      await fetch(`${API}/leads/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -103,11 +107,20 @@ export default function LeadsPipelinePage() {
     }
   };
 
+  // Filter tabs based on permissions
+  const availableTabs = TABS.filter(tab => {
+    const permissionMap = {
+      'landing_page': 'read_leads_landing_page',
+      'contact_us': 'read_leads_contact_us',
+      'funnel': 'read_leads_funnel'
+    };
+    return permissions.includes(permissionMap[tab.key]);
+  });
+
   const handleStatusChange = async (id, value) => {
     const token = localStorage.getItem("token");
-    const endpoint = activeTab === "funnel" ? "discovery-calls" : "leads";
     try {
-      await fetch(`${API}/${endpoint}/${id}`, {
+      await fetch(`${API}/leads/${id}`, {
         method: "PATCH",
         headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
         body: JSON.stringify({ leadStatus: value }),
@@ -120,9 +133,8 @@ export default function LeadsPipelinePage() {
 
   const handleFieldUpdate = async (id, field, value) => {
     const token = localStorage.getItem("token");
-    const endpoint = activeTab === "funnel" ? "discovery-calls" : "leads";
     try {
-      await fetch(`${API}/${endpoint}/${id}`, {
+      await fetch(`${API}/leads/${id}`, {
         method: "PATCH",
         headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
         body: JSON.stringify({ [field]: value }),
@@ -146,7 +158,7 @@ export default function LeadsPipelinePage() {
 
           {/* Tabs */}
           <div className="flex gap-2 mb-6 bg-white border border-gray-200 rounded-xl p-1.5 w-fit">
-            {TABS.map(tab => (
+            {availableTabs.map(tab => (
               <button
                 key={tab.key}
                 onClick={() => setActiveTab(tab.key)}
@@ -272,13 +284,26 @@ export default function LeadsPipelinePage() {
 
                           {/* Actions */}
                           <td className="px-4 py-3 text-right">
-                            <button
-                              onClick={() => handleDelete(lead.id)}
-                              className="p-1.5 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
-                              title="Delete"
-                            >
-                              <Trash2 className="w-4 h-4" />
-                            </button>
+                            {(() => {
+                              const permissionMap = {
+                                'landing_page': 'delete_leads_landing_page',
+                                'contact_us': 'delete_leads_contact_us',
+                                'funnel': 'delete_leads_funnel'
+                              };
+                              const requiredPermission = permissionMap[activeTab];
+                              if (permissions.includes(requiredPermission)) {
+                                return (
+                                  <button
+                                    onClick={() => handleDelete(lead.id)}
+                                    className="p-1.5 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                                    title="Delete"
+                                  >
+                                    <Trash2 className="w-4 h-4" />
+                                  </button>
+                                );
+                              }
+                              return null;
+                            })()}
                           </td>
                         </tr>
                       ))}

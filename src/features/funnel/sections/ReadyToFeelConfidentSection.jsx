@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import heroImage from "../../../assets/hero-DF1kcSob.jpg";
+import funnelImage from "../../../assets/images/funnel.jpg";
 
 export function ReadyToFeelConfidentSection() {
   return (
@@ -34,7 +34,7 @@ export function ReadyToFeelConfidentSection() {
 
           <div>
             <Image
-              src={heroImage}
+              src={funnelImage}
               alt="A Health Shield caregiver reviewing live vitals with a patient at home"
               width={1536}
               height={1280}

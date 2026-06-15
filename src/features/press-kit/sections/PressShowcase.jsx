@@ -74,7 +74,7 @@ export function PressShowcase() {
         <Card variant="round" padding="lg" className="bg-white mb-12">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="font-bold text-gray-900 text-2xl mb-4">See tele Health in Action</h3>
+              <h3 className="font-bold text-gray-900 text-2xl mb-4">See Health Shield in Action</h3>
               <p className="text-gray-600 mb-6">
                 Watch our demo video to see how healthcare providers are transforming their care management workflows with our platform.
               </p>

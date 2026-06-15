@@ -1,7 +1,7 @@
 import ErrorPage from "@/components/ErrorPage";
 
 export const metadata = {
-  title: "Unauthorized | Tele Health",
+  title: "Unauthorized | Health Shield",
   description: "You need to be logged in to access this resource.",
 };
 

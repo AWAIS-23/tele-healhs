@@ -6,26 +6,40 @@ import { Container } from "./Container";
 import logo from "../assets/images/logo.png";
 
 const footerLinks = {
+  Links: [
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Partnership", href: "/partnership" },
+    { label: "FAQs", href: "/faqs" },
+    { label: "Contact us", href: "/contact" },
+    { label: "Book Your Slot", href: "/book-slot" },
+  ],
   Services: [
     { label: "Remote Patient Monitoring", href: "/services/remote-patient-monitoring" },
     { label: "Chronic Care Management", href: "/services/chronic-care-management" },
     { label: "Principal Care Management", href: "/services/principal-care-management" },
     { label: "Behavioral Health Integration", href: "/services/behavioral-health-integration" },
+    { label: "View All Services", href: "/services" },
   ],
   Devices: [
     { label: "Blood Pressure Monitors", href: "/devices/bpm" },
     { label: "Blood Glucose Monitors", href: "/devices/bgm" },
     { label: "Weight Scales", href: "/devices/weight-scale" },
     { label: "Pulse Oximeters", href: "/devices/pulse-oximeter" },
-    { label: "CGM Devices", href: "/devices/cgm" },
+    { label: "View All Devices", href: "/devices" },
   ],
-
-  Company: [
-    { label: "About Us", href: "/about" },
-    { label: "Partnership", href: "/partnership" },
-{ label: "FAQs", href: "/faqs" },   
-{ label: "Contact", href: "/contact" },
-    
+  "How We Help": [
+    { label: "Chronic Conditions", href: "/how-we-help/chronic-conditions" },
+    { label: "Health Monitoring", href: "/how-we-help/health-monitoring" },
+    { label: "Care Coordinations", href: "/how-we-help/care-coordinations" },
+    { label: "Behavioral Conditions", href: "/how-we-help/behavioral-conditions" },
+    { label: "Hospital Recover Support", href: "/how-we-help/hospital-recover-support" },
+  ],
+  "Who We Help": [
+    { label: "Medicare Beneficiaries", href: "/who-we-help/medicare-beneficiaries" },
+    { label: "Family Caregivers", href: "/who-we-help/family-caregivers" },
+    { label: "Recently Hospitalized", href: "/who-we-help/recently-hospitalized" },
+    { label: "Independent Seniors", href: "/who-we-help/independent-seniors" },
   ],
 };
 
@@ -70,39 +84,10 @@ export function Footer() {
 
       <Container className="relative py-16 lg:py-20">
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
-          {/* Brand column */}
-          <div className="lg:col-span-2">
-            <Link href="/" className="inline-flex items-center gap-2 mb-6">
-               <Image src={logo} alt="Health Shield Logo" width={170} height={48} className="w-[170px] h-12 object-contain group-hover:scale-105 transition-all duration-300" />
-            </Link>
-            <p className="text-gray-600 leading-relaxed max-w-sm mb-8">
-              Powering the highest-impact remote patient monitoring and care management programs across all 50 states.
-            </p>
-            
-            {/* Social Links */}
-            <div className="flex items-center gap-4">
-              {socialLinks.map((social) => {
-                const IconComponent = social.icon;
-                return (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-blue-500 hover:text-white transition-all duration-300"
-                    aria-label={social.name}
-                  >
-                    <IconComponent />
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-
+        <div className="flex flex-wrap gap-6 lg:gap-8">
           {/* Links columns */}
           {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
+            <div key={category} className="flex-1 min-w-[120px]">
               <span className="block text-base font-semibold text-gray-900 mb-4">
                 {category}
               </span>
@@ -127,7 +112,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} Health Sheild. All rights reserved.
+            © {new Date().getFullYear()} Health Shield. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
