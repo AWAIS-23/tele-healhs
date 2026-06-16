@@ -14,7 +14,7 @@ export function CaregiverSection() {
           <div className="order-2 lg:order-1">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-3xl blur-2xl opacity-80" />
-              <div className="relative bg-white border border-gray-200/60 rounded-3xl p-6 md:p-8 shadow-xl">
+              <div className="relative   rounded-3xl p-6 md:p-8 ">
                 <Image
                   src={caregiverImage}
                   alt="Adult daughter sitting with elderly mother"

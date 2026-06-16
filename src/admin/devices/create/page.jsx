@@ -50,7 +50,6 @@ function DeviceForm() {
     keywords: "",
     shortDescription: "",
     heroDescription: "",
-    content: "",
     badge: "",
     tags: "",
     price: "",
@@ -309,18 +308,7 @@ function DeviceForm() {
         </button>
       </div>
 
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-          Content
-        </label>
-        <textarea
-          value={formData.content}
-          onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-          rows={10}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          placeholder="Full content"
-        />
-      </div>
+   
 
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-2">

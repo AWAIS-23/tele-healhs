@@ -1,7 +1,7 @@
 "use client";
 // Triggering rebuild
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Eye, EyeOff, Mail, Lock } from "lucide-react";
@@ -17,6 +17,15 @@ export default function LoginPage() {
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+
+  // Load saved email on mount
+  useEffect(() => {
+    const savedEmail = localStorage.getItem("rememberedEmail");
+    if (savedEmail) {
+      setFormData(prev => ({ ...prev, email: savedEmail }));
+      setRememberMe(true);
+    }
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -48,6 +57,13 @@ export default function LoginPage() {
       localStorage.setItem("token", data.data?.token || data.token);
       localStorage.setItem("user", JSON.stringify(userObj));
       localStorage.setItem("permissions", JSON.stringify(permissions));
+
+      // Handle remember me
+      if (rememberMe) {
+        localStorage.setItem("rememberedEmail", formData.email);
+      } else {
+        localStorage.removeItem("rememberedEmail");
+      }
 
       console.log("Login successful:", data);
 

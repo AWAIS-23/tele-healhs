@@ -199,18 +199,7 @@ export function ReadyToGetStartedSection() {
           </div>
         </div>
 
-        {/* Footer branding container */}
-        <div className="bg-[#0e4060] rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-700/20 to-indigo-700/20 pointer-events-none" />
-          <div className="relative z-10 max-w-4xl mx-auto space-y-4">
-            <h4 className="text-xl md:text-2xl font-bold tracking-wide text-white" style={{ color: "#fff" }}>
-              Health Shield — Patient-First. Technology-Driven. Built for the Future of Care.
-            </h4>
-            <p className="text-blue-100 text-base md:text-lg">
-              Making remote chronic care management simpler, smarter, and more human.
-            </p>
-          </div>
-        </div>
+       
       </Container>
     </section>
   );

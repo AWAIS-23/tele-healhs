@@ -8,10 +8,11 @@ import { BenefitsSection } from "./sections/BenefitsSection";
 import { FAQSection } from "./sections/FAQSection";
 import { TrustedSettingsSection } from "./sections/TrustedSettingsSection";
 import { ReadyToGetStartedSection } from "./sections/ReadyToGetStartedSection";
-
+import {BrandingCTASection} from "./sections/BrandingCTASection";
 export default function HomePage() {
   return (
     <div className="flex min-h-screen flex-col">
+      
       <main className="flex-1">
         <HeroSection />
         <WhyChooseSection />
@@ -23,6 +24,7 @@ export default function HomePage() {
         <FAQSection />
         <TrustedSettingsSection />
         <ReadyToGetStartedSection />
+        <BrandingCTASection />
       </main>
     </div>
   );

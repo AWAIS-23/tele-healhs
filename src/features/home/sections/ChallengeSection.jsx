@@ -65,7 +65,7 @@ export function ChallengeSection() {
               {/* background glow */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-3xl blur-2xl opacity-80" />
 
-              <div className="relative bg-white border border-gray-200/60 rounded-3xl p-6 md:p-8 shadow-xl">
+              <div className="relative  border border-gray-200/60 rounded-3xl p-6 md:p-8 ">
                 <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-100">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center">

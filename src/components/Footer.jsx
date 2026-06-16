@@ -28,18 +28,18 @@ const footerLinks = {
     { label: "Pulse Oximeters", href: "/devices/pulse-oximeter" },
     { label: "View All Devices", href: "/devices" },
   ],
-  "How We Help": [
-    { label: "Chronic Conditions", href: "/how-we-help/chronic-conditions" },
-    { label: "Health Monitoring", href: "/how-we-help/health-monitoring" },
-    { label: "Care Coordinations", href: "/how-we-help/care-coordinations" },
-    { label: "Behavioral Conditions", href: "/how-we-help/behavioral-conditions" },
-    { label: "Hospital Recover Support", href: "/how-we-help/hospital-recover-support" },
-  ],
+  "How It Works": [
+    { label: "Regular Check-Ins", href: "/how-it-works/regular-check-ins" },
+    { label: "Remote Monitoring", href: "/how-it-works/remote-monitoring" },
+    { label: "Care Coordination", href: "/how-it-works/care-coordination" },
+    { label: "Medicare Coverage", href: "/how-it-works/medicare-coverage" },
+ ],
+
   "Who We Help": [
-    { label: "Medicare Beneficiaries", href: "/who-we-help/medicare-beneficiaries" },
+    { label: "Adults with Chronic Conditions", href: "/who-we-help/adults-with-chronic-conditions" },
     { label: "Family Caregivers", href: "/who-we-help/family-caregivers" },
-    { label: "Recently Hospitalized", href: "/who-we-help/recently-hospitalized" },
-    { label: "Independent Seniors", href: "/who-we-help/independent-seniors" },
+    { label: "Hospitalized Patients", href: "/who-we-help/hospitalized-patients" },
+    { label: "Medicare Beneficiaries", href: "/who-we-help/medicare-beneficiaries" },
   ],
 };
 
@@ -88,7 +88,7 @@ export function Footer() {
           {/* Links columns */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category} className="flex-1 min-w-[120px]">
-              <span className="block text-base font-semibold text-gray-900 mb-4">
+              <span className="block text-[21px] font-semibold text-gray-900 mb-4">
                 {category}
               </span>
               <ul className="space-y-2">
@@ -110,18 +110,54 @@ export function Footer() {
      
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} Health Shield. All rights reserved.
-          </p>
-          <div className="flex items-center gap-6">
-            <Link href="/privacy" className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
-              Privacy
-            </Link>
-            <Link href="/terms-conditions" className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
-              Terms
-            </Link>
-            
+        <div className="mt-12 pt-8 border-t  border-gray-200">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
+            {/* Logo - col-2 */}
+            <div className="md:col-span-2">
+              <Link href="/" className="inline-flex items-center gap-2 mb-4">
+                <Image src={logo} alt="Health Shield Logo" width={170} height={48} className="w-[170px] h-12 object-contain" />
+              </Link>
+              {/* Social Icons */}
+              <div className="flex items-center gap-3">
+                {socialLinks.map((social) => {
+                  const IconComponent = social.icon;
+                  return (
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-blue-600 hover:bg-blue-500 hover:text-white transition-all duration-300"
+                      aria-label={social.name}
+                    >
+                      <IconComponent />
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Description - col-9 */}
+            <div className="md:col-span-9">
+              <p className="text-gray-600 text-[12px] leading-relaxed">
+                Health Shield provides comprehensive remote patient monitoring and behavioral health integration services nationwide. We support Medicare beneficiaries, independent seniors, and individuals recovering from recent hospitalizations by making home health tracking seamless. Through advanced medical devices and personalized care management, we help you easily track metrics like blood pressure and glucose levels. Our mission is to improve daily health outcomes and deliver reliable, continuous care coordination, allowing patients to manage chronic conditions safely from the comfort of home.
+              </p>
+            </div>
+          </div>
+
+          {/* Copyright and links */}
+          <div className="flex flex-col md:flex-row justify-between items-center pt-8 gap-4">
+            <p className="text-sm text-gray-500">
+              © {new Date().getFullYear()} Health Shield. All rights reserved.
+            </p>
+            <div className="flex items-center gap-6">
+              <Link href="/privacy-policy" className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms-conditions" className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
+                Terms & Conditions
+              </Link>
+            </div>
           </div>
         </div>
       </Container>

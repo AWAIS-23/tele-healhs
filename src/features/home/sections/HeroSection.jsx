@@ -1,12 +1,16 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { Button } from "../../../components/Button";
 import { Container } from "../../../components/Container";
 import { Badge } from "../../../components/Badge";
+import { EligibilityModal } from "../../../components/EligibilityModal";
 import heroImage from "../../../assets/images/homepage-image.jpg.jpeg";
 
 export function HeroSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className="relative overflow-hidden bg-white">
       <Container className="relative py-18">
@@ -77,7 +81,7 @@ export function HeroSection() {
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-4 items-center">
                 <Button
-                  href="#check-eligibility"
+                  onClick={() => setIsModalOpen(true)}
                   variant="primary"
                   size="lg"
                   className="bg-[#0e4060] hover:bg-[#0a2e45] text-white"
@@ -103,7 +107,7 @@ export function HeroSection() {
           </div>
 
           {/* RIGHT CONTENT */}
-          <div className="relative ml-auto hidden lg:block">
+          <div className="relative ml-auto lg:block">
             <div>
               <Image
                 src={heroImage}
@@ -116,6 +120,12 @@ export function HeroSection() {
 
         </div>
       </Container>
+
+      {/* Eligibility Modal */}
+      <EligibilityModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </section>
   );
 }

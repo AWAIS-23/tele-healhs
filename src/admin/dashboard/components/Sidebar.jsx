@@ -115,6 +115,7 @@ export default function Sidebar() {
         { label: "Landing Page Leads", href: "/admin/leads?tab=landing_page", permission: "read_leads_landing_page" },
         { label: "Contact Us Leads", href: "/admin/leads?tab=contact_us", permission: "read_leads_contact_us" },
         { label: "Funnel Leads", href: "/admin/leads?tab=funnel", permission: "read_leads_funnel" },
+        { label: "Eligibility Leads", href: "/admin/leads?tab=eligibility", permission: "read_leads_eligibility" },
       ]
     },
     {
