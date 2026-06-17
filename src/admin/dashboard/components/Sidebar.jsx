@@ -20,7 +20,8 @@ import {
   Shield,
   UserPlus,
   Key,
-  Cpu
+  Cpu,
+  Mail
 } from "lucide-react";
 
 export default function Sidebar() {
@@ -117,6 +118,12 @@ export default function Sidebar() {
         { label: "Funnel Leads", href: "/admin/leads?tab=funnel", permission: "read_leads_funnel" },
         { label: "Eligibility Leads", href: "/admin/leads?tab=eligibility", permission: "read_leads_eligibility" },
       ]
+    },
+    {
+      label: "Sender",
+      href: "/admin/sender",
+      icon: Mail,
+      permission: null,
     },
     {
       label: "Settings",

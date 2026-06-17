@@ -6,21 +6,28 @@ import { Container } from "./Container";
 import logo from "../assets/images/logo.png";
 
 const footerLinks = {
-  Links: [
-    { label: "Home", href: "/" },
-    { label: "About Us", href: "/about" },
-    { label: "Partnership", href: "/partnership" },
-    { label: "FAQs", href: "/faqs" },
-    { label: "Contact us", href: "/contact" },
-    { label: "Book Your Slot", href: "/book-slot" },
-  ],
-  Services: [
+    Services: [
     { label: "Remote Patient Monitoring", href: "/services/remote-patient-monitoring" },
     { label: "Chronic Care Management", href: "/services/chronic-care-management" },
     { label: "Principal Care Management", href: "/services/principal-care-management" },
     { label: "Behavioral Health Integration", href: "/services/behavioral-health-integration" },
     { label: "View All Services", href: "/services" },
   ],
+   "How It Works": [
+    { label: "Regular Check-Ins", href: "/how-it-works/regular-check-ins" },
+    { label: "Remote Monitoring", href: "/how-it-works/remote-monitoring" },
+    { label: "Care Coordination", href: "/how-it-works/care-coordination" },
+    { label: "Medicare Coverage", href: "/how-it-works/medicare-coverage" },
+ ],
+ 
+  "Who We Help": [
+    { label: "Adults with Chronic Conditions", href: "/who-we-help/adults-with-chronic-conditions" },
+    { label: "Family Caregivers", href: "/who-we-help/family-caregivers" },
+    { label: "Hospitalized Patients", href: "/who-we-help/hospitalized-patients" },
+    { label: "Medicare Beneficiaries", href: "/who-we-help/medicare-beneficiaries" },
+  ],
+
+
   Devices: [
     { label: "Blood Pressure Monitors", href: "/devices/bpm" },
     { label: "Blood Glucose Monitors", href: "/devices/bgm" },
@@ -28,19 +35,15 @@ const footerLinks = {
     { label: "Pulse Oximeters", href: "/devices/pulse-oximeter" },
     { label: "View All Devices", href: "/devices" },
   ],
-  "How It Works": [
-    { label: "Regular Check-Ins", href: "/how-it-works/regular-check-ins" },
-    { label: "Remote Monitoring", href: "/how-it-works/remote-monitoring" },
-    { label: "Care Coordination", href: "/how-it-works/care-coordination" },
-    { label: "Medicare Coverage", href: "/how-it-works/medicare-coverage" },
- ],
-
-  "Who We Help": [
-    { label: "Adults with Chronic Conditions", href: "/who-we-help/adults-with-chronic-conditions" },
-    { label: "Family Caregivers", href: "/who-we-help/family-caregivers" },
-    { label: "Hospitalized Patients", href: "/who-we-help/hospitalized-patients" },
-    { label: "Medicare Beneficiaries", href: "/who-we-help/medicare-beneficiaries" },
+   Links: [
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Partnership", href: "/partnership" },
+    { label: "FAQs", href: "/faqs" },
+    { label: "Contact Us", href: "/contact" },
+    { label: "Connect With A Provider", href: "/book-slot" },
   ],
+
 };
 
 const socialLinks = [

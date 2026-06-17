@@ -7,7 +7,6 @@ import { SectionHeader } from '@/components/SectionHeader';
 const parseJSON = (value) => {
   if (!value) return [];
   if (Array.isArray(value)) return value;
-
   try {
     return JSON.parse(value);
   } catch {
@@ -34,7 +33,7 @@ export function PartnershipPage({ partnership }) {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
                 <Badge variant="blue" showDot className="mb-6">
-                 Partner with Health Shield
+                  Partner with Health Shield
                 </Badge>
 
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
@@ -76,7 +75,6 @@ export function PartnershipPage({ partnership }) {
               <div className="relative">
                 <div className="bg-white border border-gray-200 rounded-[2rem] shadow-xl p-8 md:p-10 relative overflow-hidden">
                   <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-t-[2rem]" />
-
                   <h3 className="text-xl font-bold text-gray-900 mb-6">Why Partner With Us?</h3>
                   <div className="space-y-5 text-gray-600">
                     <div className="flex gap-3">
@@ -96,7 +94,6 @@ export function PartnershipPage({ partnership }) {
                       <p>Seamless integration with existing healthcare systems</p>
                     </div>
                   </div>
-
                   <div className="grid grid-cols-2 gap-4 mt-8 pt-6 border-t border-gray-100">
                     <div>
                       <p className="text-2xl font-bold text-gray-900">24/7</p>
@@ -117,14 +114,13 @@ export function PartnershipPage({ partnership }) {
           <Container>
             <SectionHeader
               badgeText={partnership.challengeBadgeText || "The Challenge"}
-              title={partnership.challengeTitle || "The Challenge for Medicare Advantage Plans & Payers"}
-              description={partnership.challengeIntro && typeof partnership.challengeIntro === 'string' && partnership.challengeIntro.includes('<') ? 
+              title={partnership.challengeTitle || "The Challenge"}
+              description={partnership.challengeIntro && typeof partnership.challengeIntro === 'string' && partnership.challengeIntro.includes('<') ?
                 <div className="prose prose-sm" dangerouslySetInnerHTML={{ __html: partnership.challengeIntro }} />
-                : 
+                :
                 partnership.challengeIntro
               }
             />
-
             <div className="grid gap-6 md:grid-cols-2">
               {challengePoints.map((point, index) => (
                 <div key={index} className="rounded-[2rem] border border-gray-200 bg-slate-50 p-8">
@@ -147,7 +143,6 @@ export function PartnershipPage({ partnership }) {
               }
               align="center"
             />
-
             <div className="grid gap-6 md:grid-cols-2">
               {solutionFeatures.map((feature, index) => (
                 <div key={index} className="rounded-[2rem] border border-gray-200 bg-white p-8 shadow-sm">
@@ -163,19 +158,17 @@ export function PartnershipPage({ partnership }) {
             <SectionHeader
               badge={partnership.resultsBadgeText || "Early Results"}
               title={partnership.resultsTitle}
-              description={partnership.resultsDescription && typeof partnership.resultsDescription === 'string' && partnership.resultsDescription.includes('<') ?
-                <div className="prose prose-sm" dangerouslySetInnerHTML={{ __html: partnership.resultsDescription }} />
-                :
-                partnership.resultsDescription
-              }
               align="center"
             />
-
             <div className="mx-auto max-w-4xl rounded-[2rem] border border-blue-100 bg-blue-50 p-10 text-center shadow-sm">
               <Badge variant="blue" className="mb-4">
                 {partnership.resultsMetric}
               </Badge>
-              <p className="text-xl text-gray-700 mt-2">{partnership.resultsDescription}</p>
+              {partnership.resultsDescription && typeof partnership.resultsDescription === 'string' && partnership.resultsDescription.includes('<') ?
+                <div className="prose prose-sm text-xl text-gray-700 mt-2" dangerouslySetInnerHTML={{ __html: partnership.resultsDescription }} />
+                :
+                <p className="text-xl text-gray-700 mt-2">{partnership.resultsDescription}</p>
+              }
             </div>
           </Container>
         </section>
@@ -187,7 +180,6 @@ export function PartnershipPage({ partnership }) {
               title={partnership.whyPartnerTitle || "Why Partner with Health Shield?"}
               align="center"
             />
-
             <div className="grid gap-6 md:grid-cols-2">
               {reasons.map((item, index) => (
                 <div key={index} className="rounded-[2rem] border border-gray-200 bg-white p-8 shadow-sm">
@@ -213,12 +205,20 @@ export function PartnershipPage({ partnership }) {
               title={partnership.scalabilityTitle || "Why Health Shield Scales With Your Organization"}
               align="center"
             />
-
             <div className="space-y-4">
               {whyScales.map((item, index) => (
                 <div key={index} className="flex gap-4 rounded-[2rem] border border-gray-200 bg-slate-50 p-6">
                   <span className="mt-1 text-blue-600">✓</span>
-                  <p className="text-gray-700 leading-relaxed">{item}</p>
+                  <div>
+                    {typeof item === 'object' ? (
+                      <>
+                        <p className="text-gray-900 font-semibold">{item.title}</p>
+                        <p className="text-gray-700 leading-relaxed">{item.description}</p>
+                      </>
+                    ) : (
+                      <p className="text-gray-700 leading-relaxed">{item}</p>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
@@ -229,14 +229,20 @@ export function PartnershipPage({ partnership }) {
           <Container>
             <SectionHeader
               badgeText={partnership.partnersGetBadgeText || "Partner Benefits"}
-              title={partnership.partnersGetTitle || "What Our Payer & Medicare Advantage Partners Get"}
+              title={partnership.partnersGetTitle || "What Our Partners Get"}
               align="center"
             />
-
             <div className="grid gap-6 md:grid-cols-2">
               {partnersGet.map((item, index) => (
                 <div key={index} className="rounded-[2rem] border border-gray-200 bg-white p-8 shadow-sm">
-                  <p className="text-gray-700 leading-relaxed">{item}</p>
+                  {typeof item === 'object' ? (
+                    <>
+                      <p className="text-gray-900 font-semibold">{item.title}</p>
+                      <p className="mt-2 text-gray-700 leading-relaxed">{item.description}</p>
+                    </>
+                  ) : (
+                    <p className="text-gray-700 leading-relaxed">{item}</p>
+                  )}
                 </div>
               ))}
             </div>
@@ -254,10 +260,9 @@ export function PartnershipPage({ partnership }) {
                 partnership.finalCtaDescription
               }
               align="center"
-              titleColor="text-white"
+              titleColor="!text-white"
               descColor="text-blue-100"
             />
-
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               {partnership.finalCtaPrimaryLabel && (
                 <Button href={partnership.finalCtaPrimaryUrl || '#'} variant="onDark" size="lg">

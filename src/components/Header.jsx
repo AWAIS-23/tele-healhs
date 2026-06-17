@@ -30,28 +30,33 @@ function getIcon(name) {
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
   {
-    label: "Services",
-    href: "/services",
+    label: "How It Works",
+    href: "/how-it-works",
     hasDropdown: true,
     dropdownItems: [
-      { name: "Remote Patient Monitoring", desc: "Real-time vital sign monitoring", icon: "monitor", color: "blue", href: "/services/rpm" },
-      { name: "Chronic Care Management", desc: "Care coordination for chronic conditions", icon: "heart", color: "orange" },
-      { name: "Remote Therapeutic Monitoring", desc: "Musculoskeletal & respiratory monitoring", icon: "bone", color: "green" },
-      { name: "Principal Care Management", desc: "Single high-risk condition management", icon: "activity", color: "purple" },
-      { name: "Behavioral Health Integration", desc: "Mental health integration", icon: "brain", color: "pink" },
-      { name: "Device Integration", desc: "Connect various health devices", icon: "device", color: "teal" },
-      { name: "Data Analytics", desc: "Health data insights and reporting", icon: "chart", color: "indigo" },
-      { name: "Telehealth Consultations", desc: "Virtual doctor appointments", icon: "video", color: "red" },
+      { name: "Regular Check-ins", desc: "Consistent health monitoring and check-ups", icon: "activity", color: "blue", href: "/how-it-works/regular-check-ins" },
+      { name: "Remote Monitoring", desc: "Track your vitals from the comfort of home", icon: "monitor", color: "green", href: "/how-it-works/remote-monitoring" },
+      { name: "Care Coordination", desc: "Seamless coordination between your care team", icon: "heart", color: "orange", href: "/how-it-works/care-coordination" },
+      { name: "Medicare Coverage", desc: "Understanding your Medicare benefits", icon: "shield", color: "purple", href: "/how-it-works/medicare-coverage" },
     ],
   },
- { label: "Devices", href: "/devices" },
-  { label: "Partnership", href: "/partnership" },
- { label: "FAQ", href: "/faqs" }, 
-  { label: "Contact Us", href: "/contact" },
-
- 
+  {
+    label: "Who We Help",
+    href: "/who-we-help",
+    hasDropdown: true,
+    dropdownItems: [
+      { name: "Adults with Chronic Conditions", desc: "Specialized care for chronic disease management", icon: "heart", color: "red", href: "/who-we-help/adults-with-chronic-conditions" },
+      { name: "Family Caregivers", desc: "Support and resources for caregivers", icon: "users", color: "blue", href: "/who-we-help/family-caregivers" },
+      { name: "Medicare Beneficiaries", desc: "Comprehensive Medicare-covered services", icon: "shield", color: "teal", href: "/who-we-help/medicare-beneficiaries" },
+      { name: "Recently Hospitalized Patients", desc: "Post-discharge care and monitoring", icon: "activity", color: "orange", href: "/who-we-help/recently-hospitalized-patients" },
+    ],
+  },
+  { label: "About", href: "/about" },
+  { label: "Devices", href: "/devices" },
+  { label: "Partnerships", href: "/partnership" },
+  { label: "FAQ", href: "/faqs" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function Header() {
@@ -207,7 +212,7 @@ export function Header() {
           <div className="hidden lg:flex lg:items-center lg:gap-4 flex-shrink-0">
             {mounted && user ? (
               <>
-                <Button href={user.role === "admin" ? "/admin/dashboard" : "/client/dashboard"} variant="ghost" size="sm" className="text-gray-700 hover:text-[#0e4060] hover:bg-transparent transition-all duration-300 font-sans px-4 py-2">
+                <Button href="/admin/dashboard" variant="ghost" size="sm" className="text-gray-700 hover:text-[#0e4060] hover:bg-transparent transition-all duration-300 font-sans px-4 py-2">
                   Dashboard
                 </Button>
                 <Button onClick={handleLogout} variant="primary" size="sm" className="bg-[#0e4060] hover:bg-[#0a2e45] shadow-lg hover:shadow-xl transition-all duration-300 font-sans">
@@ -250,20 +255,61 @@ export function Header() {
           <div className="lg:hidden py-6 border-t border-gray-200/60 bg-white/95 backdrop-blur-xl">
             <div className="space-y-2">
               {dynamicNavItems.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 rounded-lg transition-all duration-300 font-sans"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
+                <div key={item.label}>
+                  {item.hasDropdown ? (
+                    <div>
+                      <button
+                        onClick={() => setActiveDropdown(activeDropdown === item.label ? null : item.label)}
+                        className="w-full flex items-center justify-between px-4 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 rounded-lg transition-all duration-300 font-sans"
+                      >
+                        <span>{item.label}</span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className={`transition-transform duration-300 ${activeDropdown === item.label ? "rotate-180" : ""}`}
+                        >
+                          <path d="m6 9 6 6 6-6" />
+                        </svg>
+                      </button>
+                      {activeDropdown === item.label && item.dropdownItems && (
+                        <div className="ml-4 mt-1 space-y-1">
+                          {item.dropdownItems.map((dropItem) => (
+                            <Link
+                              key={dropItem.name}
+                              href={dropItem.href || "#"}
+                              className="block px-4 py-2.5 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50/50 rounded-lg transition-all duration-300 font-sans"
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              <span className="font-medium">{dropItem.name}</span>
+                              <p className="text-xs text-gray-400 mt-0.5 line-clamp-2">{dropItem.desc}</p>
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50/50 rounded-lg transition-all duration-300 font-sans"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </div>
               ))}
             </div>
             <div className="mt-6 pt-6 border-t border-gray-200/60 space-y-3">
               {mounted && user ? (
                 <>
-                  <Button href={user.role === "admin" ? "/admin/dashboard" : "/client/dashboard"} variant="ghost" className="w-full justify-center text-gray-700 hover:text-blue-600 hover:bg-transparent transition-all duration-300 font-sans">
+                  <Button href="/admin/dashboard" variant="ghost" className="w-full justify-center text-gray-700 hover:text-blue-600 hover:bg-transparent transition-all duration-300 font-sans">
                     Dashboard
                   </Button>
                   <Button onClick={() => { handleLogout(); setMobileMenuOpen(false); }} variant="primary" className="w-full justify-center bg-[#0e4060] hover:bg-[#0a2e45] shadow-lg hover:shadow-xl transition-all duration-300 font-sans">

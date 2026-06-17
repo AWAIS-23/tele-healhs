@@ -133,7 +133,7 @@ export function ContactHero() {
 
           </div>
 
-          <div className="relative hidden lg:block">
+          <div className="relative">
             <div className="relative bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8 border border-blue-100 flex items-center justify-center">
              
 

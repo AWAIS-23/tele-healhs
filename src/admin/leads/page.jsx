@@ -2,8 +2,10 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { Trash2, ChevronLeft, ChevronRight, User, Mail, Phone, Calendar, Clock } from "lucide-react";
+import { Trash2, ChevronLeft, ChevronRight, User, Mail, Phone, Calendar, Clock, Send } from "lucide-react";
 import Sidebar from "../dashboard/components/Sidebar";
+import SendEmailModal from "../components/SendEmailModal";
+import AdvancedEmailComposer from "../components/AdvancedEmailComposer";
 
 const API = process.env.NEXT_PUBLIC_API_BASE_URL;
 
@@ -49,6 +51,9 @@ export default function LeadsPipelinePage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages]   = useState(1);
   const [totalCount, setTotalCount]   = useState(0);
+  const [selectedLead, setSelectedLead] = useState(null);
+  const [showEmailModal, setShowEmailModal] = useState(false);
+  const [showBulkEmailModal, setShowBulkEmailModal] = useState(false);
 
   const fetchLeads = useCallback(async () => {
     setLoading(true);
@@ -175,9 +180,16 @@ export default function LeadsPipelinePage() {
             ))}
           </div>
 
-          {/* Count badge */}
-          <div className="flex items-center gap-2 mb-4">
+          {/* Count badge & Actions */}
+          <div className="flex items-center justify-between mb-4">
             <span className="text-sm text-gray-500">{totalCount} lead{totalCount !== 1 ? "s" : ""}</span>
+            <button
+              onClick={() => setShowBulkEmailModal(true)}
+              className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
+            >
+              <Send className="w-4 h-4" />
+              Send Email to Leads
+            </button>
           </div>
 
           {/* Table */}
@@ -300,27 +312,41 @@ export default function LeadsPipelinePage() {
 
                           {/* Actions */}
                           <td className="px-4 py-3 text-right">
-                            {(() => {
-                              const permissionMap = {
-                                'landing_page': 'delete_leads_landing_page',
-                                'contact_us': 'delete_leads_contact_us',
-                                'funnel': 'delete_leads_funnel',
-                                'eligibility': 'delete_leads_eligibility'
-                              };
-                              const requiredPermission = permissionMap[activeTab];
-                              if (permissions.includes(requiredPermission)) {
-                                return (
-                                  <button
-                                    onClick={() => handleDelete(lead.id)}
-                                    className="p-1.5 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
-                                    title="Delete"
-                                  >
-                                    <Trash2 className="w-4 h-4" />
-                                  </button>
-                                );
-                              }
-                              return null;
-                            })()}
+                            <div className="flex items-center justify-end gap-1">
+                              {lead.email && (
+                                <button
+                                  onClick={() => {
+                                    setSelectedLead(lead);
+                                    setShowEmailModal(true);
+                                  }}
+                                  className="p-1.5 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                                  title="Send Email"
+                                >
+                                  <Mail className="w-4 h-4" />
+                                </button>
+                              )}
+                              {(() => {
+                                const permissionMap = {
+                                  'landing_page': 'delete_leads_landing_page',
+                                  'contact_us': 'delete_leads_contact_us',
+                                  'funnel': 'delete_leads_funnel',
+                                  'eligibility': 'delete_leads_eligibility'
+                                };
+                                const requiredPermission = permissionMap[activeTab];
+                                if (permissions.includes(requiredPermission)) {
+                                  return (
+                                    <button
+                                      onClick={() => handleDelete(lead.id)}
+                                      className="p-1.5 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                                      title="Delete"
+                                    >
+                                      <Trash2 className="w-4 h-4" />
+                                    </button>
+                                  );
+                                }
+                                return null;
+                              })()}
+                            </div>
                           </td>
                         </tr>
                       ))}
@@ -355,6 +381,24 @@ export default function LeadsPipelinePage() {
           </div>
         </main>
       </div>
+
+      {/* Email Modal */}
+      <SendEmailModal
+        isOpen={showEmailModal}
+        onClose={() => {
+          setShowEmailModal(false);
+          setSelectedLead(null);
+        }}
+        lead={selectedLead}
+        onSuccess={() => fetchLeads()}
+      />
+
+      {/* Bulk Email Composer */}
+      <AdvancedEmailComposer
+        isOpen={showBulkEmailModal}
+        onClose={() => setShowBulkEmailModal(false)}
+        onSuccess={() => fetchLeads()}
+      />
     </div>
   );
 }
