@@ -30,6 +30,7 @@ function getIcon(name) {
 
 const navItems = [
   { label: "Home", href: "/" },
+   { label: "About", href: "/about" },
   {
     label: "How It Works",
     href: "/how-it-works",
@@ -52,7 +53,7 @@ const navItems = [
       { name: "Recently Hospitalized Patients", desc: "Post-discharge care and monitoring", icon: "activity", color: "orange", href: "/who-we-help/recently-hospitalized-patients" },
     ],
   },
-  { label: "About", href: "/about" },
+ 
   { label: "Devices", href: "/devices" },
   { label: "Partnerships", href: "/partnership" },
   { label: "FAQ", href: "/faqs" },
