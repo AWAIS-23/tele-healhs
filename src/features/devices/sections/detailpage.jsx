@@ -22,9 +22,22 @@ export default function CellularGatewaySection({ slug: propSlug }) {
 
         if (response.ok && data.success) {
           setDevice(data.data);
+          // Parse related devices if it's a string
+          let relatedDevices = data.data.relatedDevices || [];
+          if (typeof relatedDevices === 'string') {
+            try {
+              relatedDevices = JSON.parse(relatedDevices);
+            } catch (e) {
+              relatedDevices = [];
+            }
+          }
+          if (!Array.isArray(relatedDevices)) {
+            relatedDevices = [];
+          }
+
           // Use related devices from API or fetch all devices
-          if (data.data.relatedDevices && data.data.relatedDevices.length > 0) {
-            setRelatedDevices(data.data.relatedDevices);
+          if (relatedDevices.length > 0) {
+            setRelatedDevices(relatedDevices);
           } else {
             // Fetch all devices to show as related
             const allDevicesResponse = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/devices?limit=10&status=published`);

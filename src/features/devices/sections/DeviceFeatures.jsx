@@ -23,7 +23,18 @@ const iconMap = {
 };
 
 export function DeviceFeatures({ device }) {
-  const features = device.features || [];
+  // Ensure features is always an array
+  let features = device.features || [];
+  if (typeof features === 'string') {
+    try {
+      features = JSON.parse(features);
+    } catch (e) {
+      features = [];
+    }
+  }
+  if (!Array.isArray(features)) {
+    features = [];
+  }
 
   return (
     <div className="px-6 py-16 md:py-20 lg:py-24 bg-gradient-to-br from-blue-50 to-indigo-100">

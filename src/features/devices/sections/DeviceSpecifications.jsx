@@ -11,7 +11,18 @@ const getImageUrl = (imageName) => {
 };
 
 export function DeviceSpecifications({ device }) {
-  const specifications = device.specifications || [];
+  // Ensure specifications is always an array
+  let specifications = device.specifications || [];
+  if (typeof specifications === 'string') {
+    try {
+      specifications = JSON.parse(specifications);
+    } catch (e) {
+      specifications = [];
+    }
+  }
+  if (!Array.isArray(specifications)) {
+    specifications = [];
+  }
   const specificationsTitle = device.specificationsTitle || "Specifications";
 
   return (

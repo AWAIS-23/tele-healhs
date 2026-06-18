@@ -11,7 +11,20 @@ const getImageUrl = (imageName) => {
 };
 
 export function DeviceRelatedDevices({ relatedDevices }) {
-  if (!relatedDevices || relatedDevices.length === 0) {
+  // Ensure relatedDevices is always an array
+  let devices = relatedDevices || [];
+  if (typeof devices === 'string') {
+    try {
+      devices = JSON.parse(devices);
+    } catch (e) {
+      devices = [];
+    }
+  }
+  if (!Array.isArray(devices)) {
+    devices = [];
+  }
+
+  if (devices.length === 0) {
     return null;
   }
 
@@ -36,7 +49,7 @@ export function DeviceRelatedDevices({ relatedDevices }) {
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {relatedDevices.map((relatedDevice) => (
+          {devices.map((relatedDevice) => (
             <Link
               key={relatedDevice.id}
               href={`/devices/${relatedDevice.slug}`}

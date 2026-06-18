@@ -18,7 +18,18 @@ const getImageUrl = (imageName) => {
 
 export function DeviceHero({ device }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const deviceImages = device.images || (device.image ? [device.image] : []);
+  // Ensure deviceImages is always an array
+  let deviceImages = device.images || (device.image ? [device.image] : []);
+  if (typeof deviceImages === 'string') {
+    try {
+      deviceImages = JSON.parse(deviceImages);
+    } catch (e) {
+      deviceImages = device.image ? [device.image] : [];
+    }
+  }
+  if (!Array.isArray(deviceImages)) {
+    deviceImages = device.image ? [device.image] : [];
+  }
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % deviceImages.length);

@@ -6,8 +6,21 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 export function DeviceFAQs({ device }) {
   const [openIndex, setOpenIndex] = useState(0);
 
+  // Ensure FAQs is always an array
+  let faqs = device.faqs || [];
+  if (typeof faqs === 'string') {
+    try {
+      faqs = JSON.parse(faqs);
+    } catch (e) {
+      faqs = [];
+    }
+  }
+  if (!Array.isArray(faqs)) {
+    faqs = [];
+  }
+
   // Use FAQs from API or fallback to default
-  const faqs = device.faqs && device.faqs.length > 0 ? device.faqs : [
+  const displayFaqs = faqs.length > 0 ? faqs : [
     {
       question: "How do I set up the device?",
       answer: `The ${device.title || "device"} is designed for easy setup. Simply charge the device, download the companion app, and follow the on-screen instructions to pair via Bluetooth. Most users complete setup in under 5 minutes.`
@@ -48,7 +61,7 @@ export function DeviceFAQs({ device }) {
           </p>
         </div>
         <div className="max-w-3xl space-y-4">
-          {faqs.map((faq, index) => (
+          {displayFaqs.map((faq, index) => (
             <div
               key={index}
               className="bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden"
