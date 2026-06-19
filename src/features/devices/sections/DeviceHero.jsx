@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/Button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -18,6 +18,8 @@ const getImageUrl = (imageName) => {
 
 export function DeviceHero({ device }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const intervalRef = useRef(null);
+
   // Ensure deviceImages is always an array
   let deviceImages = device.images || (device.image ? [device.image] : []);
   if (typeof deviceImages === 'string') {
@@ -39,9 +41,24 @@ export function DeviceHero({ device }) {
     setCurrentImageIndex((prev) => (prev - 1 + deviceImages.length) % deviceImages.length);
   };
 
+  // Auto-play functionality
+  useEffect(() => {
+    if (deviceImages.length > 1) {
+      intervalRef.current = setInterval(() => {
+        nextImage();
+      }, 3000); // 3 seconds
+    }
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [deviceImages.length]);
+
   return (
-    <div className="px-6 py-16 md:py-20 lg:py-24 bg-gradient-to-br from-blue-50 to-indigo-100">
-      <div className="mx-auto max-w-7xl flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+    <div className="px-6 py-16 md:py-20 lg:py-24">
+      <div className="mx-auto max-w-[1200px] flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         {/* Left: copy */}
         <div className="flex-1 text-center lg:text-left">
           <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-bold text-gray-900 mb-6 tracking-tight leading-[1.15]">
@@ -58,12 +75,12 @@ export function DeviceHero({ device }) {
             </p>
           )}
           <Button
-            href={device.heroButtonLink || "#specifications"}
+            href={device.heroButtonLink || "#device-lead-form"}
             variant="primary"
             size="lg"
             className="mt-8 text-white font-semibold text-base px-8 py-4 rounded-full shadow-lg"
           >
-            {device.heroButtonText || "View Specifications"}
+            {device.heroButtonText || "Request Information"}
           </Button>
         </div>
 
@@ -83,14 +100,13 @@ export function DeviceHero({ device }) {
 
               {/* Image */}
               <div className="relative w-72 h-72 md:w-96 md:h-96">
-                <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-blue-100 to-indigo-100">
+                <div className="relative w-full h-full rounded-3xl overflow-hidden border-4 border-white shadow-2xl">
                   <img
                     src={getImageUrl(deviceImages[currentImageIndex])}
                     alt={`${device.title} - Image ${currentImageIndex + 1}`}
                     className="w-full h-full object-cover transition-transform duration-500 ease-in-out"
                   />
                   {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                 </div>
                 {/* Image indicators */}
                 {deviceImages.length > 1 && (

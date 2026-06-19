@@ -6,6 +6,7 @@ import { DeviceSpecifications } from "./DeviceSpecifications";
 import { DeviceFeatures } from "./DeviceFeatures";
 import { DeviceFAQs } from "./DeviceFAQs";
 import { DeviceRelatedDevices } from "./DeviceRelatedDevices";
+import DeviceLeadForm from "./DeviceLeadForm.jsx";
 
 export default function CellularGatewaySection({ slug: propSlug }) {
   const [device, setDevice] = useState(null);
@@ -92,6 +93,11 @@ export default function CellularGatewaySection({ slug: propSlug }) {
       <DeviceSpecifications device={device} />
       <DeviceFeatures device={device} />
       <DeviceFAQs device={device} />
+      <div id="device-lead-form" className="px-6 py-16 md:py-20 lg:py-24">
+        <div className="mx-auto max-w-6xl">
+          <DeviceLeadForm  />
+        </div>
+      </div>
       <DeviceRelatedDevices relatedDevices={relatedDevices} />
     </section>
   );

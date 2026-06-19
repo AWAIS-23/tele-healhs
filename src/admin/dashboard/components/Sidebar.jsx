@@ -117,6 +117,7 @@ export default function Sidebar() {
         { label: "Contact Us Leads", href: "/admin/leads?tab=contact_us", permission: "read_leads_contact_us" },
         { label: "Funnel Leads", href: "/admin/leads?tab=funnel", permission: "read_leads_funnel" },
         { label: "Eligibility Leads", href: "/admin/leads?tab=eligibility", permission: "read_leads_eligibility" },
+        { label: "Device Leads", href: "/admin/leads?tab=device", permission: "read_leads_device" },
       ]
     },
     {

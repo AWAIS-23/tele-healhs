@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { X } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { X, ChevronDown, MapPin, Shield } from "lucide-react";
 
 export function EligibilityModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
@@ -14,12 +14,29 @@ export function EligibilityModal({ isOpen, onClose }) {
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
-
-  if (!isOpen) return null;
+  const [stateDropdownOpen, setStateDropdownOpen] = useState(false);
+  const [carrierDropdownOpen, setCarrierDropdownOpen] = useState(false);
+  const stateDropdownRef = useRef(null);
+  const carrierDropdownRef = useRef(null);
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (stateDropdownRef.current && !stateDropdownRef.current.contains(event.target)) {
+        setStateDropdownOpen(false);
+      }
+      if (carrierDropdownRef.current && !carrierDropdownRef.current.contains(event.target)) {
+        setCarrierDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  if (!isOpen) return null;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -158,21 +175,36 @@ export function EligibilityModal({ isOpen, onClose }) {
                     <label htmlFor="state" className="block text-sm font-semibold text-gray-700 mb-2">
                       State *
                     </label>
-                    <select
-                      id="state"
-                      name="state"
-                      required
-                      value={formData.state}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500/25 focus:border-blue-500 transition-colors bg-white"
-                    >
-                      <option value="">Select your state</option>
-                      {states.map((state) => (
-                        <option key={state} value={state}>
-                          {state}
-                        </option>
-                      ))}
-                    </select>
+                    <div className="relative" ref={stateDropdownRef}>
+                      <div
+                        onClick={() => setStateDropdownOpen(!stateDropdownOpen)}
+                        className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500/25 focus:border-blue-500 transition-colors bg-white cursor-pointer flex items-center justify-between"
+                      >
+                        <span className={formData.state ? "text-gray-900" : "text-gray-400"}>
+                          {formData.state || "Select your state"}
+                        </span>
+                        <ChevronDown className={`w-5 h-5 text-gray-400 transition-transform ${stateDropdownOpen ? 'rotate-180' : ''}`} />
+                      </div>
+                      <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
+                        <MapPin className="w-5 h-5" />
+                      </div>
+                      {stateDropdownOpen && (
+                        <div className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-xl shadow-lg max-h-40 overflow-y-auto">
+                          {states.map((state) => (
+                            <div
+                              key={state}
+                              onClick={() => {
+                                setFormData({ ...formData, state });
+                                setStateDropdownOpen(false);
+                              }}
+                              className="px-4 py-3 hover:bg-blue-50 cursor-pointer transition-colors text-gray-700"
+                            >
+                              {state}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
 
@@ -180,21 +212,36 @@ export function EligibilityModal({ isOpen, onClose }) {
                   <label htmlFor="insuranceCarrier" className="block text-sm font-semibold text-gray-700 mb-2">
                     Insurance Carrier *
                   </label>
-                  <select
-                    id="insuranceCarrier"
-                    name="insuranceCarrier"
-                    required
-                    value={formData.insuranceCarrier}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500/25 focus:border-blue-500 transition-colors bg-white"
-                  >
-                    <option value="">Select your insurance carrier</option>
-                    {insuranceCarriers.map((carrier) => (
-                      <option key={carrier} value={carrier}>
-                        {carrier}
-                      </option>
-                    ))}
-                  </select>
+                  <div className="relative" ref={carrierDropdownRef}>
+                    <div
+                      onClick={() => setCarrierDropdownOpen(!carrierDropdownOpen)}
+                      className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500/25 focus:border-blue-500 transition-colors bg-white cursor-pointer flex items-center justify-between"
+                    >
+                      <span className={formData.insuranceCarrier ? "text-gray-900" : "text-gray-400"}>
+                        {formData.insuranceCarrier || "Select your insurance carrier"}
+                      </span>
+                      <ChevronDown className={`w-5 h-5 text-gray-400 transition-transform ${carrierDropdownOpen ? 'rotate-180' : ''}`} />
+                    </div>
+                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
+                      <Shield className="w-5 h-5" />
+                    </div>
+                    {carrierDropdownOpen && (
+                      <div className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-xl shadow-lg max-h-40 overflow-y-auto">
+                        {insuranceCarriers.map((carrier) => (
+                          <div
+                            key={carrier}
+                            onClick={() => {
+                              setFormData({ ...formData, insuranceCarrier: carrier });
+                              setCarrierDropdownOpen(false);
+                            }}
+                            className="px-4 py-3 hover:bg-blue-50 cursor-pointer transition-colors text-gray-700"
+                          >
+                            {carrier}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
 
                 {errorMsg && (

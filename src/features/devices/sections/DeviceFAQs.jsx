@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
 
 export function DeviceFAQs({ device }) {
   const [openIndex, setOpenIndex] = useState(0);
@@ -44,48 +43,49 @@ export function DeviceFAQs({ device }) {
   ];
 
   return (
-    <div className="px-6 py-16 md:py-20 lg:py-24 bg-white">
-      <div className="mx-auto max-w-7xl">
-        <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 border border-blue-200 mb-6">
-            <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span className="text-sm font-medium text-blue-800">Common Questions</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Questions</span>
+    <section className="relative bg-white py-16 md:py-20 lg:py-24 overflow-hidden border-t border-gray-100">
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
+            Frequently Asked Questions
           </h2>
-          <p className="text-gray-600 text-[16px] leading-relaxed">
-            Find answers to common questions about the {device.title || "device"}.
+          <p className="text-gray-600 text-lg">
+            Everything you need to know about the {device.title || "device"}
           </p>
         </div>
-        <div className="max-w-3xl space-y-4">
+
+        <div className="space-y-4">
           {displayFaqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden"
+              className="border border-gray-200 rounded-2xl overflow-hidden"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-100 transition-colors"
+                className="w-full px-6 py-5 text-left flex items-center justify-between bg-white hover:bg-gray-50 transition-colors"
               >
                 <span className="font-semibold text-gray-900 pr-4">{faq.question}</span>
-                {openIndex === index ? (
-                  <ChevronUp className="w-5 h-5 text-gray-500 flex-shrink-0" />
-                ) : (
-                  <ChevronDown className="w-5 h-5 text-gray-500 flex-shrink-0" />
-                )}
+                <svg
+                  className={`w-5 h-5 text-gray-500 flex-shrink-0 transition-transform ${
+                    openIndex === index ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
               </button>
               {openIndex === index && (
-                <div className="px-6 pb-5 pt-0">
-                  <p className="text-gray-600 text-sm leading-relaxed">{faq.answer}</p>
+                <div className="px-6 py-5 bg-gray-50 border-t border-gray-200">
+                  <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
                 </div>
               )}
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

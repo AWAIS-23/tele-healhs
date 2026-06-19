@@ -27,13 +27,30 @@ export function DeviceSpecifications({ device }) {
 
   return (
     <div id="specifications" className="px-6 py-16 md:py-20 lg:py-24 bg-white">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+             <div className="flex items-center justify-center">
+            <div className="w-full max-w-md">
+              {device.specificationsImage ? (
+                <img
+                  src={getImageUrl(device.specificationsImage)}
+                  alt={device.title}
+                  className="w-full h-auto rounded-2xl shadow-2xl "
+                />
+              ) : (
+                <img
+                  src={`https://placehold.co/500x500/2196C9/ffffff?text=${encodeURIComponent(device.title || 'Specifications')}`}
+                  alt={device.title}
+                  className="w-full h-auto rounded-2xl shadow-2xl"
+                />
+              )}
+            </div>
+          </div>
           {/* Left: Content */}
           <div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Device <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">{specificationsTitle}</span>
+               {specificationsTitle}
             </h2>
             <div className="bg-white rounded-2xl p-4 ">
               <ul className="space-y-4 text-sm text-gray-600 leading-relaxed">
@@ -55,23 +72,7 @@ export function DeviceSpecifications({ device }) {
           </div>
 
           {/* Right: Image */}
-          <div className="flex items-center justify-center">
-            <div className="w-full max-w-md">
-              {device.specificationsImage ? (
-                <img
-                  src={getImageUrl(device.specificationsImage)}
-                  alt={device.title}
-                  className="w-full h-auto rounded-2xl shadow-2xl"
-                />
-              ) : (
-                <img
-                  src={`https://placehold.co/500x500/2196C9/ffffff?text=${encodeURIComponent(device.title || 'Specifications')}`}
-                  alt={device.title}
-                  className="w-full h-auto rounded-2xl shadow-2xl"
-                />
-              )}
-            </div>
-          </div>
+       
         </div>
       </div>
     </div>

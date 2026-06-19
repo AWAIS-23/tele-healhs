@@ -2,6 +2,7 @@
 
 import { Header } from "./Header";
 import { Footer } from "./Footer";
+import { BrandingCTASection } from "./BrandingCTASection";
 
 export function Layout({ children }) {
   return (
@@ -10,6 +11,7 @@ export function Layout({ children }) {
       <main className="flex-1">
         {children}
       </main>
+      <BrandingCTASection />
       <Footer />
     </div>
   );

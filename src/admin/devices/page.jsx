@@ -194,7 +194,7 @@ export default function DevicesListPage() {
                         <td className="px-6 py-4 text-right">
                           <div className="flex items-center justify-end gap-2">
                             <Link
-                              href={`/device/${device.slug}`}
+                              href={`/devices/${device.slug}`}
                               target="_blank"
                               className="p-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
                             >

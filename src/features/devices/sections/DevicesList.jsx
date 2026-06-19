@@ -1,79 +1,44 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Search, ArrowRight } from "lucide-react";
 
-// Helper to get image URL (placeholder for static data)
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+const UPLOADS_URL = API_BASE_URL.replace('/api', '');
+
+// Helper to get image URL
 const getImageUrl = (imageName) => {
   if (!imageName) return null;
-  return `https://placehold.co/400x400/2196C9/ffffff?text=${encodeURIComponent(imageName.replace('.jpg', '').replace('-', ' '))}`;
+  return `${UPLOADS_URL}/uploads/${imageName}`;
 };
-
-// Static devices data
-const staticDevices = [
-  {
-    id: 1,
-    title: "Tenovi Cellular Gateway",
-    slug: "cellular-gateway",
-    badge: "FDA-Cleared",
-    shortDescription: "Connects to over 60 FDA-cleared Bluetooth devices and transmits data securely via cellular.",
-    price: "149",
-    image: "gateway-main.jpg"
-  },
-  {
-    id: 2,
-    title: "Blood Pressure Monitor",
-    slug: "bpm",
-    badge: "FDA-Cleared",
-    shortDescription: "Accurate blood pressure readings with automatic data transmission",
-    price: "89",
-    image: "bpm.jpg"
-  },
-  {
-    id: 3,
-    title: "Blood Glucose Monitor",
-    slug: "bgm",
-    badge: "FDA-Cleared",
-    shortDescription: "Track glucose levels with Bluetooth-enabled meter",
-    price: "75",
-    image: "bgm.jpg"
-  },
-  {
-    id: 4,
-    title: "Weight Scale",
-    slug: "weight-scale",
-    badge: "FDA-Cleared",
-    shortDescription: "Smart scale with body composition analysis",
-    price: "99",
-    image: "scale.jpg"
-  },
-  {
-    id: 5,
-    title: "Pulse Oximeter",
-    slug: "pulse-oximeter",
-    badge: "FDA-Cleared",
-    shortDescription: "Measure blood oxygen levels and heart rate with precision",
-    price: "65",
-    image: "oximeter.jpg"
-  },
-  {
-    id: 6,
-    title: "Thermometer",
-    slug: "thermometer",
-    badge: "FDA-Cleared",
-    shortDescription: "Bluetooth-enabled thermometer for accurate temperature readings",
-    price: "45",
-    image: "thermometer.jpg"
-  }
-];
 
 export default function DevicesList() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [devices, setDevices] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const filteredDevices = staticDevices.filter(device =>
+  useEffect(() => {
+    fetchDevices();
+  }, []);
+
+  const fetchDevices = async () => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/devices?status=published`);
+      const data = await response.json();
+      if (data.success) {
+        setDevices(data.data);
+      }
+    } catch (error) {
+      console.error("Error fetching devices:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const filteredDevices = devices.filter(device =>
     device.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    device.shortDescription.toLowerCase().includes(searchTerm.toLowerCase())
+    (device.shortDescription && device.shortDescription.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
   return (
@@ -104,7 +69,9 @@ export default function DevicesList() {
 
       {/* Devices Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {filteredDevices.length === 0 ? (
+        {loading ? (
+          <div className="text-center text-gray-500 py-12">Loading devices...</div>
+        ) : filteredDevices.length === 0 ? (
           <div className="text-center text-gray-500 py-12">No devices found</div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -115,7 +82,7 @@ export default function DevicesList() {
                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group"
               >
                 {device.image && (
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative overflow-hidden">
                     <img
                       src={getImageUrl(device.image)}
                       alt={device.title}
@@ -127,15 +94,11 @@ export default function DevicesList() {
                   <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                     {device.title}
                   </h3>
-                  {device.shortDescription && (
+                  {device.heroDescription && (
                     <p className="text-gray-600 mb-4 line-clamp-2">
-                      {device.shortDescription}
+                      {device.heroDescription}
                     </p>
                   )}
-                  <div className="flex items-center text-blue-600 font-medium group-hover:translate-x-2 transition-transform">
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </div>
                 </div>
               </Link>
             ))}

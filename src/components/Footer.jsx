@@ -11,7 +11,7 @@ const footerLinks = {
     { label: "Chronic Care Management", href: "/services/chronic-care-management" },
     { label: "Principal Care Management", href: "/services/principal-care-management" },
     { label: "Behavioral Health Integration", href: "/services/behavioral-health-integration" },
-    { label: "View All Services", href: "/services" },
+  
   ],
    "How It Works": [
     { label: "Regular Check-Ins", href: "/how-it-works/regular-check-ins" },

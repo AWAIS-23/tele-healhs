@@ -347,28 +347,28 @@ export function Header() {
               dropdownTimeoutRef.current = setTimeout(() => setActiveDropdown(null), 150);
             }}
           >
-            <div className="border border-gray-200/60 bg-white/98 backdrop-blur-xl shadow-2xl shadow-gray-900/10 rounded-2xl w-[1280px] max-w-[95vw] p-6 border-t-2 border-t-blue-500">
-              <div className="mb-4">
-                <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-3 font-sans">{activeItem.label}</h3>
+            <div className="border border-gray-200/60 bg-white/98 backdrop-blur-xl shadow-2xl shadow-gray-900/10 rounded-2xl w-[800px] max-w-[90vw] p-4 border-t-2 border-t-blue-500">
+              <div className="mb-3">
+                <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-2 font-sans">{activeItem.label}</h3>
               </div>
               <div className="grid grid-cols-2 gap-2">
                 {activeItem.dropdownItems.map((dropItem) => (
                   <Link
                     key={dropItem.name}
                     href={dropItem.href || "#"}
-                    className="group flex items-start gap-3 rounded-xl px-3 py-3 transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:shadow-md"
+                    className="group flex items-start gap-2 rounded-lg px-2 py-2 transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:shadow-md"
                   >
-                    <div className={`mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg bg-gradient-to-br from-${dropItem.color}-50 to-${dropItem.color}-100 border border-${dropItem.color}-200`}>
+                    <div className={`mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg bg-gradient-to-br from-${dropItem.color}-50 to-${dropItem.color}-100 border border-${dropItem.color}-200`}>
                       {(() => {
                         const IconComponent = getIcon(dropItem.icon);
-                        return <IconComponent className={`h-4 w-4 text-${dropItem.color}-600`} strokeWidth={2} />;
+                        return <IconComponent className={`h-3.5 w-3.5 text-${dropItem.color}-600`} strokeWidth={2} />;
                       })()}
                     </div>
                     <div className="min-w-0">
-                      <p className="text-[0.8rem] font-semibold text-gray-900 transition-colors duration-300 group-hover:text-blue-600 font-sans leading-tight">
+                      <p className="text-[0.75rem] font-semibold text-gray-900 transition-colors duration-300 group-hover:text-blue-600 font-sans leading-tight">
                         {dropItem.name}
                       </p>
-                      <p className="mt-0.5 text-[0.75rem] leading-relaxed line-clamp-2 text-gray-500 font-sans">
+                      <p className="mt-0.5 text-[0.7rem] leading-relaxed line-clamp-2 text-gray-500 font-sans">
                         {dropItem.desc}
                       </p>
                     </div>

@@ -53,7 +53,7 @@ export function DeviceRelatedDevices({ relatedDevices }) {
             <Link
               key={relatedDevice.id}
               href={`/devices/${relatedDevice.slug}`}
-              className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-shadow group"
+              className="bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 transition-all duration-300 group"
             >
               {relatedDevice.image && (
                 <div className="relative h-48 mb-4 overflow-hidden rounded-xl">

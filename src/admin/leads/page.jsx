@@ -14,6 +14,7 @@ const TABS = [
   { key: "contact_us",   label: "Contact Us"   },
   { key: "funnel",       label: "Funnel Page"  },
   { key: "eligibility",  label: "Eligibility"  },
+  { key: "device",       label: "Device"       },
 ];
 
 const STATUS_OPTIONS = ["new", "contacted", "qualified", "closed"];
@@ -40,7 +41,7 @@ export default function LeadsPipelinePage() {
   }, []);
 
   useEffect(() => {
-    if (tabParam && ["landing_page", "contact_us", "funnel", "eligibility"].includes(tabParam)) {
+    if (tabParam && ["landing_page", "contact_us", "funnel", "eligibility", "device"].includes(tabParam)) {
       setActiveTab(tabParam);
     }
   }, [tabParam]);
@@ -119,7 +120,8 @@ export default function LeadsPipelinePage() {
       'landing_page': 'read_leads_landing_page',
       'contact_us': 'read_leads_contact_us',
       'funnel': 'read_leads_funnel',
-      'eligibility': 'read_leads_eligibility'
+      'eligibility': 'read_leads_eligibility',
+      'device': 'read_leads_device'
     };
     return permissions.includes(permissionMap[tab.key]);
   });
@@ -204,7 +206,7 @@ export default function LeadsPipelinePage() {
                   <table className="w-full text-sm">
                     <thead className="bg-gray-50 border-b border-gray-200">
                       <tr>
-                        {["Name", "Email", "Phone", ...(activeTab === 'eligibility' ? ["State", "Insurance Carrier"] : []), "Contact Owner", "Primary Contact", "Last Activity", "Lead Status", "Create Date", ""].map(h => (
+                        {["Name", "Email", "Phone", ...(activeTab === 'eligibility' ? ["State", "Insurance Carrier"] : []), ...(activeTab === 'device' ? ["Device"] : []), "Contact Owner", "Primary Contact", "Last Activity", "Lead Status", "Create Date", ""].map(h => (
                           <th key={h} className="px-4 py-3 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider whitespace-nowrap">
                             {h}
                           </th>
@@ -250,6 +252,15 @@ export default function LeadsPipelinePage() {
                               {/* Insurance Carrier */}
                               <td className="px-4 py-3">
                                 <span className="text-gray-600">{lead.insuranceCarrier || "—"}</span>
+                              </td>
+                            </>
+                          )}
+
+                          {activeTab === 'device' && (
+                            <>
+                              {/* Device */}
+                              <td className="px-4 py-3">
+                                <span className="text-gray-600">{lead.deviceName || "—"}</span>
                               </td>
                             </>
                           )}
@@ -330,7 +341,8 @@ export default function LeadsPipelinePage() {
                                   'landing_page': 'delete_leads_landing_page',
                                   'contact_us': 'delete_leads_contact_us',
                                   'funnel': 'delete_leads_funnel',
-                                  'eligibility': 'delete_leads_eligibility'
+                                  'eligibility': 'delete_leads_eligibility',
+                                  'device': 'delete_leads_device'
                                 };
                                 const requiredPermission = permissionMap[activeTab];
                                 if (permissions.includes(requiredPermission)) {

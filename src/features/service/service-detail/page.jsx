@@ -11,6 +11,7 @@ import BillingSection from "./sections/BillingSection";
 import WhyCCNSection from "./sections/WhyCCNSection";
 import ComplianceSection from "./sections/ComplianceSection";
 import FAQSection from "./sections/FAQSection";
+import { LatestDevicesSection } from "./sections/LatestDevicesSection";
 
 import { useState, useEffect } from "react";
 import { Layout } from "@/components/Layout";
@@ -66,6 +67,7 @@ export default function ServiceDetailPage({ slug }) {
       <WhyCCNSection data={data} />
       <ComplianceSection data={data} />
       <FAQSection data={data} />
+      <LatestDevicesSection />
     </Layout>
   );
 }

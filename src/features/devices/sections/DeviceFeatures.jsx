@@ -37,18 +37,18 @@ export function DeviceFeatures({ device }) {
   }
 
   return (
-    <div className="px-6 py-16 md:py-20 lg:py-24 bg-gradient-to-br from-blue-50 to-indigo-100">
-      <div className="mx-auto max-w-7xl">
+    <div className="px-6 py-16 md:py-20 lg:py-24 ">
+      <div className="mx-auto max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Content */}
           <div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Device <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Features</span>
+              {device.title} Features
             </h2>
             <p className="text-gray-600 text-[16px] leading-relaxed mb-8">
               Discover the key features and capabilities of the {device.title || "device"}.
             </p>
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+            <div className=" rounded-2xl p-4  ">
               <ul className="space-y-6">
                 {features.length > 0 ? (
                   features.map((feature, index) => {
